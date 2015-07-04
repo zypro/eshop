@@ -1,27 +1,27 @@
 <div id="block-category">
-	<p class="header-title">Категории товаров</p>
+	<p class="header-title">ГЉГ ГІГҐГЈГ®Г°ГЁГЁ ГІГ®ГўГ Г°Г®Гў</p>
 	<ul>
-		<li><a><img src="/images/mobile-icon.gif" id="mobile-images">Мобильные телефоны</a>
+		<li><a><img src="/images/mobile-icon.gif" id="mobile-images">ГЊГ®ГЎГЁГ«ГјГ­Г»ГҐ ГІГҐГ«ГҐГґГ®Г­Г»</a>
 			<ul class="category-section">
-				<li><a href="#"><strong>Все модели</strong></a></li>
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 1</a></li>
+				<li><a href="#"><strong>Г‚Г±ГҐ Г¬Г®Г¤ГҐГ«ГЁ</strong></a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
 			</ul>
 		</li>
-		<li><a><img src="/images/book-icon.gif" id="book-images">Косметика</a>
+		<li><a><img src="/images/book-icon.gif" id="book-images">ГЉГ®Г±Г¬ГҐГІГЁГЄГ </a>
 			<ul class="category-section">
-				<li><a href="#"><strong>Все модели</strong></a></li>
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 1</a></li>
+				<li><a href="#"><strong>Г‚Г±ГҐ Г¬Г®Г¤ГҐГ«ГЁ</strong></a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
 			</ul>
 		</li>
-				<li><a><img src="/images/table-icon.gif" id="table-images">Шампуни</a>
+				<li><a><img src="/images/table-icon.gif" id="table-images">ГГ Г¬ГЇГіГ­ГЁ</a>
 			<ul class="category-section">
-				<li><a href="#"><strong>Все модели</strong></a></li>
-				<li><a href="#">Подраздел 1</a></li>
-				<li><a href="#">Подраздел 1</a></li>
+				<li><a href="#"><strong>Г‚Г±ГҐ Г¬Г®Г¤ГҐГ«ГЁ</strong></a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
+				<li><a href="#">ГЏГ®Г¤Г°Г Г§Г¤ГҐГ« 1</a></li>
 			</ul>
 		</li>
 	</ul>

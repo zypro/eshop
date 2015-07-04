@@ -6,6 +6,6 @@ $db_database	= 'db_eshop';
 
 $link = mysql_connect($db_host,$db_user,$db_pass);
 
-mysql_select_db($db_database,$link) or die("Íåò ñîåäèíåíèÿ ñ ÁÄ ".mysql_error());
+mysql_select_db($db_database,$link) or die("ÃÃ¥Ã² Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¥Ã­Ã¨Ã¿ Ã± ÃÃ„ ".mysql_error());
 mysql_query("SET names cp1251");
 ?>
