@@ -129,7 +129,7 @@
 			 	<ul id="block-tovar-list">
 			<?php 
 				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' ORDER BY $sorting",$link);
-				if (mysql_num_rows($result) > 0) 
+				if (mysql_num_rows($result) > 0)
 				{
 					$row = mysql_fetch_array($result);
 					do
