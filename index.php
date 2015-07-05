@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-	<title>Интернет магазин Косметики</title>
+	<title>???? ?????????/title>
 </head>
 <body>
 <div id="block-body">
@@ -31,19 +31,19 @@
 
 		<div id="block-content">
 			<div id="block-sorting">
-				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
+				<p id="nav-breadcrumbs"><a href="index.php">???? ?????/a> \ <span>?????</span></p>
 				<ul id="options-list">
-					<li>Вид: </li>
+					<li>?? </li>
 					<li><img id="style-grid" src="/images/icon-grid.png"></li>
 					<li><img id="style-list" src="/images/icon-list.png"></li>
-					<li>Сортировка: </li>
-					<li><a id="select-sort">Без сортировки</a>
+					<li>?????: </li>
+					<li><a id="select-sort">?? ?????</a>
 				<ul id="sorting-list">
-					<li><a href="index.php?sort=price-asc">От дешевых к дорогим</a></li>
-					<li><a href="index.php?sort=price-desc">От дорогих к дешевым</a></li>
-					<li><a href="index.php?sort=popular">Популярное</a></li>
-					<li><a href="index.php?sort=news">Новинки</a></li>
-					<li><a href="index.php?sort=brand">От А до Я</a></li>
+					<li><a href="index.php?sort=price-asc">? ????? ?????/a></li>
+					<li><a href="index.php?sort=price-desc">? ???? ??????/a></li>
+					<li><a href="index.php?sort=popular">?????</a></li>
+					<li><a href="index.php?sort=news">????/a></li>
+					<li><a href="index.php?sort=brand">? ? ? ?/a></li>
 				</ul>
 					</li>
 				</ul>
@@ -84,7 +84,7 @@
 										<li><img src="/images/comment-icon.png"><p>0</p></li>
 									</ul>
 									<a class="add-cart-style-grid"></a>
-									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
+									<p class="style-price-grid"><strong>'.$row["price"].'</strong> ??</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
 							';
@@ -129,7 +129,7 @@
 									</ul>
 									<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 									<a class="add-cart-style-list"></a>
-									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
+									<p class="style-price-list"><strong>'.$row["price"].'</strong> ??</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
 							';
