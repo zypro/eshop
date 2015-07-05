@@ -38,4 +38,9 @@ $(document).ready (function() {
 		$("#style-list").attr("src","/images/icon-list-active.png")
 		$("#style-grid").attr("src","/images/icon-grid.png")
 			}
+// Сортировка
+		$("#select-sort").click(function(){
+			$("#sorting-list").slideToggle(200);
+		});
+
 });
