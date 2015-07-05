@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-	<title>Интернет магазин</title>
+	<title>Интернет магазин Косметики</title>
 </head>
 <body>
 <div id="block-body">
