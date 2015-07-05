@@ -39,11 +39,11 @@
 					<li>Сортировка: </li>
 					<li><a id="select-sort">Без сортировки</a>
 				<ul id="sorting-list">
-					<li><a href="">От дешевых к дорогим</a></li>
-					<li><a href="">От дорогих к дешевым</a></li>
-					<li><a href="">Популярное</a></li>
-					<li><a href="">Новинки</a></li>
-					<li><a href="">От А до Я</a></li>
+					<li><a href="index.php?sort=price-asc">От дешевых к дорогим</a></li>
+					<li><a href="index.php?sort=price-desc">От дорогих к дешевым</a></li>
+					<li><a href="index.php?sort=popular">Популярное</a></li>
+					<li><a href="index.php?sort=news">Новинки</a></li>
+					<li><a href="index.php?sort=brand">От А до Я</a></li>
 				</ul>
 					</li>
 				</ul>
