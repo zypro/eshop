@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-	<title>РРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅ</title>
+	<title>Интернет магазин</title>
 </head>
 <body>
 <div id="block-body">
@@ -31,19 +31,19 @@
 
 		<div id="block-content">
 			<div id="block-sorting">
-				<p id="nav-breadcrumbs"><a href="index.php">Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°</a> \ <span>Р’СЃРµ С‚РѕРІР°СЂС‹</span></p>
+				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
 				<ul id="options-list">
-					<li>Р’РёРґ: </li>
+					<li>Вид: </li>
 					<li><img id="style-grid" src="/images/icon-grid.png"></li>
 					<li><img id="style-list" src="/images/icon-list.png"></li>
-					<li>РЎРѕСЂС‚РёСЂРѕРІРєР°: </li>
-					<li><a id="select-sort">Р‘РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё</a>
+					<li>Сортировка: </li>
+					<li><a id="select-sort">Без сортировки</a>
 				<ul id="sorting-list">
-					<li><a href="">РћС‚ РґРµС€РµРІС‹С… Рє РґРѕСЂРѕРіРёРј</a></li>
-					<li><a href="">РћС‚ РґРѕСЂРѕРіРёС… Рє РґРµС€РµРІС‹Рј</a></li>
-					<li><a href="">РџРѕРїСѓР»СЏСЂРЅРѕРµ</a></li>
-					<li><a href="">РќРѕРІРёРЅРєРё</a></li>
-					<li><a href="">РћС‚ Рђ РґРѕ РЇ</a></li>
+					<li><a href="">От дешевых к дорогим</a></li>
+					<li><a href="">От дорогих к дешевым</a></li>
+					<li><a href="">Популярное</a></li>
+					<li><a href="">Новинки</a></li>
+					<li><a href="">От А до Я</a></li>
 				</ul>
 					</li>
 				</ul>
@@ -84,7 +84,7 @@
 										<li><img src="/images/comment-icon.png"><p>0</p></li>
 									</ul>
 									<a class="add-cart-style-grid"></a>
-									<p class="style-price-grid"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
+									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
 							';
@@ -129,7 +129,7 @@
 									</ul>
 									<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 									<a class="add-cart-style-list"></a>
-									<p class="style-price-list"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
+									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
 							';

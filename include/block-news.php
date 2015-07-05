@@ -4,17 +4,17 @@
 		<ul>
 			<li>
 				<span>24.11.2015</span>
-				<a href="#">Íàçâàíèå íîâîñòè</a>
+				<a href="#">Iacaaiea iiainoe</a>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.</p>10
 			</li>
 			<li>
 				<span>24.11.2015</span>
-				<a href="#">Íàçâàíèå íîâîñòè</a>
+				<a href="#">Iacaaiea iiainoe</a>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.</p>10
 			</li>
 			<li>
 				<span>24.11.2015</span>
-				<a href="#">Íàçâàíèå íîâîñòè</a>
+				<a href="#">Iacaaiea iiainoe</a>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.</p>10
 			</li>
 		</ul>
