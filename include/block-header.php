@@ -9,7 +9,7 @@
 <!-- Список с навигацией -->
 
 		<ul id="header-top-menu">
-			<li>Ваш Город - <span>Душанбе</span></li>
+			<li>Ваш город - <span>Душанбе</span></li>
 			<li><a href="#">О нас</a></li>
 			<li><a href="#">Магазины</a></li>
 			<li><a href="#">Контакты</a></li>
