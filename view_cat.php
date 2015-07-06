@@ -43,10 +43,12 @@
 	<meta charset="windows-1251">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="trackbar/trackbar.css">
 	<script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
 	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="/trackbar/jquery.trackbar.js"></script>
 	<title>Интернет магазин Косметики</title>
 </head>
 <body>

@@ -332,8 +332,8 @@
 
 #blocktrackbar {
 	width: 220px;
-	height: 20px;
-	border: 1px solid black;
+	height: 35px;
+	padding-top: 5px;
 	margin-top: 20px;
 	clear: both;
 }
