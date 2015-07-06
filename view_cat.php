@@ -10,32 +10,32 @@
 		{
 			case 'price-asc';
 			$sorting = 'price ASC';
-			$sort_name = 'РћС‚ РґРµС€РµРІС‹С… Рє РґРѕСЂРѕРіРёРј';
+			$sort_name = 'От дешевых к дорогим';
 			break;
 
 			case 'price-desc';
 			$sorting = 'price DESC';
-			$sort_name = 'РћС‚ РґРѕСЂРѕРіРёС… Рє РґРµС€РµРІС‹Рј';
+			$sort_name = 'От дорогих к дешевым';
 			break;
 
 			case 'popular';
 			$sorting = 'count DESC';
-			$sort_name = 'РџРѕРїСѓР»СЏСЂРЅРѕРµ';
+			$sort_name = 'Популярное';
 			break;
 
 			case 'news';
 			$sorting = 'datetime DESC';
-			$sort_name = 'РќРѕРІРёРЅРєРё';
+			$sort_name = 'Новинки';
 			break;
 
 			case 'brand';
 			$sorting = 'brand';
-			$sort_name = 'РћС‚ Рђ РґРѕ РЇ';
+			$sort_name = 'От А до Я';
 			break;
 
 			default:
 			$sorting = 'products_id DESC';
-			$sort_name = 'РќРµС‚ СЃРѕСЂС‚РёСЂРѕРІРєРё';
+			$sort_name = 'Нет сортировки';
 			break;
 		}
  ?>
@@ -49,7 +49,7 @@
 	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-	<title>РРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅ РљРѕСЃРјРµС‚РёРєРё</title>
+	<title>Интернет магазин Косметики</title>
 </head>
 <body>
 <div id="block-body">
@@ -96,24 +96,24 @@
 				{
 					$row = mysql_fetch_array($result);
 					echo '<div id="block-sorting">
-				<p id="nav-breadcrumbs"><a href="index.php">Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°</a> \ <span>Р’СЃРµ С‚РѕРІР°СЂС‹</span></p>
+				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
 				<ul id="options-list">
-					<li>Р’РёРґ: </li>
+					<li>Вид: </li>
 					<li><img id="style-grid" src="/images/icon-grid.png"></li>
 					<li><img id="style-list" src="/images/icon-list.png"></li>
-					<li>РЎРѕСЂС‚РёСЂРѕРІРєР°: </li>
+					<li>Сортировка: </li>
 					<li><a id="select-sort">'.$sort_name.'</a>
 				<ul id="sorting-list">
-					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=price-asc">РћС‚ РґРµС€РµРІС‹С… Рє РґРѕСЂРѕРіРёРј</a></li>
-					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=price-desc">РћС‚ РґРѕСЂРѕРіРёС… Рє РґРµС€РµРІС‹Рј</a></li>
-					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=popular">РџРѕРїСѓР»СЏСЂРЅРѕРµ</a></li>
-					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=news">РќРѕРІРёРЅРєРё</a></li>
-					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=brand">РћС‚ Рђ РґРѕ РЇ</a></li>
+					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=price-asc">От дешевых к дорогим</a></li>
+					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=price-desc">От дорогих к дешевым</a></li>
+					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=popular">Популярное</a></li>
+					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=news">Новинки</a></li>
+					<li><a href="view_cat.php?'.$catlink.'type='.$type.'&sort=brand">От А до Я</a></li>
 				</ul>
 					</li>
 				</ul>
 			</div>
-			<ul id="block-tovar-grid">';
+			';
 					do
 					{
 					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
@@ -144,7 +144,7 @@
 										<li><img src="/images/comment-icon.png"><p>0</p></li>
 									</ul>
 									<a class="add-cart-style-grid"></a>
-									<p class="style-price-grid"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
+									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
 							';
@@ -189,7 +189,7 @@
 									</ul>
 									<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 									<a class="add-cart-style-list"></a>
-									<p class="style-price-list"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
+									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
 							';
@@ -198,7 +198,7 @@
 				}
 			}else
 				{
-					echo '<h3>РљР°С‚РµРіРѕСЂРёСЏ РЅРµ РґРѕСЃС‚СѓРїРЅР° РёР»Рё РЅРµ СЃРѕР·РґР°РЅР°!</h3>';
+					echo '<h3>Категория не доступна или не создана!</h3>';
 				}
 			 ?>
 			 	</ul>
