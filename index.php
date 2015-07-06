@@ -30,7 +30,7 @@
 
 			default:
 			$sorting = 'products_id DESC';
-			$sorting_name = 'Нет сортировки';
+			$sort_name = 'Нет сортировки';
 			break;
 		}
  ?>
