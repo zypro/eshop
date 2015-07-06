@@ -1,10 +1,8 @@
 <?php 
 	include 'include/db_connect.php';
 	include 'functions/functions.php';
-
 	$cat = clear_string($_GET["cat"]);
 	$type = clear_string($_GET["type"]);
-
 	$sorting = $_GET["sort"];
 		switch($sorting)
 		{
@@ -49,7 +47,7 @@
 	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-	<title>Интернет магазин Косметики</title>
+	<title>Г€Г­ГІГҐГ°Г­ГҐГІ Г¬Г ГЈГ Г§ГЁГ­ ГЉГ®Г±Г¬ГҐГІГЁГЄГЁ</title>
 </head>
 <body>
 <div id="block-body">
@@ -113,7 +111,7 @@
 					</li>
 				</ul>
 			</div>
-			';
+			<ul id="block-tovar-grid">';
 					do
 					{
 					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
