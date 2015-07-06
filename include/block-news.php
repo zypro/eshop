@@ -2,21 +2,22 @@
 	<center><img src="/images/img-prev.png" id="news-prev"></center>
 	<div id="newsticker">
 		<ul>
-			<li>
-				<span>24.11.2015</span>
-				<a href="#">Iacaaiea iiainoe</a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.</p>10
-			</li>
-			<li>
-				<span>24.11.2015</span>
-				<a href="#">Iacaaiea iiainoe</a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.</p>10
-			</li>
-			<li>
-				<span>24.11.2015</span>
-				<a href="#">Iacaaiea iiainoe</a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.</p>10
-			</li>
+<?php
+	$result = mysql_query("SELECT * FROM news ORDER BY id DESC",$link);
+		if (mysql_num_rows($result) > 0)
+			{
+				$row = mysql_fetch_array($result);
+			do
+			{
+				echo '<li>
+				<span>'.$row["date"].'</span>
+				<a href="#">'.$row["title"].'</a>
+				<p>'.$row["text"].'</p>
+					</li>';
+			}
+			while ($row = mysql_fetch_array($result));
+		}
+?>
 		</ul>
 	</div>
 	<center><img src="/images/img-next.png" id="news-next"></center>
