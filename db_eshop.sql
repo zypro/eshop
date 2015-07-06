@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 05 2015 г., 17:13
+-- Время создания: Июл 06 2015 г., 16:53
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -47,7 +47,19 @@ CREATE TABLE IF NOT EXISTS `category` (
   `type` varchar(100) NOT NULL,
   `brand` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id`, `type`, `brand`) VALUES
+(1, 'mobile', 'Apple'),
+(2, 'mobile', 'Samsung'),
+(3, 'notebook', 'Asus'),
+(4, 'notebook', 'Acer'),
+(5, 'mobile', 'HTC'),
+(6, 'mobile', 'Sony');
 
 -- --------------------------------------------------------
 
@@ -85,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `table_products` (
 --
 
 INSERT INTO `table_products` (`products_id`, `title`, `price`, `brand`, `seo_words`, `seo_description`, `mini_description`, `mini_features`, `image`, `description`, `features`, `datetime`, `new`, `leader`, `sale`, `visible`, `count`, `type_tovara`, `brand_id`, `vote`, `votes`) VALUES
-(1, 'Мобильный телефон Samsung Galaxy S6 32Gb (черно-синий)', 399, 'Samsung', '', '', 'Производитель : Samsung Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас Сканер отпечатков пальцев : да Срок ', 'Производитель : Samsung\nДатчики   : G-сенсор   , датчик освещенности   , датчик приближения   , цифровой компас  \nСканер отпечатков пальцев : да\nСрок гарантии : 1 год\nДополнительно : Быстрая зарядка (десять ', 'img1.jpg', '', '0', '2015-07-03 03:16:32', 0, 0, 0, 1, 0, 'mobile', 0, 1, 1),
+(1, 'Мобильный телефон Samsung Galaxy S6 32Gb (черно-синий)', 399, 'Samsung', '', '', 'Производитель : Samsung Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас Сканер отпечатков пальцев : да Срок ', 'Производитель : Samsung\nДатчики   : G-сенсор   , датчик освещенности   , датчик приближения   , цифровой компас  \nСканер отпечатков пальцев : да\nСрок гарантии : 1 год\nДополнительно : Быстрая зарядка (десять ', 'img1.jpg', '', '0', '2015-07-03 03:16:32', 0, 0, 0, 1, 0, 'mobile', 2, 1, 1),
 (2, 'Мобильный телефон Apple iPhone 4S 8Gb (черный) ', 355, 'Apple', '', '', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', 'Производитель : Apple\nДатчики   : G-сенсор   , датчик освещенности   , датчик приближения   , цифровой компас  \n', 'img2.jpg', '', '', '2015-07-03 04:09:12', 1, 0, 0, 1, 0, 'mobile', 1, 1, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
