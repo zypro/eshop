@@ -7,39 +7,39 @@
  include("../functions/functions.php");
 
      $error = array();
-         // Убрать тут преоброзование (iconv("UTF-8", "cp1251",)
-        $login = iconv("UTF-8", "cp1251",strtolower(clear_string($_POST['reg_login']))); 
-        $pass = iconv("UTF-8", "cp1251",strtolower(clear_string($_POST['reg_pass']))); 
-        $surname = iconv("UTF-8", "cp1251",clear_string($_POST['reg_surname'])); 
+         // РЈР±СЂР°С‚СЊ С‚СѓС‚ РїСЂРµРѕР±СЂРѕР·РѕРІР°РЅРёРµ (iconv("UTF-8", "cp1251",)
+        $login = strtolower(clear_string($_POST['reg_login']))); 
+        $pass = strtolower(clear_string($_POST['reg_pass']))); 
+        $surname = clear_string($_POST['reg_surname'])); 
         
-        $name = iconv("UTF-8", "cp1251",clear_string($_POST['reg_name'])); 
-        $email = iconv("UTF-8", "cp1251",clear_string($_POST['reg_email'])); 
+        $name = clear_string($_POST['reg_name'])); 
+        $email = clear_string($_POST['reg_email'])); 
         
-        $phone = iconv("UTF-8", "cp1251",clear_string($_POST['reg_phone'])); 
-        $address = iconv("UTF-8", "cp1251",clear_string($_POST['reg_address'])); 
+        $phone = clear_string($_POST['reg_phone'])); 
+        $address = clear_string($_POST['reg_address'])); 
 
 
     if (strlen($login) < 4 or strlen($login) > 15)
     {
-       $error[] = "Логин должен быть от 4 до 15 символов!"; 
+       $error[] = "Р›РѕРіРёРЅ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕС‚ 4 РґРѕ 15 СЃРёРјРІРѕР»РѕРІ!"; 
     }
     else
     {   
      $result = mysql_query("SELECT login FROM reg_user WHERE login = '$login'",$link);
     If (mysql_num_rows($result) > 0)
     {
-       $error[] = "Логин занят!";
+       $error[] = "Р›РѕРіРёРЅ Р·Р°РЅСЏС‚!";
     }
     }
      
-    if (strlen($pass) < 5 or strlen($pass) > 15) $error[] = "Укажите пароль от 5 до 15 символов!";
-    if (strlen($surname) < 3 or strlen($surname) > 20) $error[] = "Укажите Фамилию от 3 до 20 символов!";
-    if (strlen($name) < 3 or strlen($name) > 15) $error[] = "Укажите Имя от 3 до 15 символов!";
-    if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i",trim($email))) $error[] = "Укажите корректный email!";
-    if (!$phone) $error[] = "Укажите номер телефона!";
-    if (!$address) $error[] = "Необходимо указать адрес доставки!";
+    if (strlen($pass) < 5 or strlen($pass) > 15) $error[] = "РЈРєР°Р¶РёС‚Рµ РїР°СЂРѕР»СЊ РѕС‚ 5 РґРѕ 15 СЃРёРјРІРѕР»РѕРІ!";
+    if (strlen($surname) < 3 or strlen($surname) > 20) $error[] = "РЈРєР°Р¶РёС‚Рµ Р¤Р°РјРёР»РёСЋ РѕС‚ 3 РґРѕ 20 СЃРёРјРІРѕР»РѕРІ!";
+    if (strlen($name) < 3 or strlen($name) > 15) $error[] = "РЈРєР°Р¶РёС‚Рµ РРјСЏ РѕС‚ 3 РґРѕ 15 СЃРёРјРІРѕР»РѕРІ!";
+    if (!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i",trim($email))) $error[] = "РЈРєР°Р¶РёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ email!";
+    if (!$phone) $error[] = "РЈРєР°Р¶РёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°!";
+    if (!$address) $error[] = "РќРµРѕР±С…РѕРґРёРјРѕ СѓРєР°Р·Р°С‚СЊ Р°РґСЂРµСЃ РґРѕСЃС‚Р°РІРєРё!";
     
-    if($_SESSION['img_captcha'] != strtolower($_POST['reg_captcha'])) $error[] = "Неверный код с картинки!";
+    if($_SESSION['img_captcha'] != strtolower($_POST['reg_captcha'])) $error[] = "РќРµРІРµСЂРЅС‹Р№ РєРѕРґ СЃ РєР°СЂС‚РёРЅРєРё!";
     unset($_SESSION['img_captcha']);
     
    if (count($error))
@@ -52,19 +52,19 @@
         $pass   = strrev($pass);
         $pass   = "9nm2rv8q".$pass."2yo6z";
         $ip = $_SERVER['REMOTE_ADDR'];
-		
-		mysql_query("	INSERT INTO reg_user(login,pass,surname,name,email,phone,address,datetime,ip)
-						VALUES(
-							'".$login."',
-							'".$pass."',
-							'".$surname."',
-							'".$name."',
+        
+        mysql_query("   INSERT INTO reg_user(login,pass,surname,name,email,phone,address,datetime,ip)
+                        VALUES(
+                            '".$login."',
+                            '".$pass."',
+                            '".$surname."',
+                            '".$name."',
                             '".$email."',
                             '".$phone."',
                             '".$address."',
                             NOW(),
                             '".$ip."'
-						)",$link);
+                        )",$link);
  echo 'true';
  }
 

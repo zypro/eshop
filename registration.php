@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="windows-1251">
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="trackbar/trackbar.css">
@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="/js/jquery.form.js"></script>
 	<script type="text/javascript" src="/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="/js/check-form.js"></script>
-	<title>Регистрация</title>
+	<title>Р РµРіРёСЃС‚СЂР°С†РёСЏ</title>
 </head>
 <body>
 <div id="block-body">
@@ -32,29 +32,29 @@
 ?>
 	</div>
 		<div id="block-content">
-		<h2 class="h2-title">Регистрация</h2>
+		<h2 class="h2-title">Р РµРіРёСЃС‚СЂР°С†РёСЏ</h2>
 	<form method="POST" id="form_reg" action="/reg/handler_reg.php">
 		<p id="reg_message"></p>
 		<div id="block-form-registration">
 			<ul id="form-registration">
 				<li>
-					<label>Логин</label>
+					<label>Р›РѕРіРёРЅ</label>
 					<span class="star">*</span>
 					<input type="text" name="reg_login" id="reg_login">
 				</li>
 				<li>
-					<label>Пароль</label>
+					<label>РџР°СЂРѕР»СЊ</label>
 					<span class="star">*</span>
 					<input type="text" name="reg_pass" id="reg_pass">
-					<span id="genpass">Сгенерировать</span>
+					<span id="genpass">РЎРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ</span>
 				</li>
 				<li>
-					<label>Фамилия</label>
+					<label>Р¤Р°РјРёР»РёСЏ</label>
 					<span class="star">*</span>
 					<input type="text" name="reg_surname" id="reg_surname">
 				</li>
 				<li>
-					<label>Имя</label>
+					<label>РРјСЏ</label>
 					<span class="star">*</span>
 					<input type="text" name="reg_name" id="reg_name">
 				</li>
@@ -64,12 +64,12 @@
 					<input type="text" name="reg_email" id="reg_email">
 				</li>
 				<li>
-					<label>Мобильный телефон</label>
+					<label>РњРѕР±РёР»СЊРЅС‹Р№ С‚РµР»РµС„РѕРЅ</label>
 					<span class="star">*</span>
 					<input type="text" name="reg_phone" id="reg_phone">
 				</li>
 				<li>
-					<label>Адрес доставки</label>
+					<label>РђРґСЂРµСЃ РґРѕСЃС‚Р°РІРєРё</label>
 					<span class="star">*</span>
 					<input type="text" name="reg_address" id="reg_address">
 				</li>
@@ -77,11 +77,11 @@
 					<div id="block-captcha">
 						<img src="/reg/reg_captcha.php" alt="">
 						<input type="text" name="reg_captcha" id="reg_captcha">
-						<p id="reloadcaptcha">Обновить</p>
+						<p id="reloadcaptcha">РћР±РЅРѕРІРёС‚СЊ</p>
 					</div>
 				</li>
 			</ul>
-			<p align="right"><input type="submit" name="reg_submit" id="form_submit" value="Регистрация"></p>
+			<p align="right"><input type="submit" name="reg_submit" id="form_submit" value="Р РµРіРёСЃС‚СЂР°С†РёСЏ"></p>
 		</div>
 	</form>
 		</div>

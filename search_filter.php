@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="windows-1251">
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="trackbar/trackbar.css">
@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
 	<script type="text/javascript" src="/trackbar/jquery.trackbar.js"></script>
-	<title>Поиск по параметрам</title>
+	<title>РџРѕРёСЃРє РїРѕ РїР°СЂР°РјРµС‚СЂР°Рј</title>
 </head>
 <body>
 <div id="block-body">
@@ -51,9 +51,9 @@
 				{
 					$row = mysql_fetch_array($result);
 					echo '<div id="block-sorting">
-				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
+				<p id="nav-breadcrumbs"><a href="index.php">Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°</a> \ <span>Р’СЃРµ С‚РѕРІР°СЂС‹</span></p>
 				<ul id="options-list">
-					<li>Вид: </li>
+					<li>Р’РёРґ: </li>
 					<li><img id="style-grid" src="/images/icon-grid.png"></li>
 					<li><img id="style-list" src="/images/icon-list.png"></li>
 				</ul>
@@ -89,7 +89,7 @@
 										<li><img src="/images/comment-icon.png"><p>0</p></li>
 									</ul>
 									<a class="add-cart-style-grid"></a>
-									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
+									<p class="style-price-grid"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
 							';
@@ -134,7 +134,7 @@
 									</ul>
 									<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 									<a class="add-cart-style-list"></a>
-									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
+									<p class="style-price-list"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
 							';
@@ -143,7 +143,7 @@
 				}
 			}else
 				{
-					echo '<h3>Категория не доступна или не создана!</h3>';
+					echo '<h3>РљР°С‚РµРіРѕСЂРёСЏ РЅРµ РґРѕСЃС‚СѓРїРЅР° РёР»Рё РЅРµ СЃРѕР·РґР°РЅР°!</h3>';
 				}
 			 ?>
 			 	</ul>

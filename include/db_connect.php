@@ -1,8 +1,8 @@
 <?php
 $db_host		= 'localhost';
-$db_user		= 'root';
-$db_pass		= '';
-$db_database	= 'db_eshop'; 
+$db_user		= 'parliaub_eshop';
+$db_pass		= 'ayh63TMf';
+$db_database	= 'parliaub_eshop'; 
 
 $link = mysql_connect($db_host,$db_user,$db_pass);
 

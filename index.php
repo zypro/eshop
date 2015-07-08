@@ -5,39 +5,39 @@
 		{
 			case 'price-asc';
 			$sorting = 'price ASC';
-			$sort_name = 'От дешевых к дорогим';
+			$sort_name = 'РћС‚ РґРµС€РµРІС‹С… Рє РґРѕСЂРѕРіРёРј';
 			break;
 
 			case 'price-desc';
 			$sorting = 'price DESC';
-			$sort_name = 'От дорогих к дешевым';
+			$sort_name = 'РћС‚ РґРѕСЂРѕРіРёС… Рє РґРµС€РµРІС‹Рј';
 			break;
 
 			case 'popular';
 			$sorting = 'count DESC';
-			$sort_name = 'Популярное';
+			$sort_name = 'РџРѕРїСѓР»СЏСЂРЅРѕРµ';
 			break;
 
 			case 'news';
 			$sorting = 'datetime DESC';
-			$sort_name = 'Новинки';
+			$sort_name = 'РќРѕРІРёРЅРєРё';
 			break;
 
 			case 'brand';
 			$sorting = 'brand';
-			$sort_name = 'От А до Я';
+			$sort_name = 'РћС‚ Рђ РґРѕ РЇ';
 			break;
 
 			default:
 			$sorting = 'products_id DESC';
-			$sort_name = 'Нет сортировки';
+			$sort_name = 'РќРµС‚ СЃРѕСЂС‚РёСЂРѕРІРєРё';
 			break;
 		}
  ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="windows-1251">
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="trackbar/trackbar.css">
@@ -46,7 +46,7 @@
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
 	<script type="text/javascript" src="/trackbar/jquery.trackbar.js"></script>
-	<title>Интернет магазин Косметики</title>
+	<title>РРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅ РљРѕСЃРјРµС‚РёРєРё</title>
 </head>
 <body>
 <div id="block-body">
@@ -65,26 +65,26 @@
 	</div>
 		<div id="block-content">
 			<div id="block-sorting">
-				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
+				<p id="nav-breadcrumbs"><a href="index.php">Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°</a> \ <span>Р’СЃРµ С‚РѕРІР°СЂС‹</span></p>
 				<ul id="options-list">
-					<li>Вид: </li>
+					<li>Р’РёРґ: </li>
 					<li><img id="style-grid" src="/images/icon-grid.png"></li>
 					<li><img id="style-list" src="/images/icon-list.png"></li>
-					<li>Сортировка: </li>
+					<li>РЎРѕСЂС‚РёСЂРѕРІРєР°: </li>
 					<li><a id="select-sort"><?php echo $sort_name; ?></a>
 				<ul id="sorting-list">
-					<li><a href="index.php?sort=price-asc">От дешевых к дорогим</a></li>
-					<li><a href="index.php?sort=price-desc">От дорогих к дешевым</a></li>
-					<li><a href="index.php?sort=popular">Популярное</a></li>
-					<li><a href="index.php?sort=news">Новинки</a></li>
-					<li><a href="index.php?sort=brand">От А до Я</a></li>
+					<li><a href="index.php?sort=price-asc">РћС‚ РґРµС€РµРІС‹С… Рє РґРѕСЂРѕРіРёРј</a></li>
+					<li><a href="index.php?sort=price-desc">РћС‚ РґРѕСЂРѕРіРёС… Рє РґРµС€РµРІС‹Рј</a></li>
+					<li><a href="index.php?sort=popular">РџРѕРїСѓР»СЏСЂРЅРѕРµ</a></li>
+					<li><a href="index.php?sort=news">РќРѕРІРёРЅРєРё</a></li>
+					<li><a href="index.php?sort=brand">РћС‚ Рђ РґРѕ РЇ</a></li>
 				</ul>
 					</li>
 				</ul>
 			</div>
 				<ul id="block-tovar-grid">
 			<?php
-			// Постраничная навигация
+			// РџРѕСЃС‚СЂР°РЅРёС‡РЅР°СЏ РЅР°РІРёРіР°С†РёСЏ
 	$num = 5;
 	$page = (int)$_GET['page'];
 	$count = mysql_query("SELECT COUNT(*) FROM table_products WHERE visible = '1'",$link);
@@ -134,7 +134,7 @@
 										<li><img src="/images/comment-icon.png"><p>0</p></li>
 									</ul>
 									<a class="add-cart-style-grid"></a>
-									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
+									<p class="style-price-grid"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
 							';
@@ -179,7 +179,7 @@
 									</ul>
 									<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 									<a class="add-cart-style-list"></a>
-									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
+									<p class="style-price-list"><strong>'.$row["price"].'</strong> СЃРѕРј.</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
 							';
@@ -191,7 +191,7 @@ if ($page != 1){ $pstr_prev = '<li><a class="pstr-prev" href="index.php?page='.(
 if ($page != $total) $pstr_next = '<li><a class="pstr-next" href="index.php?page='.($page + 1).'">&gt;</a></li>';
 
 
-// Формируем ссылки со страницами
+// Р¤РѕСЂРјРёСЂСѓРµРј СЃСЃС‹Р»РєРё СЃРѕ СЃС‚СЂР°РЅРёС†Р°РјРё
 if($page - 5 > 0) $page5left = '<li><a href="index.php?page='.($page - 5).'">'.($page - 5).'</a></li>';
 if($page - 4 > 0) $page4left = '<li><a href="index.php?page='.($page - 4).'">'.($page - 4).'</a></li>';
 if($page - 3 > 0) $page3left = '<li><a href="index.php?page='.($page - 3).'">'.($page - 3).'</a></li>';

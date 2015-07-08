@@ -33,21 +33,21 @@
 	});
 </script>
 <div id="block-parameter">
-	<p class="header-title">Поиск по параметрам</p>
-		<p class="title-filter">Стоимость</p>
+	<p class="header-title">РџРѕРёСЃРє РїРѕ РїР°СЂР°РјРµС‚СЂР°Рј</p>
+		<p class="title-filter">РЎС‚РѕРёРјРѕСЃС‚СЊ</p>
 		<form method="GET" action="search_filter.php">
 		<div id="block-input-price">
 			<ul>
-				<li><p>от</p></li>
+				<li><p>РѕС‚</p></li>
 				<li><input type="text" id="start-price" name="start_price" value="20"></li>
-				<li><p>до</p></li>
+				<li><p>РґРѕ</p></li>
 				<li><input type="text" id="end-price" name="end_price" value="3000"></li>
-				<li><p>сом.</p></li>
+				<li><p>СЃРѕРј.</p></li>
 			</ul>
 		</div>
 
 		<div id="blocktrackbar"></div>
-		<p class="title-filter">Производители</p>
+		<p class="title-filter">РџСЂРѕРёР·РІРѕРґРёС‚РµР»Рё</p>
 		<ul class="checkboxbrand">
 		<?php 
 			$result = mysql_query("SELECT * FROM category WHERE type = 'mobile'",$link);

@@ -1,9 +1,9 @@
 <div id="block-category">
-	<p class="header-title">Категории товаров</p>
+	<p class="header-title">РљР°С‚РµРіРѕСЂРёРё С‚РѕРІР°СЂРѕРІ</p>
 	<ul>
-		<li><a id="index1"><img src="/images/mobile-icon.gif" id="mobile-images">Мобильные телефоны</a>
+		<li><a id="index1"><img src="/images/mobile-icon.gif" id="mobile-images">РњРѕР±РёР»СЊРЅС‹Рµ С‚РµР»РµС„РѕРЅС‹</a>
 			<ul class="category-section">
-				<li><a href="view_cat.php?type=mobile"><strong>Все модели</strong></a></li>
+				<li><a href="view_cat.php?type=mobile"><strong>Р’СЃРµ РјРѕРґРµР»Рё</strong></a></li>
 				<?php
 				$result = mysql_query("SELECT * FROM category WHERE type = 'mobile'",$link);
 				if (mysql_num_rows($result) > 0)
@@ -19,9 +19,9 @@
 
 			</ul>
 		</li>
-		<li><a id="index2"><img src="/images/book-icon.gif" id="book-images">Ноутбуки</a>
+		<li><a id="index2"><img src="/images/book-icon.gif" id="book-images">РќРѕСѓС‚Р±СѓРєРё</a>
 			<ul class="category-section">
-				<li><a href="view_cat.php?type=notebook"><strong>Все модели</strong></a></li>
+				<li><a href="view_cat.php?type=notebook"><strong>Р’СЃРµ РјРѕРґРµР»Рё</strong></a></li>
 				<?php
 				$result = mysql_query("SELECT * FROM category WHERE type = 'notebook'",$link);
 				if (mysql_num_rows($result) > 0)
@@ -36,9 +36,9 @@
 				?>
 			</ul>
 		</li>
-				<li><a id="index3"><img src="/images/table-icon.gif" id="table-images">Планшеты</a>
+				<li><a id="index3"><img src="/images/table-icon.gif" id="table-images">РџР»Р°РЅС€РµС‚С‹</a>
 			<ul class="category-section">
-				<li><a href="view_cat.php?type=notepad"><strong>Все модели</strong></a></li>
+				<li><a href="view_cat.php?type=notepad"><strong>Р’СЃРµ РјРѕРґРµР»Рё</strong></a></li>
 				<?php
 				$result = mysql_query("SELECT * FROM category WHERE type = 'notepad'",$link);
 				if (mysql_num_rows($result) > 0)
