@@ -34,7 +34,7 @@
 		<div id="block-content">
 		<h2 class="h2-title">Регистрация</h2>
 	<form method="POST" id="form_reg" action="/reg/handler_reg.php">
-		<p id="reg-message"></p>
+		<p id="reg_message"></p>
 		<div id="block-form-registration">
 			<ul id="form-registration">
 				<li>
@@ -75,7 +75,7 @@
 				</li>
 				<li>
 					<div id="block-captcha">
-						<img src="/reg/reg_captcha" alt="">
+						<img src="/reg/reg_captcha.php" alt="">
 						<input type="text" name="reg_captcha" id="reg_captcha">
 						<p id="reloadcaptcha">Обновить</p>
 					</div>

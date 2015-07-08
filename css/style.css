@@ -840,6 +840,7 @@
 }
 
 #block-captcha {
+	position: absolute;
 	margin-left: 200px;
 	height: 70px;
 }
@@ -867,6 +868,8 @@
 	font: bold 13px sans-serif;
 	text-decoration: underline;
 	cursor: pointer;
+	clear: both;
+
 }
 
 #block-captcha p:hover {
@@ -878,8 +881,8 @@
 	border: 1px solid #e4e4e4;
 	font: bold 14px sans-serif;
 	border-radius: 5px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	padding-left: 7px;
 	padding-right: 7px;
 	height: 33px;
@@ -896,4 +899,25 @@
 	font: italic 14px sans-serif;
 	color: #cc0063;
 	margin-left: 5px;
+}
+
+.reg_message_good {
+	font: 18px sans-serif;
+	color: black;
+	background-color: #ededff;
+	border: 1px solid #e6e6fe;
+}
+
+.reg_message_error {
+	font: bold 14px sans-serif;
+	color: red;
+	background-color: #f7edef;
+	border: 1px solid #fac8d3;
+}
+
+#reg_message {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	display: none;
 }

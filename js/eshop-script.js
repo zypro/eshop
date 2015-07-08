@@ -65,4 +65,21 @@ if ($.cookie('select_cat') != '')
 $('#block-category > ul > li > #'+$.cookie('select_cat')).addClass('active').next().show();
 }
 
+// genpass script
+$('#genpass').click(function(){
+	$.ajax({
+		type: "POST",
+		url: "/reg/genpass.php",
+		dataType: "html",
+		cache: false,
+		success: function(data) {
+		$('#reg_pass').val(data);
+		}
+});
+});
+
+$('#reloadcaptcha').click(function(){
+$('#block-captcha > img').attr("src","/reg/reg_captcha.php?r="+ Math.random());
+
+});
 });
