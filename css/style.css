@@ -891,3 +891,9 @@
 #form_submit:active {
 	background: url(/images/grd_reg_button_vert.png);
 }
+
+.error {
+	font: italic 14px sans-serif;
+	color: #cc0063;
+	margin-left: 5px;
+}

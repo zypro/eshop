@@ -1,7 +1,7 @@
 <?php
 	include 'include/db_connect.php';
 	include 'functions/functions.php';
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,9 @@
 	<script type="text/javascript" src="/js/eshop-script.js"></script>
 	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
 	<script type="text/javascript" src="/trackbar/jquery.trackbar.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.js"></script>
+	<script type="text/javascript" src="/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="/js/check-form.js"></script>
 	<title>Регистрация</title>
 </head>
 <body>
@@ -36,38 +39,38 @@
 			<ul id="form-registration">
 				<li>
 					<label>Логин</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_login" id="reg_login">
 				</li>
 				<li>
 					<label>Пароль</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_pass" id="reg_pass">
 					<span id="genpass">Сгенерировать</span>
 				</li>
 				<li>
 					<label>Фамилия</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_surname" id="reg_surname">
 				</li>
 				<li>
 					<label>Имя</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_name" id="reg_name">
 				</li>
 				<li>
 					<label>E-mail</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_email" id="reg_email">
 				</li>
 				<li>
 					<label>Мобильный телефон</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_phone" id="reg_phone">
 				</li>
 				<li>
 					<label>Адрес доставки</label>
-					<span class="star" >*</span>
+					<span class="star">*</span>
 					<input type="text" name="reg_address" id="reg_address">
 				</li>
 				<li>
@@ -82,10 +85,9 @@
 		</div>
 	</form>
 		</div>
-<?php 
+<?php
 	include 'include/block-footer.php';
- ?>
+?>
 </div>
-
 </body>
 </html>

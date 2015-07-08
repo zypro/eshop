@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 07 2015 г., 20:56
+-- Время создания: Июл 08 2015 г., 16:54
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -87,6 +87,26 @@ INSERT INTO `news` (`id`, `title`, `text`, `datetime`) VALUES
 (3, 'News 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 02:23:16'),
 (4, 'News 4', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 04:19:21'),
 (5, 'News 5', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 05:16:12');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `reg_user`
+--
+
+CREATE TABLE IF NOT EXISTS `reg_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `datetime` datetime NOT NULL,
+  `ip` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
