@@ -61,6 +61,10 @@
 	float: right;
 }
 
+#reg-auth-title > a#active-button {
+	background: url(/images/auth-butt-bg-click.png);
+}
+
 #reg-auth-title a.top-auth {
 	font: bold 13px sans-serif;
 	text-decoration: none;
@@ -1050,5 +1054,5 @@
 }
 
 
-
+5:46;
 
