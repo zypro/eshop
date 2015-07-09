@@ -131,9 +131,9 @@
 			<ul id="block-tovar-grid">';
 					do
 					{
-					if ($row["image"] != "" && file_exists("/upload_images/".$row["image"]))
+					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 						{
-						$img_path = '/upload_images/'.$row["image"];
+						$img_path = './upload_images/'.$row["image"];
 						$max_width = 200; 
 						$max_height = 200; 
 						 list($width, $height) = getimagesize($img_path); 
