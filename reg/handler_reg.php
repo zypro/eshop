@@ -8,15 +8,15 @@
 
      $error = array();
          // Убрать тут преоброзование (iconv("UTF-8", "cp1251",)
-        $login = strtolower(clear_string($_POST['reg_login']))); 
-        $pass = strtolower(clear_string($_POST['reg_pass']))); 
-        $surname = clear_string($_POST['reg_surname'])); 
+        $login = strtolower(clear_string($_POST['reg_login']));
+        $pass = strtolower(clear_string($_POST['reg_pass']));
+        $surname = clear_string($_POST['reg_surname']);
         
-        $name = clear_string($_POST['reg_name'])); 
-        $email = clear_string($_POST['reg_email'])); 
+        $name = clear_string($_POST['reg_name']);
+        $email = clear_string($_POST['reg_email']);
         
-        $phone = clear_string($_POST['reg_phone'])); 
-        $address = clear_string($_POST['reg_address'])); 
+        $phone = clear_string($_POST['reg_phone']);
+        $address = clear_string($_POST['reg_address']); 
 
 
     if (strlen($login) < 4 or strlen($login) > 15)
