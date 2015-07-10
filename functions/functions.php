@@ -49,7 +49,7 @@
 		$headers = "From: <".$from."> \n";
 		$headers = "Reply-To: <".$to." \n>";
 		$headers = "Content-Type: text/html; charset=$charset \n";
-		$subject = '=?'.$charset.'?B'.base64_encode($subject).'?=';
+		$subject = 'Восставновление забытого пароля';
 
 		mail($to,$subject,$body,$headers);
 	}

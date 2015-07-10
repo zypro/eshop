@@ -35,7 +35,7 @@
 				<li><center><input type="password" id="auth_pass" placeholder="Пароль"><span id="button-pass-show-hide" class="pass-show"></span></center></li>
 				<ul id="list-auth">
 					<li><input type="checkbox" name="rememberme" id="rememberme"><label for="rememberme">Запомнить меня</label></li>
-					<li><a id="remindpass" href="#">Забыли пароль?</a></li>
+					<li><a id="remindpass">Забыли пароль?</a></li>
 				</ul>
 				<p align="right" id="button-auth"><a>Вход</a></p>
 				<p align="right" class="auth-loading"><img src="/images/loading.gif" alt=""></p>
@@ -53,7 +53,16 @@
 	</div>
 <!-- Линия -->
 
-		<div id="top-line"></div>
+	<div id="top-line"></div>
+
+<!--окошка блок юзер -->
+	<div id="block-user">
+		<div class="corner2"></div>
+			<ul>
+				<li><img src="/images/user_info.png"><a href="profile.php">Профиль</a></li>
+				<li><img src="/images/logout.png"><a id="logout" >Выход</a></li>
+			</ul>
+	</div>
 
 <!-- Логотип -->
 
