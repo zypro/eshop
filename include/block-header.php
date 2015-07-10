@@ -25,8 +25,6 @@
 		echo '<p id="reg-auth-title" align="right"><a class="top-auth">Вход</a><a href="registration.php">Регистрация</a></p>';
 	}
 ?>
-
-
 		<div id="block-top-auth">
 		<div class="corner"></div>
 		<form method="POST">
@@ -43,6 +41,14 @@
 				<p align="right" class="auth-loading"><img src="/images/loading.gif" alt=""></p>
 			</ul>
 		</form>
+		<div id="block-remind">
+			<h3>Восстановление<br /> пароля</h3>
+			<p id="message-remind" class="message-remind-success" ></p>
+			<center><input type="text" id="remind-email" placeholder="Ваш E-mail" /></center>
+			<p align="right" id="button-remind" ><a>Готово</a></p>
+			<p align="right" class="auth-loading" ><img src="/images/loading.gif" /></p>
+			<p id="prev-auth">Назад</p>
+		</div>
 		</div>
 	</div>
 <!-- Линия -->
