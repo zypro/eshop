@@ -88,6 +88,9 @@
 				<input type="text" id="input-search" name="q" placeholder="Поиск среди товаров">
 				<input type="submit" id="button-search" value="Поиск">
 			</form>
+			<ul id="result-search">
+				
+			</ul>
 		</div>
 </div>
 <!-- Меню -->

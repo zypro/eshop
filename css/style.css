@@ -137,6 +137,8 @@
 	height: auto;
 	margin-left: 700px;
 	margin-top: 23px;
+	z-index: 999;
+	position: absolute;
 }
 
 #block-search span {
@@ -1252,4 +1254,26 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 10px;
+}
+
+#result-search {
+	display: none;
+	border-left: 1px solid #e1e1e2;
+	border-right: 1px solid #e1e1e2;
+	border-bottom: 1px solid #e1e1e2;
+	width: 271px;
+	height: auto;
+	background-color: white;
+}
+
+#result-search a {
+	font: 14px sans-serif;
+	text-decoration: none;
+	padding: 5px;
+	display: block;
+	color: black;
+}
+
+#result-search a:hover {
+	background-color: #f1f2f2;
 }
