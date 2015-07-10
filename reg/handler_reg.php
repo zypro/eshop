@@ -48,9 +48,9 @@
  echo implode('<br />',$error);
     }else
     {
-        $pass   = md5($pass);
-        $pass   = strrev($pass);
-        $pass   = "9nm2rv8q".$pass."2yo6z";
+        $pass = md5($pass);
+        $pass = strrev($pass);
+        $pass = strtolower("8md7udyd".$pass."2ui6z");
         $ip = $_SERVER['REMOTE_ADDR'];
         
         mysql_query("   INSERT INTO reg_user(login,pass,surname,name,email,phone,address,datetime,ip)

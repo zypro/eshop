@@ -1,6 +1,8 @@
 <?php
 	include 'include/db_connect.php';
 	include 'functions/functions.php';
+	session_start();
+	include 'include/auth_cookie.php';
 ?>
 <!DOCTYPE html>
 <html>

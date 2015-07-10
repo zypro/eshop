@@ -1053,6 +1053,21 @@
 	display: none;
 }
 
+#auth-user-info {
+	font: bold 14px sans-serif;
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;
+}
 
-5:46;
+#auth-user-info:hover {
+	color: #cf3a3a;
+	border-bottom: 1px dashed #cf3a3a;
+	cursor: pointer;
+}
 
+#auth-user-info > img {
+	position: absolute;
+	margin-left: -30px;
+	margin-top: -3px;
+}
