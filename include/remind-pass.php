@@ -26,7 +26,7 @@ $update = mysql_query ("UPDATE reg_user SET pass='$pass' WHERE email='$email'",$
 
 
 // Отправка нового пароля.
-	         send_mail('parliament888@gmail.com',
+	         send_mail('no-reply@pwnz22.ru',
 			       $email,
 						'Новый пароль для сайта pwnz22.ru',
 						'Ваш пароль: '.$newpass);
