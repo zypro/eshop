@@ -96,7 +96,7 @@ $int = $int + ($row["price"] * $row["cart_count"]);
 <!DOCTYPE html">
 
 <head>
-	<meta "charset=utf-8">
+	<meta charset="utf-8">
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link href="trackbar/trackbar.css" rel="stylesheet" type="text/css">
