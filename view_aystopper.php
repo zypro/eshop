@@ -186,7 +186,7 @@ echo '
 				<li><img src="/images/comment-icon.png" /><p>0</p></li>
 			</ul>
 		<a class="add-cart-style-grid" ></a>
-		<p class="style-price-grid" ><strong>'.$row["price"].'</strong> руб.</p>
+		<p class="style-price-grid" ><strong>'.group_numerals($row["price"]).'</strong> руб.</p>
 	<div class="mini-features" >
 		'.$row["mini_features"].'
 	</div>
@@ -241,7 +241,7 @@ echo '
 	</ul>
 	<p class="style-title-list" ><a href="" >'.$row["title"].'</a></p>
 	<a class="add-cart-style-list" ></a>
-	<p class="style-price-list" ><strong>'.$row["price"].'</strong> руб.</p>
+	<p class="style-price-list" ><strong>'.group_numerals($row["price"]).'</strong> руб.</p>
 	<div class="style-text-list" >
 	'.$row["mini_description"].'
 	</div>

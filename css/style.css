@@ -207,6 +207,11 @@
 	margin-right: -3px;
 }
 
+#block-basket span {
+	color: #34659d;
+}
+
+
 #block-basket a {
 	font: bold 15px sans-serif;
 	text-decoration: none;
