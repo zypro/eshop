@@ -61,29 +61,32 @@ $(document).ready(function(){
 	</div>
 		<div id="block-content">
 			<?php
-				$result1 = mysql_query("SELECT * FROM table_products WHERE products_id = '$id' AND visible = '1'",$link);
-				if (mysql_num_rows($result1) > 0)
+		$result1 = mysql_query("SELECT * FROM table_products WHERE products_id = '$id' AND visible = '1'",$link);
+		if (mysql_num_rows($result1) > 0)
+		{
+			$row1 = mysql_fetch_array($result1);
+			do
+			{
+			if (strlen($row1["image"]) > 0 && file_exists("./upload_images/".$row1["image"]))
 				{
-					$row1 = mysql_fetch_array($result1);
-					do
-					{
-					if (strlen($row1["image"]) > 0 && file_exists("./upload_images/".$row1["image"]))
-						{
-						$img_path = './upload_images/'.$row1["image"];
-						$max_width = 300;
-						$max_height = 300;
-						 list($width, $height) = getimagesize($img_path); 
-						$ratioh = $max_height/$height;
-						$ratiow = $max_width/$width;
-						$ratio = min($ratioh, $ratiow);
-						$width = intval($ratio*$width);
-						$height = intval($ratio*$height);
-						}else
-						{
-						$img_path = "/images/no-image.png";
-						$width = 110;
-						$height = 200;
-						}
+				$img_path = './upload_images/'.$row1["image"];
+				$max_width = 300;
+				$max_height = 300;
+				 list($width, $height) = getimagesize($img_path); 
+				$ratioh = $max_height/$height;
+				$ratiow = $max_width/$width;
+				$ratio = min($ratioh, $ratiow);
+				$width = intval($ratio*$width);
+				$height = intval($ratio*$height);
+				}else
+				{
+				$img_path = "/images/no-image.png";
+				$width = 110;
+				$height = 200;
+				}
+				// Количество отзывов 
+				$query_reviews = mysql_query("SELECT * FROM table_reviews WHERE products_id = '$id' AND moderate='1'",$link);  
+				$count_reviews = mysql_num_rows($query_reviews);
 						echo '
 							<div id="block-breadcrumbs-and-rating">
 								<p id="nav-breadcrumbs"><a href="view_cat.php?type=mobile">Мобильные телефоны</a> \ <span>'.$row1["brand"].'</span></p>
@@ -97,7 +100,7 @@ $(document).ready(function(){
 									<p id="content-title">'.$row1["title"].'</p>
 									<ul class="reviews-and-counts-content">
 										<li><img src="/images/eye-icon.png"><p>'.$row1["count"].'</p></li>
-										<li><img src="/images/comment-icon.png"><p>0</p></li>
+										<li><img src="/images/comment-icon.png"><p>'.$count_reviews.'</p></li>
 									</ul>
 									<p id="style-price">'.group_numerals($row1["price"]).' сом</p>
 									<a class="add-cart" id="add-cart-view" tid="'.$row1["products_id"].'"></a>
@@ -125,16 +128,24 @@ $ratio = min($ratioh, $ratiow);
 
 $width = intval($ratio*$width);
 $height = intval($ratio*$height);
-
+// Комментарии отзывы итд
 echo '
-<li><a class="image-modal" href="#image'.$row["id"].'"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'"></a></li>
-<a style="display: none;" class="image-modal" rel="group" id="image'.$row["id"].'" ><img src="./upload_images/'.$row["image"].'"></a>';
+<li>
+<a class="image-modal" href="#image'.$row["id"].'"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'"></a>
+</li>
+<a style="display:none;" class="image-modal" rel="group" id="image'.$row["id"].'" ><img  src="./upload_images/'.$row["image"].'"></a>
+';
 }
  while ($row = mysql_fetch_array($result));
-echo '</ul></div>';
+echo '
+</ul>
+</div>
+';
 }
+
 $result = mysql_query("SELECT * FROM table_products WHERE products_id='$id' AND visible='1'",$link);
 $row = mysql_fetch_array($result);
+
 echo '
 <ul class="tabs">
 	<li><a class="active" href="#" >Описание</a></li>
@@ -142,8 +153,49 @@ echo '
 	<li><a href="#" >Отзывы</a></li>
 </ul>
 <div class="tabs_content">
-<div>'.$row["description"].'</div>
-<div>'.$row["features"].'</div>
+	<div>'.$row["description"].'</div>
+	<div>'.$row["features"].'</div>
+<div>
+	<p id="link-send-review" ><a class="send-review" href="#send-review" >Написать отзыв</a></p>
+';
+
+$query_reviews = mysql_query("SELECT * FROM table_reviews WHERE products_id='$id' AND moderate='1' ORDER BY reviews_id DESC",$link);
+
+If (mysql_num_rows($query_reviews) > 0)
+{
+$row_reviews = mysql_fetch_array($query_reviews);
+do
+{
+
+echo '
+<div class="block-reviews" >
+	<p class="author-date" ><strong>'.$row_reviews["name"].'</strong>, '.$row_reviews["date"].'</p>
+	<img src="/images/plus-reviews.png">
+	<p class="textrev" >'.$row_reviews["good_reviews"].'</p>
+	<img src="/images/minus-reviews.png">
+	<p class="textrev" >'.$row_reviews["bad_reviews"].'</p>
+	<p class="text-comment">'.$row_reviews["comment"].'</p>
+</div>
+';
+}
+ while ($row_reviews = mysql_fetch_array($query_reviews));
+}
+else
+{
+	echo '<p class="title-no-info" >Отзывов нет</p>';
+}
+echo '
+</div>
+</div>
+<div id="send-review" >
+		<p align="right" id="title-review">Публикация отзыва производится после предварительной модерации.</p>
+		<ul>
+			<li><p align="right"><label id="label-name" >Имя<span>*</span></label><input maxlength="15" type="text" id="name_review"></p></li>
+			<li><p align="right"><label id="label-good" >Достоинства<span>*</span></label><textarea id="good_review"></textarea></p></li>
+			<li><p align="right"><label id="label-bad" >Недостатки<span>*</span></label><textarea id="bad_review" ></textarea></p></li>
+			<li><p align="right"><label id="label-comment" >Комментарий</label><textarea id="comment_review"></textarea></p></li>
+		</ul>
+		<p id="reload-img"><img src="/images/loading.gif"></p> <p id="button-send-review" iid="'.$id.'" ></p>
 </div>
 ';
 }
