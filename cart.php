@@ -84,13 +84,12 @@ If (mysql_num_rows($result) > 0)
 $row = mysql_fetch_array($result);
 
 do
-{ 
+{
 $int = $int + ($row["price"] * $row["cart_count"]); 
 }
  while ($row = mysql_fetch_array($result));
- 
 
-   $itogpricecart = $int;
+$itogpricecart = $int;
 }
 ?>
 <!DOCTYPE html">
@@ -329,18 +328,17 @@ echo '
 {
 echo '
 <ul id="list-info" >
-<li><strong>Способ доставки:</strong>'.$_SESSION['order_delivery'].'</li>
-<li><strong>Email:</strong>'.$_SESSION['order_email'].'</li>
-<li><strong>ФИО:</strong>'.$_SESSION['order_fio'].'</li>
-<li><strong>Адрес доставки:</strong>'.$_SESSION['order_address'].'</li>
-<li><strong>Телефон:</strong>'.$_SESSION['order_phone'].'</li>
-<li><strong>Примечание: </strong>'.$_SESSION['order_note'].'</li>
+	<li><strong>Способ доставки:</strong>'.$_SESSION['order_delivery'].'</li>
+	<li><strong>Email:</strong>'.$_SESSION['order_email'].'</li>
+	<li><strong>ФИО:</strong>'.$_SESSION['order_fio'].'</li>
+	<li><strong>Адрес доставки:</strong>'.$_SESSION['order_address'].'</li>
+	<li><strong>Телефон:</strong>'.$_SESSION['order_phone'].'</li>
+	<li><strong>Примечание: </strong>'.$_SESSION['order_note'].'</li>
 </ul>
-
 ';
 }
 echo '
-	<h2 class="itog-price" align="right">Итого: <strong>'.$itogpricecart.'</strong> сом</h2>
+	<h2 class="itog-price" align="right">Итого: <strong>'.group_numerals($itogpricecart).'</strong> сом</h2>
 	<p align="right" class="button-next" ><a href="" >Оплатить</a></p>
 ';
 
