@@ -86,7 +86,11 @@ $(document).ready(function(){
 						}
 						echo '
 							<div id="block-breadcrumbs-and-rating">
-								<p id="nav-breadcrumbs"><a href="view_mobile.php">Мобильные телефоны</a> \ <span>'.$row1["brand"].'</span></p>
+								<p id="nav-breadcrumbs"><a href="view_cat.php?type=mobile">Мобильные телефоны</a> \ <span>'.$row1["brand"].'</span></p>
+								<div id="block-like">
+									<p id="likegood" tid="'.$id.'">Нравиться</p>
+									<p id="likegoodcount">'.$row1["yes_like"].'</p>
+								</div>
 							</div>
 							<div id="block-content-info"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
 								<div id="block-mini-description">
