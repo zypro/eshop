@@ -129,6 +129,19 @@ echo '
  while ($row = mysql_fetch_array($result));
 echo '</ul></div>';
 }
+$result = mysql_query("SELECT * FROM table_products WHERE products_id='$id' AND visible='1'",$link);
+$row = mysql_fetch_array($result);
+echo '
+<ul class="tabs">
+	<li><a class="active" href="#" >Описание</a></li>
+	<li><a href="#" >Характеристики</a></li>
+	<li><a href="#" >Отзывы</a></li>
+</ul>
+<div class="tabs_content">
+<div>'.$row["description"].'</div>
+<div>'.$row["features"].'</div>
+</div>
+';
 }
 ?>
 </div>
