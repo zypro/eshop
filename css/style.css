@@ -1576,3 +1576,98 @@ font:15px sans-serif;
 	font: bold 14px Verdana;
 	margin-right: 10px;
 }
+
+#block-breadcrumbs-and-rating {
+	height: 50px;
+	margin-top: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+#nav-breadcrumbs {
+	margin-top: -5px;
+}
+
+#nav-breadcrumbs > a {
+	font: 15px sans-serif;
+	color: #4268b1;
+}
+
+#nav-breadcrumbs > a:hover {
+	color: #ffa1a1;
+}
+
+#nav-breadcrumbs > span {
+	font: 14px sans-serif;
+	color: #7f868e;
+}
+
+#block-content-info {
+	height: 320px;
+	margin-top: 15px;
+}
+
+#block-content-info img {
+	float: left;
+	margin-top: 0;
+	margin-right: 15px;
+}
+
+#block-mini-description {
+	width: 600px;
+	float: left;
+}
+
+#content-title {
+	font: 19px sans-serif;
+	margin: 0;
+}
+
+#content-text {
+	font: 15px sans-serif;
+	margin-top: 10px;
+}
+
+.reviews-and-counts-content {
+	height: 20px;
+	margin-top: 10px;
+}
+
+.reviews-and-counts-content > li {
+	float: left;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+.reviews-and-counts-content > li > p {
+	margin-left: 25px;
+	margin-top: -1px;
+	font: 13px sans-serif;
+	margin-bottom: 0px;
+}
+
+.reviews-and-counts-content img {
+	position: absolute;
+}
+
+#style-price {
+	font: 23px sans-serif;
+	color: black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#add-cart-view {
+	width: 88px;
+	height: 27px;
+	display: block;
+	cursor: pointer;
+	background: url(../images/button-buy-norm.png) no-repeat;
+}
+
+#add-cart-view:hover {
+	background: url(../images/button-buy-active.png) no-repeat;
+}
+
+#add-cart-view:active {
+	background: url(../images/button-buy-click.png) no-repeat;
+}
