@@ -83,31 +83,31 @@ if ($_SESSION['auth'] == 'yes_auth')
     $_SESSION['auth_phone'] = $_POST["info_phone"];
     $_SESSION['auth_email'] = $_POST["info_email"];
     }
-     }
+    }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="trackbar/trackbar.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
-    <script type="text/javascript" src="/js/eshop-script.js"></script>
-    <script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-    <script type="text/javascript" src="/trackbar/jquery.trackbar.js"></script>
-    <script type="text/javascript" src="/js/TextChange.js"></script>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="trackbar/trackbar.css" rel="stylesheet">
+    <script src="/js/jquery-1.8.2.min.js"></script>
+    <script src="/js/jcarousellite_1.0.1.js"></script>
+    <script src="/js/eshop-script.js"></script>
+    <script src="/js/jquery.cookie.min.js"></script>
+    <script src="/trackbar/jquery.trackbar.js"></script>
+    <script src="/js/TextChange.js"></script>
 
 	<title>Интернет Магазин Женской Косметики</title>
 </head>
 <body>
 <div id="block-body">
-<?php	
+<?php
        include("include/block-header.php");
 ?>
 <div id="block-right">
-<?php	
+<?php
        include 'include/block-category.php';
        include 'include/block-parameter.php';
        include 'include/block-news.php';

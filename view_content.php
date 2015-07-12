@@ -21,16 +21,28 @@ $_SESSION['countid'] = $id;
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="trackbar/trackbar.css">
-	<script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript" src="/js/jcarousellite_1.0.1.js"></script>
-	<script type="text/javascript" src="/js/eshop-script.js"></script>
-	<script type="text/javascript" src="/js/jquery.cookie.min.js"></script>
-	<script type="text/javascript" src="/trackbar/jquery.trackbar.js"></script>
-	<script type="text/javascript" src="/js/TextChange.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="trackbar/trackbar.css">
+	<script src="/js/jquery-1.8.2.min.js"></script>
+	<script src="/js/jcarousellite_1.0.1.js"></script>
+	<script src="/js/eshop-script.js"></script>
+	<script src="/js/jquery.cookie.min.js"></script>
+	<script src="/trackbar/jquery.trackbar.js"></script>
+	<script src="/js/TextChange.js"></script>
+
+	<link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+	<script src="/fancybox/jquery.fancybox.js"></script>
+	<script src="/js/jTabs.js"></script>
 	<title>Интернет магазин Косметики</title>
+
+<script>
+$(document).ready(function(){
+	$("ul.tabs").jTabs({content: ".tabs_content", animate: true, effect:"fade"});
+	$(".image-modal").fancybox();
+	$(".send-review").fancybox();
+});
+</script>
 </head>
 <body>
 <div id="block-body">
@@ -91,9 +103,35 @@ $_SESSION['countid'] = $id;
 						';
 					}
 					while ($row1 = mysql_fetch_array($result1));
-				}
-			?>
-		</div>
+
+$result = mysql_query("SELECT * FROM upload_images WHERE products_id='$id'",$link);
+If (mysql_num_rows($result) > 0)
+{
+$row = mysql_fetch_array($result);
+echo '<div id="block-img-slide"><ul>';
+do
+{
+$img_path = './upload_images/'.$row["image"];
+$max_width = 70;
+$max_height = 70;
+ list($width, $height) = getimagesize($img_path);
+$ratioh = $max_height/$height;
+$ratiow = $max_width/$width;
+$ratio = min($ratioh, $ratiow);
+
+$width = intval($ratio*$width);
+$height = intval($ratio*$height);
+
+echo '
+<li><a class="image-modal" href="#image'.$row["id"].'"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'"></a></li>
+<a style="display: none;" class="image-modal" rel="group" id="image'.$row["id"].'" ><img src="./upload_images/'.$row["image"].'"></a>';
+}
+ while ($row = mysql_fetch_array($result));
+echo '</ul></div>';
+}
+}
+?>
+</div>
 <?php
 	include 'include/block-footer.php';
 ?>
