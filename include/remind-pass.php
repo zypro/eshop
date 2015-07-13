@@ -1,4 +1,5 @@
 <?php
+define('myeshop', true);
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
 include("db_connect.php");

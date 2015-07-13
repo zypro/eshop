@@ -1,4 +1,5 @@
 <?php
+defined('myeshop') or die('Доступ запрещён!');
  if ($_SESSION['auth'] != 'yes_auth' && $_COOKIE["rememberme"])
 	{
 

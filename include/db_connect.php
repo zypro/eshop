@@ -1,4 +1,5 @@
 <?php
+defined('myeshop') or die ('Доступ запрещён!');
 $db_host		= 'localhost';
 $db_user		= 'parliaub_eshop';
 $db_pass		= 'ayh63TMf';

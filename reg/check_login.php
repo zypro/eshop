@@ -1,6 +1,7 @@
 <?php
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 {
+	define('myeshop', true);
 		include("../include/db_connect.php");
 		include("../functions/functions.php");
 		$login = clear_string($_POST['reg_login']);

@@ -4,7 +4,7 @@ session_start();
 if ($_SESSION['auth'] == 'yes_auth')
 
  {
-
+define('myeshop', true);
 	include 'include/db_connect.php';
     include 'functions/functions.php';
 

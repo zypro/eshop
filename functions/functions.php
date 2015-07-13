@@ -1,4 +1,5 @@
-<?php 
+<?php
+defined('myeshop') or die('Доступ запрещён!');
 	function clear_string($cl_str)
 	{
 	// Фун-я удаление строк
