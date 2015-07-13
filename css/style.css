@@ -1897,3 +1897,49 @@ div.tabs_content > div {padding:10px;}
 .random-add-cart:active {
 	background: url(/images/button-buy-click.png);
 }
+
+#block-feedback {
+	height: 450px;
+}
+
+#feedback {
+ margin-top: 50px;
+}
+
+#feedback li {
+ margin-top: 10px;
+}
+
+#feedback input {
+	height: 30px;
+	width: 300px;
+	font: 17px sans-serif;
+	margin-left: 200px; 
+	border-left: 1px solid #ababab;
+	border-top: 1px solid #ababab;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding-left: 5px;
+}
+
+#feedback label {
+	font: 14px arial;
+	color: #464648;
+	position: absolute;
+	margin-top: 7px;
+}
+
+#feedback textarea {
+	height: 180px;
+	width: 450px;
+	font: 17px sans-serif;
+	margin-left: 200px;
+	border-left: 1px solid #ababab;
+	border-top: 1px solid #ababab;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+#feedback input:focus,#feedback textarea:focus {
+	border: 1px solid #c4e1eb;
+}

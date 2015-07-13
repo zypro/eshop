@@ -23,14 +23,14 @@
 			<li><a href="">О нас</a></li>
 			<li><a href="">Вакансии</a></li>
 			<li><a href="">Партнерам</a></li>
-			<li><a href="">Контакты</a></li>
+			<li><a href="feedback.php">Контакты</a></li>
 		</ul>
 	</div>
 	<div class="footer-list">
 		<p>Навигация</p>
 		<ul>
 			<li><a href="index.php">Главная страница</a></li>
-			<li><a href="">Обратная связь</a></li>
+			<li><a href="feedback.php">Обратная связь</a></li>
 		</ul>
 
 		<p>Рассказать о сайте</p>
