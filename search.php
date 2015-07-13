@@ -144,7 +144,7 @@
 										<li><img src="/images/eye-icon.png"><p>'.$row["count"].'</p></li>
 										<li><img src="/images/comment-icon.png"><p>'.$count_reviews.'</p></li>
 									</ul>
-									<a class="add-cart-style-grid"></a>
+									<a class="add-cart-style-grid" tid="'.$row["products_id"].'"></a>
 									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
@@ -191,7 +191,7 @@
 										<li><img src="/images/comment-icon.png"><p>'.$count_reviews.'</p></li>
 									</ul>
 									<p class="style-title-list"><a href="view_content.php?id='.$row["products_id"].'">'.$row["title"].'</a></p>
-									<a class="add-cart-style-list"></a>
+									<a class="add-cart-style-list" tid="'.$row["products_id"].'"></a>
 									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
