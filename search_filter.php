@@ -1,11 +1,11 @@
-<?php 
+<?php
 	include 'include/db_connect.php';
 	include 'functions/functions.php';
 	session_start();
 	include 'include/auth_cookie.php';
 	$cat = clear_string($_GET["cat"]);
 	$type = clear_string($_GET["type"]);
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,14 +67,14 @@
 					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 						{
 						$img_path = './upload_images/'.$row["image"];
-						$max_width = 200; 
-						$max_height = 200; 
-						 list($width, $height) = getimagesize($img_path); 
-						$ratioh = $max_height/$height; 
-						$ratiow = $max_width/$width; 
-						$ratio = min($ratioh, $ratiow); 
-						$width = intval($ratio*$width); 
-						$height = intval($ratio*$height);    
+						$max_width = 200;
+						$max_height = 200;
+						 list($width, $height) = getimagesize($img_path);
+						$ratioh = $max_height/$height;
+						$ratiow = $max_width/$width;
+						$ratio = min($ratioh, $ratiow);
+						$width = intval($ratio*$width);
+						$height = intval($ratio*$height);
 						}else
 						{
 						$img_path = "/images/no-image.png";
@@ -93,18 +93,18 @@
 										<li><img src="/images/eye-icon.png"><p>'.$row["count"].'</p></li>
 										<li><img src="/images/comment-icon.png"><p>'.$count_reviews.'</p></li>
 									</ul>
-									<a class="add-cart-style-grid"></a>
+									<a class="add-cart-style-grid" tid="'.$row["products_id"].'"></a>
 									<p class="style-price-grid"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="mini-features">'.$row["mini_features"].'</div>
 								</li>
 							';
 					}
 						while($row = mysql_fetch_array($result));
-				
-			 ?>
-			 	</ul>
-			 	<ul id="block-tovar-list">
-			<?php 
+
+			?>
+				</ul>
+				<ul id="block-tovar-list">
+			<?php
 				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' $query_brand $query_price ORDER BY products_id DESC",$link);
 				if (mysql_num_rows($result) > 0)
 				{
@@ -114,14 +114,14 @@
 					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 						{
 						$img_path = './upload_images/'.$row["image"];
-						$max_width = 150; 
-						$max_height = 150; 
-						 list($width, $height) = getimagesize($img_path); 
-						$ratioh = $max_height/$height; 
-						$ratiow = $max_width/$width; 
-						$ratio = min($ratioh, $ratiow); 
-						$width = intval($ratio*$width); 
-						$height = intval($ratio*$height);    
+						$max_width = 150;
+						$max_height = 150;
+						 list($width, $height) = getimagesize($img_path);
+						$ratioh = $max_height/$height;
+						$ratiow = $max_width/$width;
+						$ratio = min($ratioh, $ratiow);
+						$width = intval($ratio*$width);
+						$height = intval($ratio*$height);
 						}else
 						{
 						$img_path = "/images/noimages80x70.png";
@@ -140,7 +140,7 @@
 										<li><img src="/images/comment-icon.png"><p>'.$count_reviews.'</p></li>
 									</ul>
 									<p class="style-title-list"><a href="view_content.php?id='.$row["products_id"].'">'.$row["title"].'</a></p>
-									<a class="add-cart-style-list"></a>
+									<a class="add-cart-style-list" tid="'.$row["products_id"].'"></a>
 									<p class="style-price-list"><strong>'.$row["price"].'</strong> сом.</p>
 									<div class="style-text-list">'.$row["mini_description"].'</div>
 								</li>
@@ -155,10 +155,9 @@
 			 ?>
 			 	</ul>
 		</div>
-<?php 
+<?php
 	include 'include/block-footer.php';
- ?>
+?>
 </div>
-
 </body>
 </html>
