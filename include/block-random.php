@@ -33,7 +33,7 @@ $height = 118;
 echo '
 <li>
 	<img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
-	<a class="random-title" href="view_content.php?id='.$res_query["products_id"].'">'.$res_query["title"].'</a>
+	<a class="random-title" href="view_content.php?id='.$res_query["products_id"].'">'.$res_query["short_title"].'</a>
 	<p class="random-reviews">Отзывы '.$count_reviews.'</p>
 	<p class="random-price">'.group_numerals($res_query["price"]).' сом.</p>
 	<a class="random-add-cart" tid="'.$res_query["products_id"].'"></a>
