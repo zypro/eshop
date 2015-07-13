@@ -91,7 +91,7 @@
 				<ul id="block-tovar-grid">
 			<?php
 			// Постраничная навигация
-	$num = 5;
+	$num = 8;
 	$page = (int)$_GET['page'];
 	$count = mysql_query("SELECT COUNT(*) FROM table_products WHERE visible = '1'",$link);
 	$temp = mysql_fetch_array($count);
@@ -104,9 +104,9 @@
 	if(empty($page) or $page < 0) $page = 1;
 	if($page > $total) $page = $total;
 	$start = $page * $num - $num;
-	$qury_start_num = " LIMIT $start, $num";
+	$qury_start_num_grid = " LIMIT $start, $num";
 	}
-				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' ORDER BY $sorting $qury_start_num",$link);
+				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' ORDER BY $sorting $qury_start_num_grid",$link);
 				if (mysql_num_rows($result) > 0)
 				{
 					$row = mysql_fetch_array($result);
@@ -117,7 +117,7 @@
 						$img_path = './upload_images/'.$row["image"];
 						$max_width = 200;
 						$max_height = 200;
-						 list($width, $height) = getimagesize($img_path); 
+						 list($width, $height) = getimagesize($img_path);
 						$ratioh = $max_height/$height;
 						$ratiow = $max_width/$width;
 						$ratio = min($ratioh, $ratiow);
@@ -149,11 +149,26 @@
 					}
 						while($row = mysql_fetch_array($result));
 				}
-			 ?>
-			 	</ul>
-			 	<ul id="block-tovar-list">
+			?>
+				</ul>
+				<ul id="block-tovar-list">
 			<?php
-				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' ORDER BY $sorting $qury_start_num",$link);
+				$num = 6;
+	$page = (int)$_GET['page'];
+	$count = mysql_query("SELECT COUNT(*) FROM table_products WHERE visible = '1'",$link);
+	$temp = mysql_fetch_array($count);
+	If ($temp[0] > 0)
+	{
+	$tempcount = $temp[0];
+	$total = (($tempcount - 1) / $num) + 1;
+	$total =  intval($total);
+	$page = intval($page);
+	if(empty($page) or $page < 0) $page = 1;
+	if($page > $total) $page = $total;
+	$start = $page * $num - $num;
+	$qury_start_num_list = " LIMIT $start, $num";
+}
+				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' ORDER BY $sorting $qury_start_num_list",$link);
 				if (mysql_num_rows($result) > 0)
 				{
 					$row = mysql_fetch_array($result);
@@ -234,10 +249,10 @@ echo '
 </div>
 ';
 }
-			?>
-				
+?>
 		</div>
 <?php
+	include 'include/block-random.php';
 	include 'include/block-footer.php';
  ?>
 </div>

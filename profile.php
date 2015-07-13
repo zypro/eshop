@@ -166,7 +166,7 @@ if ($_SESSION['auth'] == 'yes_auth')
 </div>
 
 <?php
-
+include 'include/block-random.php';
 include 'include/block-footer.php';
 ?>
 </div>

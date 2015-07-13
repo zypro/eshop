@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include 'include/db_connect.php';
 	include 'functions/functions.php';
 	session_start();
@@ -38,7 +38,7 @@
 			$sort_name = 'Нет сортировки';
 			break;
 		}
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,9 +60,7 @@
 <?php
 	include 'include/block-header.php';
 ?>
-
 	<div id="block-right">
-
 <?php
 	include 'include/block-category.php';
 	include 'include/block-parameter.php';
@@ -94,7 +92,7 @@
 						$catlink = "";
 					}
 				}
-					$num = 5;
+	$num = 8;
 	$page = (int)$_GET['page'];
 	$count = mysql_query("SELECT COUNT(*) FROM table_products WHERE visible = '1' $querycat",$link);
 	$temp = mysql_fetch_array($count);
@@ -107,7 +105,7 @@
 	if(empty($page) or $page < 0) $page = 1;
 	if($page > $total) $page = $total;
 	$start = $page * $num - $num;
-	$qury_start_num = " LIMIT $start, $num";
+	$qury_start_num_grid = " LIMIT $start, $num";
 	}
 				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' $querycat ORDER BY $sorting $qury_start_num",$link);
 				if (mysql_num_rows($result) > 0)
@@ -137,14 +135,14 @@
 					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 						{
 						$img_path = './upload_images/'.$row["image"];
-						$max_width = 200; 
-						$max_height = 200; 
-						 list($width, $height) = getimagesize($img_path); 
-						$ratioh = $max_height/$height; 
-						$ratiow = $max_width/$width; 
-						$ratio = min($ratioh, $ratiow); 
-						$width = intval($ratio*$width); 
-						$height = intval($ratio*$height);    
+						$max_width = 200;
+						$max_height = 200;
+						 list($width, $height) = getimagesize($img_path);
+						$ratioh = $max_height/$height;
+						$ratiow = $max_width/$width;
+						$ratio = min($ratioh, $ratiow);
+						$width = intval($ratio*$width);
+						$height = intval($ratio*$height);
 						}else
 						{
 						$img_path = "/images/no-image.png";
@@ -170,12 +168,27 @@
 							';
 					}
 						while($row = mysql_fetch_array($result));
-				
+
 			 ?>
 			 	</ul>
 			 	<ul id="block-tovar-list">
-			<?php 
-				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' $querycat ORDER BY $sorting $qury_start_num",$link);
+			<?php
+				$num = 6;
+	$page = (int)$_GET['page'];
+	$count = mysql_query("SELECT COUNT(*) FROM table_products WHERE visible = '1' $querycat",$link);
+	$temp = mysql_fetch_array($count);
+	If ($temp[0] > 0)
+	{
+	$tempcount = $temp[0];
+	$total = (($tempcount - 1) / $num) + 1;
+	$total =  intval($total);
+	$page = intval($page);
+	if(empty($page) or $page < 0) $page = 1;
+	if($page > $total) $page = $total;
+	$start = $page * $num - $num;
+	$qury_start_num_list = " LIMIT $start, $num";
+}
+				$result = mysql_query("SELECT * FROM table_products WHERE visible = '1' $querycat ORDER BY $sorting $qury_start_num_list",$link);
 				if (mysql_num_rows($result) > 0)
 				{
 					$row = mysql_fetch_array($result);
@@ -184,14 +197,14 @@
 					if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 						{
 						$img_path = './upload_images/'.$row["image"];
-						$max_width = 150; 
-						$max_height = 150; 
-						 list($width, $height) = getimagesize($img_path); 
-						$ratioh = $max_height/$height; 
-						$ratiow = $max_width/$width; 
-						$ratio = min($ratioh, $ratiow); 
-						$width = intval($ratio*$width); 
-						$height = intval($ratio*$height);    
+						$max_width = 150;
+						$max_height = 150;
+						 list($width, $height) = getimagesize($img_path);
+						$ratioh = $max_height/$height;
+						$ratiow = $max_width/$width;
+						$ratio = min($ratioh, $ratiow);
+						$width = intval($ratio*$width);
+						$height = intval($ratio*$height);
 						}else
 						{
 						$img_path = "/images/noimages80x70.png";
@@ -260,12 +273,12 @@ echo '
 </div>
 ';
 }
-			 ?>
-
+			?>
 		</div>
-<?php 
+<?php
+	include 'include/block-random.php';
 	include 'include/block-footer.php';
- ?>
+?>
 </div>
 
 </body>

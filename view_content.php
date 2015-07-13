@@ -46,13 +46,10 @@ $(document).ready(function(){
 </head>
 <body>
 <div id="block-body">
-
 <?php
 	include 'include/block-header.php';
 ?>
-
 	<div id="block-right">
-
 <?php
 	include 'include/block-category.php';
 	include 'include/block-parameter.php';
@@ -156,7 +153,7 @@ echo '
 	<div>'.$row["description"].'</div>
 	<div>'.$row["features"].'</div>
 <div>
-	<p id="link-send-review" ><a class="send-review" href="#send-review" >Написать отзыв</a></p>
+	<p id="link-send-review" ><a class="send-review" href="#send-review">Написать отзыв</a></p>
 ';
 
 $query_reviews = mysql_query("SELECT * FROM table_reviews WHERE products_id='$id' AND moderate='1' ORDER BY reviews_id DESC",$link);
@@ -202,6 +199,7 @@ echo '
 ?>
 </div>
 <?php
+	include 'include/block-random.php';
 	include 'include/block-footer.php';
 ?>
 </div>

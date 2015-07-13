@@ -156,6 +156,7 @@
 			 	</ul>
 		</div>
 <?php
+	include 'include/block-random.php';
 	include 'include/block-footer.php';
 ?>
 </div>

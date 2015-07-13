@@ -1841,3 +1841,59 @@ div.tabs_content > div {padding:10px;}
 #button-send-review:active{
 	background: url(../images/button-send-active.png) no-repeat;
 }
+
+#block-random-tovar {
+	height: 150px;
+	padding-top: 15px;
+	clear: both;
+}
+
+#block-random-tovar li {
+	float: left;
+	width: 250px;
+	height: 150px;
+	margin-left: 5px;
+}
+
+#block-random-tovar img {
+	float: left;
+	margin-right: 8px;
+}
+
+.random-title {
+	font: 15px sans-serif;
+	color: #276fc8;
+}
+
+.random-title:hover {
+	text-decoration: none;
+}
+
+.random-reviews {
+	font: 13px sans-serif;
+	color: #434343;
+	margin: 5px 0;
+}
+
+.random-price {
+	margin:0px;
+	font: bold 18px sans-serif;
+}
+
+.random-add-cart {
+	width: 87px;
+	height: 26px;
+	margin-top: 10px;
+	margin-right: 0px;
+	cursor: pointer;
+	background: url(/images/button-buy-norm.png);
+	float: left;
+}
+
+.random-add-cart:hover {
+	background: url(/images/button-buy-active.png);
+}
+
+.random-add-cart:active {
+	background: url(/images/button-buy-click.png);
+}

@@ -95,30 +95,22 @@ switch ($sorting)
 	if ($query_aystopper != "")
 	{
 
-	$num = 6;// Здесь указываем сколько хотим выводить товаров.
+	$num = 8;// Здесь указываем сколько хотим выводить товаров.
 	$page = (int)$_GET['page'];
-
 	$count = mysql_query("SELECT COUNT(*) FROM table_products $query_aystopper",$link);
 	$temp = mysql_fetch_array($count);
-
 	If ($temp[0] > 0)
 	{
 	$tempcount = $temp[0];
-
 	// Находим общее число страниц
 	$total = (($tempcount - 1) / $num) + 1;
 	$total =  intval($total);
-
 	$page = intval($page);
-
 	if(empty($page) or $page < 0) $page = 1;
-
 	if($page > $total) $page = $total;
-	
 	// Вычисляем начиная с какого номера
 	// следует выводить товары 
 	$start = $page * $num - $num;
-
 	$qury_start_num = " LIMIT $start, $num";
 	}
 
@@ -144,35 +136,32 @@ If ($temp[0] > 0)
 			</li>
 	</ul>
 </div>
-
 <ul id="block-tovar-grid" >
 <?php
-	
+
 	$result = mysql_query("SELECT * FROM table_products $query_aystopper ORDER BY $sorting $qury_start_num ",$link);
 
 if (mysql_num_rows($result) > 0)
 {
 $row = mysql_fetch_array($result);
-
  do
 {
-
 if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 {
-$img_path = './upload_images/'.$row["image"];
-$max_width = 200;
-$max_height = 200;
- list($width, $height) = getimagesize($img_path);
-$ratioh = $max_height/$height;
-$ratiow = $max_width/$width;
-$ratio = min($ratioh, $ratiow);
-$width = intval($ratio*$width);
-$height = intval($ratio*$height);
-}else
-{
-$img_path = "/images/no-image.png";
-$width = 110;
-$height = 200;
+			$img_path = './upload_images/'.$row["image"];
+			$max_width = 200;
+			$max_height = 200;
+			 list($width, $height) = getimagesize($img_path);
+			$ratioh = $max_height/$height;
+			$ratiow = $max_width/$width;
+			$ratio = min($ratioh, $ratiow);
+			$width = intval($ratio*$width);
+			$height = intval($ratio*$height);
+			}else
+			{
+			$img_path = "/images/no-image.png";
+			$width = 110;
+			$height = 200;
 }
 				$query_reviews = mysql_query("SELECT * FROM table_reviews WHERE products_id = '{$row["products_id"]}' AND moderate='1'",$link);  
 				$count_reviews = mysql_num_rows($query_reviews);
@@ -218,7 +207,7 @@ if ($row["image"] != "" && file_exists("./upload_images/".$row["image"]))
 $img_path = './upload_images/'.$row["image"];
 $max_width = 150;
 $max_height = 150;
- list($width, $height) = getimagesize($img_path); 
+ list($width, $height) = getimagesize($img_path);
 $ratioh = $max_height/$height;
 $ratiow = $max_width/$width;
 $ratio = min($ratioh, $ratiow);
@@ -290,9 +279,8 @@ if ($page+5 < $total)
 	$strtotal = '<li><p class="nav-point">...</p></li><li><a href="view_aystopper.php?go='.$go.'&page='.$total.'">'.$total.'</a></li>';
 }else
 {
-	$strtotal = ""; 
+	$strtotal = "";
 }
-
 if ($total > 1)
 {
 	echo '
@@ -308,6 +296,7 @@ if ($total > 1)
 ?>
 </div>
 <?php
+	include'include/block-random.php';
 	include'include/block-footer.php';
 ?>
 </div>
