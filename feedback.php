@@ -41,14 +41,14 @@ $_SESSION['message'] = "<p id='form-success'>Ваше сообщение усп�
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8" />
+    <meta charset="utf-8">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="trackbar/trackbar.css" rel="stylesheet">
 
     <script src="/js/jquery-1.8.2.min.js"></script>
     <script src="/js/jcarousellite_1.0.1.js"></script>
-    <script src="/js/shop-script.js"></script>
+    <script src="/js/eshop-script.js"></script>
     <script src="/js/jquery.cookie.min.js"></script>
     <script src="/trackbar/jquery.trackbar.js"></script>
     <script src="/js/TextChange.js"></script>
@@ -57,11 +57,11 @@ $_SESSION['message'] = "<p id='form-success'>Ваше сообщение усп�
 </head>
 <body>
 <div id="block-body">
-<?php	
+<?php
        include'include/block-header.php';
 ?>
 <div id="block-right">
-<?php	
+<?php
        include 'include/block-category.php';
        include 'include/block-parameter.php';
        include 'include/block-news.php';
