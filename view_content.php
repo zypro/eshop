@@ -6,6 +6,13 @@
 	include 'include/auth_cookie.php';
 	$id = clear_string($_GET["id"]);
 
+		 $seoquery = mysql_query("SELECT seo_words,seo_description FROM table_products WHERE products_id='$id' AND visible='1'",$link);
+
+		If (mysql_num_rows($seoquery) > 0)
+		{
+			$resquery = mysql_fetch_array($seoquery);
+		}
+
 	If ($id != $_SESSION['countid'])
 {
 $querycount = mysql_query("SELECT count FROM table_products WHERE products_id='$id'",$link);
@@ -22,6 +29,8 @@ $_SESSION['countid'] = $id;
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="Description" content="<? echo $resquery["seo_description"]; ?>">
+	<meta name="keywords" content="<? echo $resquery["seo_words"]; ?>">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="trackbar/trackbar.css">

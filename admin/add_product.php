@@ -15,6 +15,104 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 	include 'include/db_connect.php';
 	include 'include/functions.php';
 
+	if ($_POST["submit_add"])
+	{
+
+$error = array();
+
+// Проверка полей
+
+	if (!$_POST["form_title"])
+	{
+		$error[] = "Укажите название товара";
+	}
+
+	if (!$_POST["form_shorttitle"])
+	{
+		$error[] = "Укажите название товара";
+	}
+
+	if (!$_POST["form_price"])
+	{
+		$error[] = "Укажите цену";
+	}
+
+	if (!$_POST["form_category"])
+	{
+		$error[] = "Укажите категорию";
+	}else
+	{
+		$result = mysql_query("SELECT * FROM category WHERE id='{$_POST["form_category"]}'",$link);
+		$row = mysql_fetch_array($result);
+		$selectbrand = $row["brand"];
+
+	}
+
+// Проверка чекбоксов
+
+	if ($_POST["chk_visible"])
+	{
+		$chk_visible = "1";
+	}else { $chk_visible = "0"; }
+
+	if ($_POST["chk_new"])
+	{
+		$chk_new = "1";
+	}else { $chk_new = "0"; }
+
+	if ($_POST["chk_leader"])
+	{
+		$chk_leader= "1";
+	}else { $chk_leader = "0"; }
+
+	if ($_POST["chk_sale"])
+	{
+		$chk_sale = "1";
+	}else { $chk_sale = "0"; }
+
+	if (count($error))
+	{
+		$_SESSION['message'] = "<p id='form-error'>".implode('<br />',$error)."</p>";
+
+	}else
+	{
+
+						mysql_query("INSERT INTO table_products(title,short_title,price,brand,seo_words,seo_description,mini_description,description,mini_features,features,new,leader,sale,visible,type_tovara,brand_id)
+						VALUES(						
+								'".$_POST["form_title"]."',
+								'".$_POST["form_shorttitle"]."',
+								'".$_POST["form_price"]."',
+								'".$selectbrand."',
+								'".$_POST["form_seo_words"]."',
+								'".$_POST["form_seo_description"]."',
+								'".$_POST["txt1"]."',
+								'".$_POST["txt2"]."',
+								'".$_POST["txt3"]."',
+								'".$_POST["txt4"]."',
+								'".$chk_new."',
+								'".$chk_leader."',
+								'".$chk_sale."',
+								'".$chk_visible."',
+								'".$_POST["form_type"]."',
+								'".$_POST["form_category"]."'
+						)",$link);
+
+		$_SESSION['message'] = "<p id='form-success'>Товар успешно добавлен!</p>";
+		$id = mysql_insert_id();
+
+		if (empty($_POST["upload_image"]))
+		{
+		include("actions/upload-image.php");
+		unset($_POST["upload_image"]);
+		}
+
+		if (empty($_POST["galleryimg"]))
+		{
+		include("actions/upload-gallery.php");
+		unset($_POST["galleryimg"]);
+		}
+}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,57 +134,78 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 		<div id="block-parameters">
 			<p id="title-page">Добавление товара</p>
 		</div>
+		<!-- Сессии -->
+		<?php
+	if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
+
+		 if(isset($_SESSION['message']))
+		{
+		echo $_SESSION['message'];
+		unset($_SESSION['message']);
+		}
+
+	if(isset($_SESSION['answer']))
+		{
+		echo $_SESSION['answer'];
+		unset($_SESSION['answer']);
+		}
+?>
 <form enctype="multipart/form-data" method="post">
 <ul id="edit-tovar">
-<li>
-	<label>Название товара</label>
-	<input type="text" name="form_title">
-</li>
+	<li>
+		<label>Название товара</label>
+		<input type="text" name="form_title">
+	</li>
 
-<li>
-	<label>Цена</label>
-	<input type="text" name="form_price">
-</li>
+	<li>
+		<label>Краткое имя товара</label>
+		<input type="text" name="form_shorttitle">
+	</li>
 
-<li>
-	<label>Ключевые слова</label>
-	<input type="text" name="form_seo_words">
-</li>
+	<li>
+		<label>Цена</label>
+		<input type="text" name="form_price">
+	</li>
 
-<li>
-	<label>Краткое описание</label>
-	<textarea name="form_seo_description"></textarea>
-</li>
+	<li>
+		<label>Ключевые слова</label>
+		<input type="text" name="form_seo_words">
+	</li>
 
-<li>
-<label>Тип товара</label>
-	<select name="form_type" id="type" size="1">
-		<option value="mobile" >Мобильные телефоны</option>
-		<option value="notebook" >Ноутбуки</option>
-		<option value="notepad" >Планшеты</option>
+	<li>
+		<label>Краткое описание</label>
+		<textarea name="form_seo_description"></textarea>
+	</li>
+
+	<li>
+	<label>Тип товара</label>
+		<select name="form_type" id="type" size="1">
+			<option value="mobile" >Мобильные телефоны</option>
+			<option value="notebook" >Ноутбуки</option>
+			<option value="notepad" >Планшеты</option>
+		</select>
+	</li>
+
+	<li>
+	<label>Категория</label>
+	<select name="form_category" size="10">
+
+	<?php
+	$category = mysql_query("SELECT * FROM category",$link);
+
+	If (mysql_num_rows($category) > 0)
+	{
+	$result_category = mysql_fetch_array($category);
+	do
+	{
+	echo '<option value="'.$result_category["id"].'" >'.$result_category["brand"].'</option>';
+
+	}
+	 while ($result_category = mysql_fetch_array($category));
+	}
+	?>
+
 	</select>
-</li>
-
-<li>
-<label>Категория</label>
-<select name="form_category" size="10">
-
-<?php
-$category = mysql_query("SELECT * FROM category",$link);
-
-If (mysql_num_rows($category) > 0)
-{
-$result_category = mysql_fetch_array($category);
-do
-{
-echo '<option value="'.$result_category["id"].'" >'.$result_category["brand"].'</option>';
-
-}
- while ($result_category = mysql_fetch_array($category));
-}
-?>
-
-</select>
 </ul>
 <label class="stylelabel" >Основная картинка</label>
 
@@ -151,7 +270,6 @@ echo '<option value="'.$result_category["id"].'" >'.$result_category["brand"].'<
 		<input type="file" name="galleryimg[]">
 	</div>
 </div>
-
 <p id="add-input" >Добавить</p>
 <h3 class="h3title" >Настройки товара</h3>
 <ul id="chkbox">
@@ -160,8 +278,6 @@ echo '<option value="'.$result_category["id"].'" >'.$result_category["brand"].'<
 	<li><input type="checkbox" name="chk_leader" id="chk_leader"><label for="chk_leader" >Популярный товар</label></li>
 	<li><input type="checkbox" name="chk_sale" id="chk_sale"><label for="chk_sale" >Товар со скидкой</label></li>
 </ul>
-
-
 <p align="right" ><input type="submit" id="submit_form" name="submit_add" value="Добавить товар"/></p>     
 </form>
 	</div>

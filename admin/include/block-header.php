@@ -1,6 +1,5 @@
 <?php
 	defined('myeshop') or die('Доступ запрещён!');
-
 ?>
 <div id="block-header">
 	<div id="block-header1" >
