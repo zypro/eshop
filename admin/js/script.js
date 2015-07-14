@@ -25,4 +25,8 @@ $('.delete').click(function(){
   $('#select-links').click(function(){
  $("#list-links,#list-links-sort").slideToggle(200);
  });
+  
+ $('.h3click').click(function(){ 
+ $(this).next().slideToggle(400); 
+ });
   });
