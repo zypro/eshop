@@ -103,7 +103,7 @@ $error = array();
 
 	}else
 	{
-	$querynew = "title='{$_POST["form_title"]}',title='{$_POST["form_shorttitle"]}',title='{$_POST["form_shorttitle"]}',price='{$_POST["form_price"]}',brand='$selectbrand',seo_words='{$_POST["form_seo_words"]}',seo_description='{$_POST["form_seo_description"]}',mini_description='{$_POST["txt1"]}',description='{$_POST["txt2"]}',mini_features='{$_POST["txt3"]}',features='{$_POST["txt4"]}',new='$chk_new',leader='$chk_leader',sale='$chk_sale',visible='$chk_visible',type_tovara='{$_POST["form_type"]}',brand_id='{$_POST["form_category"]}'";
+	$querynew = "title='{$_POST["form_title"]}',short_title='{$_POST["form_shorttitle"]}',price='{$_POST["form_price"]}',brand='$selectbrand',seo_words='{$_POST["form_seo_words"]}',seo_description='{$_POST["form_seo_description"]}',mini_description='{$_POST["txt1"]}',description='{$_POST["txt2"]}',mini_features='{$_POST["txt3"]}',features='{$_POST["txt4"]}',new='$chk_new',leader='$chk_leader',sale='$chk_sale',visible='$chk_visible',type_tovara='{$_POST["form_type"]}',brand_id='{$_POST["form_category"]}'";
 	$update = mysql_query("UPDATE table_products SET $querynew WHERE products_id = '$id'",$link);
 
 $_SESSION['message'] = "<p id='form-success'>Товар успешно изменен!</p>";
