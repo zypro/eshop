@@ -1,5 +1,14 @@
 <?php
 	defined('myeshop') or die('Доступ запрещён!');
+	$result1 = mysql_query("SELECT * FROM orders WHERE order_confirmed='no'",$link);
+	$count1 = mysql_num_rows($result1);
+
+	if ($count1 > 0) { $count_str1 = '<p>+'.$count1.'</p>'; } else { $count_str1 = ''; }
+
+	$result2 = mysql_query("SELECT * FROM table_reviews WHERE moderate='0'",$link);
+	$count2 = mysql_num_rows($result2);
+
+	if ($count2 > 0) { $count_str2 = '<p>+'.$count2.'</p>'; } else { $count_str2 = ''; }
 ?>
 <div id="block-header">
 	<div id="block-header1" >

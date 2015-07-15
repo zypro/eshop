@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2015 г., 18:48
+-- Время создания: Июл 15 2015 г., 19:12
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `buy_products` (
   `buy_id_product` int(11) NOT NULL,
   `buy_count_product` int(11) NOT NULL,
   PRIMARY KEY (`buy_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Дамп данных таблицы `buy_products`
@@ -42,7 +42,10 @@ INSERT INTO `buy_products` (`buy_id`, `buy_id_order`, `buy_id_product`, `buy_cou
 (3, 3, 16, 1),
 (4, 3, 15, 1),
 (5, 4, 16, 1),
-(6, 4, 15, 1);
+(6, 4, 15, 1),
+(7, 5, 16, 2),
+(8, 5, 15, 1),
+(9, 6, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -58,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `cart_datetime` datetime NOT NULL,
   `cart_ip` varchar(100) NOT NULL,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
 
 --
 -- Дамп данных таблицы `cart`
@@ -66,8 +69,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
 
 INSERT INTO `cart` (`cart_id`, `cart_id_product`, `cart_price`, `cart_count`, `cart_datetime`, `cart_ip`) VALUES
 (54, 12, 566, 5, '2015-07-12 23:03:10', '91.231.255.246'),
-(61, 16, 3242, 1, '2015-07-15 18:10:20', '127.0.0.1'),
-(62, 15, 3242, 1, '2015-07-15 18:10:21', '127.0.0.1');
+(63, 11, 988, 1, '2015-07-15 19:05:35', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,7 @@ INSERT INTO `news` (`id`, `title`, `text`, `date`) VALUES
 CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_datetime` datetime NOT NULL,
-  `order_confirmed` varchar(10) NOT NULL,
+  `order_confirmed` varchar(10) NOT NULL DEFAULT 'no',
   `order_dostavka` varchar(255) NOT NULL,
   `order_pay` varchar(50) NOT NULL,
   `order_type_pay` varchar(100) NOT NULL,
@@ -141,14 +143,15 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_note` text NOT NULL,
   `order_email` varchar(50) NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `orders`
 --
 
 INSERT INTO `orders` (`order_id`, `order_datetime`, `order_confirmed`, `order_dostavka`, `order_pay`, `order_type_pay`, `order_fio`, `order_address`, `order_phone`, `order_note`, `order_email`) VALUES
-(4, '2015-07-15 18:16:55', 'yes', 'Самовывоз', '', '', 'fewfwf', 'wf', 'wfwfw', 'wfwfwfwfewfw', 'fewf@mail.ru');
+(5, '2015-07-15 19:03:24', '', 'Самовывоз', '', '', 'fewfwf', 'wf', 'wfwfw', 'wfwfwfwfewfw', 'fewf@mail.ru'),
+(6, '2015-07-15 19:05:53', 'yes', 'По почте', '', '', 'fewfwf', 'wefwf', 'efw', 'wfwfwfwfewfw', 'fewf@mail.ru');
 
 -- --------------------------------------------------------
 
@@ -258,17 +261,16 @@ INSERT INTO `table_products` (`products_id`, `title`, `price`, `brand`, `seo_wor
 (3, 'Мобильный телефон LG Leon (титан) ', 7991, 'LG', '', '', '4-ЯДЕРНЫЙ ПРОЦЕССОР 1,3 ГГЦ \r\n\r\nВозможности 4-ядерного процессора помогут вам решить все необходимые задачи в течение дня. Испытайте его скорость работы в многофункциональном режиме. ', 'Wi-Fi (802.11)   : b, g   , n  \r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : microUSB', 'img3.jpg', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', '', '2015-07-07 07:00:00', 0, 0, 0, 1, 1, 'mobile', 7, 1, ' LG Leon (титан) '),
 (4, 'Мобильный телефон Apple iPhone 5s 16Gb как новый (золотистый)', 788, 'Apple', '', '', 'Это ранее использованные изделия Apple, которые проходят заводскую процедуру восстановления, замены корпуса и экрана, прежде чем обрести нового владельца. Все изделия проходят строжайшую процедуру реставрации компанией Apple, упакованы в новую коробку с новым зарядным устройством и наушниками. Вы можете ожидать значительную экономию, полностью функциональное устройство с полным комплектом документации, гарантию производителя 1 год. ', 'Bluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n  \r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да', 'img5.jpg', '', '', '2015-07-07 06:00:00', 0, 0, 0, 1, 1, 'mobile', 1, 1, 'Apple iPhone 5s 16Gb '),
 (5, 'Мобильный телефон Sony Xperia Z1 Compact (черный)', 988, 'Sony', '', '', 'Sony Xperia Z1 Compact сочетает в себе функциональность смартфона премиум-класса с красотой исполнения, идеально умещаясь в ладони. При условии, что все порты и крышки закрыты, устройство целых полчаса без проблем может снимать первоклассные фото и видео на глубине до 1,5 метра. ', 'Модем   : да\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img4.jpg', '', '', '2015-07-07 04:11:52', 0, 0, 0, 1, 0, 'mobile', 6, 1, ''),
-(6, 'Мобильный телефон Sony Xperia Z3 Compact (зеленый)', 566, 'Sony', '', '', 'Sony Xperia Z3 Compact – смартфон, который делает вашу жизнь лучше. Ведь она очень непредсказуема: никогда не знаешь, когда попадешь, скажем, под проливной дождь. Однако благодаря высокому классу защиты от проникновения влаги вода для Xperia Z3 Compact не помеха: вы можете делать снимки в бассейне, использовать его в ливень и даже мыть под проточной водой. Учитывая тонкий и компактный корпус, который легко держать в одной руке, Xperia Z3 Compact – это Android-смартфон, в котором одновременно воплощены прочность и красота. ', 'Модем   : да\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nUSB-хост   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img6.jpg', '', '', '2015-07-07 05:12:13', 0, 0, 0, 1, 0, 'mobile', 6, 1, ''),
 (7, 'Мобильный телефон Sony Xperia E4g LTE (черный) ', 899, 'Sony', '', '', 'Благодаря тонкому и продуманному до мелочей дизайну Sony Xperia E4g удобен в использовании и комфортно лежит в ладони. А высокое качество исполнения, которым отличаются все продукты Sony, делают этот 4G-смартфон неподвластным времени. ', 'Wi-Fi (802.11)   : да\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img7.jpg', '', '', '2015-07-07 07:19:20', 0, 0, 0, 1, 1, 'mobile', 6, 1, ''),
 (8, 'Мобильный телефон Sony Xperia Z2 (черный)', 988, 'Sony', '', '', 'Водонепроницаемый смартфон Sony Xperia Z2 выполнен в цельном корпусе из алюминия со стеклянными панелями. Благодаря идеально сбалансированному дизайну изображение на Full HD дисплее с диагональю 5,2 дюйма отлично выглядит под любым углом. Основная камера с 20,7 Мп матрицей, которая на 30% крупнее использующихся в смартфонах, по качеству съемки выходит на уровень компактных цифровых камер Sony и, более того, способна снимать видео в формате 4К, то есть в четыре раза четче, чем Full HD. ', 'Модем   : да\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nUSB-хост   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img8.jpg', '', '', '2015-07-07 04:14:17', 0, 0, 0, 1, 1, 'mobile', 6, 1, 'Sony Xperia Z2 '),
 (9, 'Мобильный телефон Sony Xperia Z3 Dual (белый)', 545, 'Sony', '', '', 'Водонепроницаемый двухсимочный смартфон Sony Xperia Z3 Dual воплотил в себе изящество дизайна и мощь высоких технологий. Новое творение Sony доказывает: красота долговечна. Ведь ультратонкий алюминиевый каркас с закругленными краями, панели из прочного закаленного стекла и эксклюзивный дизайн кнопки питания придают новому премиум-смартфону престижный элегантный вид. Но внешний вид – это еще не все, не так ли? Именно поэтому в Sony позаботились о сбалансированном симметричном дизайне, чтобы устройство идеально ложилось в руку. А благодаря простому и удобному интерфейсу пользоваться этим смартфоном удивительно комфортно. ', 'Bluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nUSB-хост   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img9.jpg', '', '', '2015-07-07 04:11:14', 0, 0, 0, 1, 7, 'mobile', 6, 1, 'Sony Xperia Z3 Dual'),
 (10, 'Мобильный телефон Apple iPhone 6 16GB (темно-серый)', 899, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Доступ в Интернет   : GPRS   , EDGE   , 3G   , 4G\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да\r\nNFC   : да', 'img10.jpg', '', '', '2015-07-07 07:21:35', 0, 0, 0, 1, 2, 'mobile', 1, 1, ''),
-(11, 'Мобильный телефон Apple iPhone 6 64GB (золотистый) ', 988, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Доступ в Интернет   : GPRS   , EDGE   , 3G   , 4G\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да\r\nNFC   : да', 'img11.jpg', '', '', '0000-00-00 00:00:00', 0, 0, 0, 1, 9, 'mobile', 1, 4, ''),
+(11, 'Мобильный телефон Apple iPhone 6 64GB (золотистый) ', 988, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Доступ в Интернет   : GPRS   , EDGE   , 3G   , 4G\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да\r\nNFC   : да', 'img11.jpg', '', '', '0000-00-00 00:00:00', 0, 0, 0, 1, 10, 'mobile', 1, 4, ''),
 (12, 'Мобильный телефон Apple iPhone 6 128GB (темно-серый)', 566, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом ', 'img12.jpg', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', '2015-07-07 10:30:33', 0, 0, 0, 1, 17, 'mobile', 1, 3, ''),
 (13, 'wfwefwfw', 34242, 'Apple', 'wefwfw', 'fewfwfw', '<p>fwefwfwfew</p>\r\n', '<p>fwefwfwfew</p>\r\n', '', '<p>fwefwfwfew</p>\r\n', '<p>fwefwfwfew</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 0, 'mobile', 1, 1, ''),
 (14, 'APPLE 4s', 544, 'Apple', '', '', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', 'mobile-1434.jpg', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 1, 'mobile', 1, 1, ''),
 (15, 'fwefwfew', 3242, 'Apple', '', '', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', 'mobile-1537.jpg', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 0, 'mobile', 1, 1, 'wefwfwfwe'),
-(16, 'fwefwfew', 3242, 'Apple', '', '', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', 'mobile-1680.jpg', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 0, 'mobile', 1, 1, 'wefwfwfwe');
+(16, 'fwefwfew', 3242, 'Apple', '', '', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', 'mobile-1680.jpg', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 1, 'mobile', 1, 1, 'wefwfwfwe');
 
 -- --------------------------------------------------------
 
@@ -286,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `table_reviews` (
   `date` date NOT NULL,
   `moderate` int(11) NOT NULL,
   PRIMARY KEY (`reviews_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `table_reviews`
@@ -294,7 +296,9 @@ CREATE TABLE IF NOT EXISTS `table_reviews` (
 
 INSERT INTO `table_reviews` (`reviews_id`, `products_id`, `name`, `good_reviews`, `bad_reviews`, `comment`, `date`, `moderate`) VALUES
 (4, 12, 'fwfewf', 'wfwfw', 'fwfwf', 'wfwffewwf', '2015-07-15', 1),
-(5, 9, 'wefewfwe', 'fwfwfwfwf', 'wfwfwfwwfw', 'fwfwfwfwfwfw', '2015-07-15', 1);
+(5, 9, 'wefewfwe', 'fwfwfwfwf', 'wfwfwfwwfw', 'fwfwfwfwfwfw', '2015-07-15', 1),
+(7, 16, 'fwe', 'fwf', 'ewfwf', 'wfwfwfw', '2015-07-15', 1),
+(8, 11, 'fwef', 'wfw', 'fwf', 'wfwfw', '2015-07-15', 0);
 
 -- --------------------------------------------------------
 

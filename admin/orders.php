@@ -14,7 +14,7 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 
 	include 'include/db_connect.php';
 	include 'include/functions.php';
-	
+
 	$sort = $_GET["sort"];
 	switch ($sort) {
 
