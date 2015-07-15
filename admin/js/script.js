@@ -51,7 +51,7 @@ $('.delete').click(function(){
     $('.del-img').click(function(){
     var img_id = $(this).attr("img_id");
     var title_img = $("#del"+img_id+" > img").attr("title");
-    
+
   $.ajax({
   type: "POST",
   url: "./actions/delete-gallery.php",
@@ -66,12 +66,12 @@ $('.delete').click(function(){
 }
 
 });
-   
+
  });
     $('.delete-cat').click(function(){
-    
+
    var selectid = $("#cat_type option:selected").val();
-     
+
    if (!selectid)
    {
        $("#cat_type").css("borderColor","#F5A4A4");
@@ -84,14 +84,14 @@ $('.delete').click(function(){
   dataType: "html",
   cache: false,
   success: function(data) {
-    
+
   if (data == "delete")
   {
      $("#cat_type option:selected").remove();
   }
-                          }
-         });       
+              }
+         });
    }
-              
+
 });
 });
