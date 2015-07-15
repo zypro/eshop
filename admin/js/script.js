@@ -99,4 +99,11 @@ $('.delete').click(function(){
  $(this).find('ul').slideToggle(300);
    
  });
+ $('#select-all').click(function(){
+    $(".privilege input:checkbox").attr('checked', true);
+});
+
+$('#remove-all').click(function(){
+    $(".privilege input:checkbox").attr('checked', false);
+});
 });

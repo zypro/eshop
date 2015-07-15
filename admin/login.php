@@ -14,6 +14,9 @@ If ($_POST["submit_enter"])
 		/*$pass = md5($pass);
 		$pass = strrev($pass);
 		$pass = strtolower("8md7udyd".$pass."2ui6z");*/
+	$pass = md5($pass);
+	$pass = strrev($pass);
+	$pass = strtolower("55tteerr".$pass."fw423fe");
 
 	$result = mysql_query("SELECT * FROM reg_admin WHERE login = '$login' AND pass = '$pass'",$link);
 
