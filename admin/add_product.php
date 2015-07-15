@@ -17,6 +17,8 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 
 	if ($_POST["submit_add"])
 	{
+if ($_SESSION['add_tovar'] == '1')
+{
 
 $error = array();
 
@@ -111,6 +113,10 @@ $error = array();
 		include("actions/upload-gallery.php");
 		unset($_POST["galleryimg"]);
 		}
+}
+}else
+{
+	$msgerror = 'У вас нет прав на добавление товара!';
 }
 }
 ?>

@@ -47,15 +47,25 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 	switch ($action) {
 
 		case 'accept':
+		if ($_SESSION['accept_reviews'] == '1')
+		{
+
 
 		$update = mysql_query("UPDATE table_reviews SET moderate='1' WHERE reviews_id = '$id'",$link);
-
+		}else 
+		{
+			$msgerror = 'У вас нет прав для одобрение отзывов!';
+		}
 		break;
 
 		case 'delete':
-
+		if ($_SESSION['delete_reviews'] == '1')
+		{
 		$delete = mysql_query("DELETE FROM table_reviews WHERE reviews_id = '$id'",$link);
-
+	}else 
+		{
+			$msgerror = 'У вас нет прав для удаление отзывов!';
+		}
 		break;
 
 	}
@@ -103,6 +113,7 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 				</ul>
 			</div>
 <?php
+if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
 	$num = 4;
 
 	$page = strip_tags($_GET['page']);

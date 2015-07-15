@@ -18,6 +18,9 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 	if ($_POST["submit_add"])
 {
 
+	if ($_SESSION['auth_admin_login'] == 'pwnz22')
+	{
+
 	$error = array();
 
 	if ($_POST["admin_login"])
@@ -76,6 +79,10 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 
 			$_SESSION['message'] = "<p id='form-success'>Пользователь успешно добавлен!</p>";
 }
+    }else
+    {
+       $msgerror = 'У вас нет прав на добавление администраторов!'; 
+    }  
 }
 ?>
 <!DOCTYPE html>

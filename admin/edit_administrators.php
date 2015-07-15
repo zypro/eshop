@@ -18,7 +18,8 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 
 	if ($_POST["submit_edit"])
 	{
-
+	if ($_SESSION['auth_admin_login'] == 'pwnz22')
+	{
 	$error = array();
 
 	if (!$_POST["admin_login"]) $error[] = "Укажите логин!";
@@ -44,6 +45,10 @@ $querynew = "login='{$_POST["admin_login"]}',$pass fio='{$_POST["admin_fio"]}',r
 		$update = mysql_query("UPDATE reg_admin SET $querynew WHERE id = '$id'",$link);
 
 		$_SESSION['message'] = "<p id='form-success'>Пользователь успешно изменён!</p>";
+}
+}else
+{
+	$msgerror = 'У вас нет прав на изменение Администраторов!';
 }
 }
 ?>

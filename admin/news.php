@@ -17,6 +17,8 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 
 	if ($_POST["submit_news"])
 {
+if ($_SESSION['add_news'] == '1')
+{
 
 
 	if ($_POST["news_title"] == "" || $_POST["news_text"] == "")
@@ -33,7 +35,10 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 							)",$link);
 			$message = "<p id='form-success' >Новость добавлена!</p>";
 	}
-
+}else
+{
+	$msgerror = 'У вас нет прав на добавление новостей!';
+}
 }
 	$id = clear_string($_GET["id"]);
 	$action = $_GET["action"];
@@ -42,9 +47,15 @@ if (isset($action))
 	switch ($action) {
 
 		case 'delete':
+		if ($_SESSION['delete_news'])
+		{
+
 
 		$delete = mysql_query("DELETE FROM news WHERE id = '$id'",$link);
-
+		}else
+		{
+			$msgerror = 'У вас нет прав на удаление новостей!';
+		}
 		break;
 
 	}
@@ -84,7 +95,8 @@ if (isset($action))
 			<p align="right" id="add-style"><a href="#news" class="news">Добавить новость</a></p>
 		</div>
 		<?php
-
+if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
+if ($message != "") echo $message;
 	$result = mysql_query("SELECT * FROM news ORDER BY id DESC",$link);
 
 	If (mysql_num_rows($result) > 0)

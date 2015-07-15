@@ -80,10 +80,16 @@ if (isset($action))
 	switch ($action) {
 
 		case 'delete':
+		if($_SESSION['delete_tovar'] == '1')
+		{
+
 
 			$delete = mysql_query("DELETE FROM table_products WHERE products_id = '$id'",$link);
 
-
+		}else
+		{
+			$msgerror = 'У вас нет прав на удаление товаров!';
+		}
 		break;
 	}
 }
@@ -169,7 +175,7 @@ if (isset($action))
 				<p id="count-style">Всего товаров - <strong><?php echo $all_count_result; ?></strong></p>
 				<p align="right" id="add-style" ><a href="add_product.php" >Добавить товар</a></p>
 			</div>
-			 <ul id="block-tovar">
+<ul id="block-tovar">
 <?php
 if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
 

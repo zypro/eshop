@@ -95,7 +95,12 @@ $no_buy_count_result = mysql_num_rows($no_buy_count);
 				</ul>
 			</div>
 <?php
+
+if ($_SESSION['view_orders'] == '1')
+{
+
 	$result = mysql_query("SELECT * FROM orders ORDER BY $sort",$link);
+
 
 If (mysql_num_rows($result) > 0)
 {
@@ -118,6 +123,10 @@ echo '
 </div>
 ';
 } while ($row = mysql_fetch_array($result));
+}
+}else
+{
+	echo '<p id="form-error" align="center">У вас нет прав на просмотр данного раздела!</p>';
 }
 ?>
 	</div>

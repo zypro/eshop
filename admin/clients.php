@@ -22,9 +22,15 @@ if (isset($action))
 	switch ($action) {
 
 		case 'delete':
+		if ($_SESSION['delete_clients'] == '1')
+		{
+
 
 		$delete = mysql_query("DELETE FROM reg_user WHERE id = '$id'",$link);
-
+		}else
+		{
+			$msgerror = 'У вас нет прав на удаление клиентов!';
+		}
 		break;
 
 	}
@@ -56,6 +62,9 @@ if (isset($action))
 		<?php
 
 $num = 4;
+if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
+	if ($_SESSION['view_clients'] == '1')
+	{
 
 	$page = strip_tags($_GET['page']);
 	$page = mysql_real_escape_string($page);
@@ -144,7 +153,13 @@ echo '
 </div>
 ';
 }
+		
+	}else
+	{
+		echo 'У вас нет прав на просмотр клиентов!';
+	}
 		?>
+
 	</div>
 	</div>
 </body>

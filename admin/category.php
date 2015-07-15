@@ -17,7 +17,8 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 
 	if ($_POST["submit_cat"])
 {
-
+	if ($_SESSION['add_category'] == '1')
+	{
 
 	$error = array();
 
@@ -39,6 +40,11 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 						)",$link);
 
 		$_SESSION['message'] = "<p id='form-success'>Категория успешно добавлена!</p>";
+	}
+
+	}else
+	{
+		$msgerror = 'У вас нет прав на добавление категорий!';
 	}
 }
 ?>
@@ -62,16 +68,24 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 				<p id="title-page">Категории</p>
 			</div>
 	<?php
+	if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
 		if(isset($_SESSION['message']))
 		{
 		echo $_SESSION['message'];
 		unset($_SESSION['message']);
 		}
 	?>
-			<form method="POST">
+			<form method="post">
 				<ul id="cat_products">
 					<li><label>Категории</label>
-					<div><a class="delete-cat">Удалить</a></div>
+<div>
+<?php
+	if ($_SESSION['delete_category'] == '1')
+	{
+		echo '<a class="delete-cat">Удалить</a>';
+	}
+?>
+</div>
 					<select name="cat_type" id="cat_type" size="10">
 <?php
 $result = mysql_query("SELECT * FROM category ORDER BY type DESC",$link);

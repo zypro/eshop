@@ -21,21 +21,28 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 	$action = clear_string($_GET["action"]);
 if (isset($action))
 {
-   switch ($action) {
+	switch ($action) {
 
-	    case 'delete':
+		case 'delete':
+		if ($_SESSION['edit_tovar'] == '1')
+		{
 
 		if (file_exists("../upload_images/".$_GET["img"]))
 	{
 		unlink("../upload_images/".$_GET["img"]);
 	}
+		}else
+		{
+			$msgerror = 'У вас нет прав на изменение товаров!';
+		}
 		break;
 	}
 	}
 
 		if ($_POST["submit_save"])
 	{
-
+		if ($_SESSION['edit_tovar'] == '1')
+		{
 $error = array();
 
 	// Проверка полей
@@ -108,6 +115,10 @@ $error = array();
 
 $_SESSION['message'] = "<p id='form-success'>Товар успешно изменен!</p>";
 }
+}else
+	{
+		$msgerror = 'У вас нет прав на изменение товаров!';
+	}
 }
 
 ?>
@@ -248,7 +259,6 @@ echo '
 }else
 {
 echo '
-
 <label class="stylelabel" >Основная картинка</label>
 <div id="baseimg-upload">
 	<input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
@@ -351,8 +361,14 @@ $height = 70;
 echo '
 <li id="del'.$result_img["id"].'">
 <img src="'.$img_path.'" width="'.$width.'" height="'.$height.'" title="'.$result_img["image"].'">
+';
+
+if ($_SESSION['edit_tovar'] == '1')
+{
+echo '
 <a class="del-img" img_id="'.$result_img["id"].'" ></a>
 ';
+}
 
 echo '</li>';
 }while ($result_img = mysql_fetch_array($query_img));
