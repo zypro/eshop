@@ -53,7 +53,7 @@
 		<p class="title-filter">Производители</p>
 		<ul class="checkboxbrand">
 		<?php 
-			$result = mysql_query("SELECT * FROM category WHERE type = 'mobile'",$link);
+			$result = mysql_query("SELECT * FROM category",$link);
 				if (mysql_num_rows($result) > 0)
 				{
 					$row = mysql_fetch_array($result);
