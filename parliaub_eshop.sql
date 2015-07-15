@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2015 г., 17:04
+-- Время создания: Июл 15 2015 г., 18:48
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -23,6 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `buy_products`
+--
+
+CREATE TABLE IF NOT EXISTS `buy_products` (
+  `buy_id` int(11) NOT NULL AUTO_INCREMENT,
+  `buy_id_order` int(11) NOT NULL,
+  `buy_id_product` int(11) NOT NULL,
+  `buy_count_product` int(11) NOT NULL,
+  PRIMARY KEY (`buy_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `buy_products`
+--
+
+INSERT INTO `buy_products` (`buy_id`, `buy_id_order`, `buy_id_product`, `buy_count_product`) VALUES
+(3, 3, 16, 1),
+(4, 3, 15, 1),
+(5, 4, 16, 1),
+(6, 4, 15, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `cart`
 --
 
@@ -34,14 +58,16 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `cart_datetime` datetime NOT NULL,
   `cart_ip` varchar(100) NOT NULL,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
 
 --
 -- Дамп данных таблицы `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_id_product`, `cart_price`, `cart_count`, `cart_datetime`, `cart_ip`) VALUES
-(54, 12, 566, 5, '2015-07-12 23:03:10', '91.231.255.246');
+(54, 12, 566, 5, '2015-07-12 23:03:10', '91.231.255.246'),
+(61, 16, 3242, 1, '2015-07-15 18:10:20', '127.0.0.1'),
+(62, 15, 3242, 1, '2015-07-15 18:10:21', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -95,6 +121,34 @@ INSERT INTO `news` (`id`, `title`, `text`, `date`) VALUES
 (6, 'цуаца', 'цацацац', '2015-07-15 15:33:01'),
 (7, 'ацацац', 'цацацуацауц цу\r\n цу\r\nа ц\r\nауц\r\nа\r\n \r\nца \r\nцуа', '2015-07-15 15:33:07'),
 (8, 'ацацац', 'цацацуацауц цу\r\n цу\r\nа ц\r\nауц\r\nа\r\n \r\nца \r\nцуа', '2015-07-15 15:33:42');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_datetime` datetime NOT NULL,
+  `order_confirmed` varchar(10) NOT NULL,
+  `order_dostavka` varchar(255) NOT NULL,
+  `order_pay` varchar(50) NOT NULL,
+  `order_type_pay` varchar(100) NOT NULL,
+  `order_fio` text NOT NULL,
+  `order_address` text NOT NULL,
+  `order_phone` varchar(50) NOT NULL,
+  `order_note` text NOT NULL,
+  `order_email` varchar(50) NOT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_datetime`, `order_confirmed`, `order_dostavka`, `order_pay`, `order_type_pay`, `order_fio`, `order_address`, `order_phone`, `order_note`, `order_email`) VALUES
+(4, '2015-07-15 18:16:55', 'yes', 'Самовывоз', '', '', 'fewfwf', 'wf', 'wfwfw', 'wfwfwfwfewfw', 'fewf@mail.ru');
 
 -- --------------------------------------------------------
 
