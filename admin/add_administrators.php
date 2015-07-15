@@ -94,8 +94,6 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 	<div id="block-body">
 	<?php
 		include 'include/block-header.php';
-		$all_client = mysql_query("SELECT * FROM reg_user",$link);
-		$result_count = mysql_num_rows($all_client);
 	?>
 	<div id="block-content">
 		<div id="block-parameters">

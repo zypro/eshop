@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2015 г., 16:28
+-- Время создания: Июл 15 2015 г., 17:04
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `reg_admin` (
 
 INSERT INTO `reg_admin` (`id`, `login`, `pass`, `fio`, `role`, `email`, `phone`, `view_orders`, `accept_orders`, `delete_orders`, `add_tovar`, `edit_tovar`, `delete_tovar`, `accept_reviews`, `delete_reviews`, `view_clients`, `delete_clients`, `add_news`, `delete_news`, `add_category`, `delete_category`, `view_admin`) VALUES
 (4, 'admin', '55tteerr07b432d25170b469b57095ca269bc202fw423fe', 'Rahimov Valijon Begovich', 'Vali', 'v-rahimov@mail.ru', '+992908990121', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(5, 'pwnz22', '55tteerr2994a44277b1de81ba8d4bc0de3614f4fw423fe', 'Rahimov Valijon Begovich', 'Admin', 'v-rahimov@mail.ru', '+992908990121', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+(5, 'pwnz222', '55tteerr550de3138dbd63002cd40d25bdb9cd18fw423fe', 'Rahimov Valijon Begovich', 'Administrator', 'v-rahimov@mail.ru22', '+99290899012122', 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
