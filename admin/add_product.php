@@ -186,15 +186,15 @@ $error = array();
 	<li>
 	<label>Тип товара</label>
 		<select name="form_type" id="type" size="1">
-			<option value="mobile" >Мобильные телефоны</option>
-			<option value="notebook" >Ноутбуки</option>
-			<option value="notepad" >Планшеты</option>
+			<option value="makeup">Макияж</option>
+			<option value="care">Уход</option>
+			<option value="hygiene">Гигиена</option>
 		</select>
 	</li>
 
 	<li>
 	<label>Категория</label>
-	<select name="form_category" size="10">
+	<select name="form_category" size="20">
 
 	<?php
 	$category = mysql_query("SELECT * FROM category",$link);
