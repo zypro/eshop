@@ -27,7 +27,7 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 	{
 	$pass = md5(clear_string($_POST["admin_pass"]));
 	$pass = strrev($pass);
-	$pass = "pass='".strtolower("55tteerr".$pass."fw423fe")."',";
+	$pass = "pass='";
 	}
 
 	if (!$_POST["admin_fio"]) $error[] = "Укажите ФИО!";
