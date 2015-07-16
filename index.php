@@ -66,7 +66,6 @@
 
 <?php
 	include 'include/block-category.php';
-	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>
 	</div>

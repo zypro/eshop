@@ -56,7 +56,7 @@
 				?>
 			</ul>
 		</li>
-					<li><a id="index3"><img src="/images/table-icon.gif" id="table-images"><strong>Мужчинам</strong></a>
+					<li><a id="index4"><img src="/images/table-icon.gif" id="table-images"><strong>Мужчинам</strong></a>
 			<ul class="category-section">
 				<li><a href="view_cat.php?type=mans"><strong>ДЕЗОДОРАНТЫ</strong></a></li>
 				<?php
