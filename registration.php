@@ -9,9 +9,9 @@ define('myeshop', true);
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="trackbar/trackbar.css">
+	<link rel="stylesheet" href="http://eshop/css/reset.css">
+	<link rel="stylesheet" href="http://eshop/css/style.css">
+	<link rel="stylesheet" href="http://eshop/trackbar/trackbar.css">
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jcarousellite_1.0.1.js"></script>
 	<script src="/js/eshop-script.js"></script>

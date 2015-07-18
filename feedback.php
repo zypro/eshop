@@ -42,9 +42,9 @@ $_SESSION['message'] = "<p id='form-success'>Ваше сообщение усп�
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="trackbar/trackbar.css" rel="stylesheet">
+    <link href="http://eshop/css/reset.css" rel="stylesheet">
+    <link href="http://eshop/css/style.css" rel="stylesheet">
+    <link href="http://eshop/trackbar/trackbar.css" rel="stylesheet">
 
     <script src="/js/jquery-1.8.2.min.js"></script>
     <script src="/js/jcarousellite_1.0.1.js"></script>
@@ -53,7 +53,7 @@ $_SESSION['message'] = "<p id='form-success'>Ваше сообщение усп�
     <script src="/trackbar/jquery.trackbar.js"></script>
     <script src="/js/TextChange.js"></script>
 
-	<title>Интернет Магазин Женской Косметики</title>
+	<title>Интернет Магазин</title>
 </head>
 <body>
 <div id="block-body">

@@ -15,7 +15,7 @@
 			<li>Ваш город - <span>Душанбе</span></li>
 			<li><a href="#">О нас</a></li>
 			<li><a href="#">Магазины</a></li>
-			<li><a href="feedback.php">Контакты</a></li>
+			<li><a href="http://eshop/feedback">Контакты</a></li>
 		</ul>
 
 <!-- Вход и Регистрация -->
@@ -25,7 +25,7 @@
 		echo '<p id="auth-user-info" align="right"><img src="/images/user.png">Здравствуйте, '.$_SESSION['auth_name'].'!</p>';
 	}else
 	{
-		echo '<p id="reg-auth-title" align="right"><a class="top-auth">Вход</a><a href="registration.php">Регистрация</a></p>';
+		echo '<p id="reg-auth-title" align="right"><a class="top-auth">Вход</a><a href="http://eshop/reg">Регистрация</a></p>';
 	}
 ?>
 		<div id="block-top-auth">
@@ -62,7 +62,7 @@
 	<div id="block-user">
 		<div class="corner2"></div>
 			<ul>
-				<li><img src="/images/user_info.png"><a href="profile.php">Профиль</a></li>
+				<li><img src="/images/user_info.png"><a href="http://eshop/profile.php">Профиль</a></li>
 				<li><img src="/images/logout.png"><a id="logout" >Выход</a></li>
 			</ul>
 	</div>
@@ -74,8 +74,7 @@
 <!-- Информационный блок -->
 
 				<div id="personal-info">
-					<p align="right">Звонок бесплатный</p>
-					<h3 align="right">908-990-121</h3>
+					<h3 align="right">93-743-43-03</h3>
 						<img src="/images/phone-icon.png">
 					<p align="right">Режим работы</p>
 					<p align="right">Будние дни</p>
@@ -99,10 +98,10 @@
 <!-- Меню -->
 <div id="top-menu">
 	<ul>
-		<li><img src="/images/shop.png"><a href="index.php">Главная</a></li>
-		<li><img src="/images/new-32.png"><a href="view_aystopper.php?go=news">Новинки</a></li>
-		<li><img src="/images/bestprice-32.png"><a href="view_aystopper.php?go=leaders">Лидеры продаж</a></li>
-		<li><img src="/images/sale-32.png"><a href="view_aystopper.php?go=sale">Распродажа</a></li>
+		<li><img src="/images/shop.png"><a href="http://eshop/index.php">Главная</a></li>
+		<li><img src="/images/new-32.png"><a href="http://eshop/view_aystopper.php?go=news">Новинки</a></li>
+		<li><img src="/images/bestprice-32.png"><a href="http://eshop/view_aystopper.php?go=leaders">Лидеры продаж</a></li>
+		<li><img src="/images/sale-32.png"><a href="http://eshop/view_aystopper.php?go=sale">Распродажа</a></li>
 	</ul>
 		<p align="right" id="block-basket"><img src="/images/cart-icon.png"><a href="cart.php?action=oneclick">Корзина пуста</a></p>
 	<div id="nav-line"></div>

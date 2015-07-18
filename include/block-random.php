@@ -17,7 +17,7 @@ $count_reviews = mysql_num_rows($query_reviews);
 
 if (strlen($res_query["image"]) > 0 && file_exists("./upload_images/".$res_query["image"]))
 {
-$img_path = './upload_images/'.$res_query["image"];
+$img_path = 'http://eshop/upload_images/'.$res_query["image"];
 $max_width = 120;
 $max_height = 120;
  list($width, $height) = getimagesize($img_path);

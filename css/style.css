@@ -108,7 +108,7 @@
 #personal-info {
 	width: 300px;
 	margin-left: 730px;
-	margin-top: 7px;
+	margin-top: 25px;
 }
 
 #personal-info p {
@@ -272,19 +272,33 @@
 	background-color: #eee;
 }
 
-#mobile-images {
+#makeup-images {
 	position: absolute;
 	margin-top: -3px;
-	margin-left: -26px;
+	margin-left: -30px;
 }
 
-#book-images {
+#mans-images {
+	position: absolute;
+	width: 23px;
+	height: 24px;
+	margin-top: -3px;
+	margin-left: -29px;
+}
+
+#care-images {
 	position: absolute;
 	margin-left: -30px;
 	margin-top: -2px;
 }
 
-#table-images {
+#kids-images {
+	position: absolute;
+	margin-left: -29px;
+	margin-top: -2px;
+}
+
+#hygiene-images {
 	position: absolute;
 	margin-left: -30px;
 }
