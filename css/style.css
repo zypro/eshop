@@ -272,19 +272,31 @@
 	background-color: #eee;
 }
 
-#mobile-images {
+#makeup-images {
 	position: absolute;
 	margin-top: -3px;
-	margin-left: -26px;
+	margin-left: -30px;
 }
 
-#book-images {
+#care-images {
 	position: absolute;
 	margin-left: -30px;
 	margin-top: -2px;
 }
 
-#table-images {
+#hygiene-images {
+	position: absolute;
+	margin-left: -30px;
+}
+
+#mans-images {
+	position: absolute;
+	margin-left: -30px;
+	width: 26px;
+	height: 22px;
+}
+
+#kids-images {
 	position: absolute;
 	margin-left: -30px;
 }

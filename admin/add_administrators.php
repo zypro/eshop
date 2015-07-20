@@ -50,6 +50,7 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 {
 	$pass = md5(clear_string($_POST["admin_pass"]));
 	$pass = strrev($pass);
+	$pass = strtolower("8md7udyd".$pass."2ui6z");
 
 					mysql_query("INSERT INTO reg_admin(login,pass,fio,role,email,phone,view_orders,accept_orders,delete_orders,add_tovar,edit_tovar,delete_tovar,accept_reviews,delete_reviews,view_clients,delete_clients,add_news,delete_news,add_category,delete_category,view_admin)
 						VALUES(

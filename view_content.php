@@ -156,7 +156,8 @@ $row = mysql_fetch_array($result);
 echo '
 <ul class="tabs">
 	<li><a class="active" href="#" >Описание</a></li>
-	<li><a href="#" >Характеристики</a></li>
+	<li><a href="#" >Как применять</a></li>
+	<li><a href="#" >Состав</a></li>
 	<li><a href="#" >Отзывы</a></li>
 </ul>
 <div class="tabs_content">
