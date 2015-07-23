@@ -228,7 +228,7 @@ if (isset($action))
 <?php
 if (isset($msgerror)) echo '<p id="form-error" align="center">'.$msgerror.'</p>';
 
-$num = 8;
+$num = 6;
 
 $page = (int)$_GET['page'];
 $count = mysql_query("SELECT COUNT(*) FROM table_products $cat",$link);

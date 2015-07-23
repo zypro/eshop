@@ -93,7 +93,7 @@ $int = $int + ($row["price"] * $row["cart_count"]);
 $itogpricecart = $int;
 }
 ?>
-<!DOCTYPE html">
+<!DOCTYPE html>
 
 <head>
 	<meta charset="utf-8">
@@ -112,13 +112,12 @@ $itogpricecart = $int;
 </head>
 <body>
 <div id="block-body">
-<?php	
+<?php
 	include 'include/block-header.php';
 ?>
 <div id="block-right">
 <?php
 	include 'include/block-category.php';
-	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>
 </div>

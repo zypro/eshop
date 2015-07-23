@@ -9,7 +9,7 @@ include '../functions/functions.php';
 	$name = clear_string($_POST['name']);
 	$good = clear_string($_POST['good']);
 	$bad = clear_string($_POST['bad']);
-	$comment =  iconv("UTF-8", "cp1251",clear_string($_POST['comment']));
+	$comment = clear_string($_POST['comment']);
 
 			mysql_query("INSERT INTO table_reviews(products_id,name,good_reviews,bad_reviews,comment,date)
 						VALUES(

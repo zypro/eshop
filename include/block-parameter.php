@@ -50,7 +50,7 @@
 		</div>
 
 		<div id="blocktrackbar"></div>
-		<p class="title-filter">Производители</p>
+		<!--<p class="title-filter">Производители</p>
 		<ul class="checkboxbrand">
 		<?php 
 			$result = mysql_query("SELECT * FROM category",$link);
@@ -72,7 +72,7 @@
 					while ($row = mysql_fetch_array($result));
 					}
 		 ?>
-		</ul>
+		</ul>-->
 		<center><input type="submit" name="submit" id="button-param-search" value=" "></center>
 		</form>
 </div>

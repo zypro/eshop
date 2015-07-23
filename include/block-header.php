@@ -74,12 +74,12 @@
 <!-- Информационный блок -->
 
 				<div id="personal-info">
-					<p align="right">Звонок бесплатный</p>
-					<h3 align="right">908-990-121</h3>
+					<!--<p align="right">Звонок бесплатный</p>-->
+					<h3 align="right">93-743-43-03</h3>
 						<img src="/images/phone-icon.png">
 					<p align="right">Режим работы</p>
-					<p align="right">Будние дни</p>
-					<p align="right">Воскресенье выходной</p>
+					<p align="right">Будние дни: 8 до 20</p>
+					<p align="right">Без выходных</p>
 						<img src="/images/time-icon.png">
 				</div>
 

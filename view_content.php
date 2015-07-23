@@ -162,6 +162,7 @@ echo '
 </ul>
 <div class="tabs_content">
 	<div>'.$row["description"].'</div>
+	<div>'.$row["how_to_use"].'</div>
 	<div>'.$row["features"].'</div>
 <div>
 	<p id="link-send-review" ><a class="send-review" href="#send-review">Написать отзыв</a></p>

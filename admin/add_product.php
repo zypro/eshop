@@ -79,7 +79,7 @@ $error = array();
 	}else
 	{
 
-						mysql_query("INSERT INTO table_products(title,short_title,price,brand,seo_words,seo_description,mini_description,description,mini_features,features,new,leader,sale,visible,type_tovara,brand_id)
+						mysql_query("INSERT INTO table_products(title,short_title,price,brand,seo_words,seo_description,mini_description,description,mini_features,features,how_to_use,new,leader,sale,visible,type_tovara,brand_id)
 						VALUES(
 								'".$_POST["form_title"]."',
 								'".$_POST["form_shorttitle"]."',
@@ -91,6 +91,7 @@ $error = array();
 								'".$_POST["txt2"]."',
 								'".$_POST["txt3"]."',
 								'".$_POST["txt4"]."',
+								'".$_POST["txt5"]."',
 								'".$chk_new."',
 								'".$chk_leader."',
 								'".$chk_sale."',
@@ -222,7 +223,7 @@ $error = array();
 <input type="file" name="upload_image">
 </div>
 
-<h3 class="h3click" >Краткое описание товара</h3>
+<h3 class="h3click" >Краткое описание товара (вид: Строка)</h3>
 <div class="div-editor1">
 <textarea id="editor1" name="txt1" cols="100" rows="20"></textarea>
 		<script type="text/javascript">
@@ -246,7 +247,7 @@ $error = array();
 		</script>
 </div>
 
-<h3 class="h3click" >Краткие характеристики</h3>
+<h3 class="h3click" >Краткие характеристики (вид: Блок)</h3>
 <div class="div-editor3" >
 <textarea id="editor3" name="txt3" cols="100" rows="20"></textarea>
 		<script type="text/javascript">
@@ -258,11 +259,23 @@ $error = array();
 		</script>
 </div>
 
-<h3 class="h3click" >Характеристики</h3>
+<h3 class="h3click" >Состав</h3>
 <div class="div-editor4" >
 <textarea id="editor4" name="txt4" cols="100" rows="20"></textarea>
 		<script type="text/javascript">
 			var ckeditor1 = CKEDITOR.replace( "editor4" );
+			AjexFileManager.init({
+				returnTo: "ckeditor",
+				editor: ckeditor1
+			});
+		</script>
+</div>
+
+<h3 class="h3click" >Как применять</h3>
+<div class="div-editor5" >
+<textarea id="editor5" name="txt5" cols="100" rows="20"></textarea>
+		<script type="text/javascript">
+			var ckeditor1 = CKEDITOR.replace( "editor5" );
 			AjexFileManager.init({
 				returnTo: "ckeditor",
 				editor: ckeditor1

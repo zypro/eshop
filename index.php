@@ -66,6 +66,7 @@
 
 <?php
 	include 'include/block-category.php';
+	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>
 	</div>
@@ -153,7 +154,7 @@
 				</ul>
 				<ul id="block-tovar-list">
 			<?php
-				$num = 6;
+				$num = 8;
 	$page = (int)$_GET['page'];
 	$count = mysql_query("SELECT COUNT(*) FROM table_products WHERE visible = '1'",$link);
 	$temp = mysql_fetch_array($count);

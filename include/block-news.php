@@ -2,6 +2,7 @@
 	defined('myeshop') or die('Доступ запрещён!');
 ?>
 <div id="block-news">
+	<p class="header-title">Новости</p>
 	<center><img src="/images/img-prev.png" id="news-prev"></center>
 	<div id="newsticker">
 		<ul>

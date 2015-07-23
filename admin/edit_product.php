@@ -110,7 +110,7 @@ $error = array();
 
 	}else
 	{
-	$querynew = "title='{$_POST["form_title"]}',short_title='{$_POST["form_shorttitle"]}',price='{$_POST["form_price"]}',brand='$selectbrand',seo_words='{$_POST["form_seo_words"]}',seo_description='{$_POST["form_seo_description"]}',mini_description='{$_POST["txt1"]}',description='{$_POST["txt2"]}',mini_features='{$_POST["txt3"]}',features='{$_POST["txt4"]}',new='$chk_new',leader='$chk_leader',sale='$chk_sale',visible='$chk_visible',type_tovara='{$_POST["form_type"]}',brand_id='{$_POST["form_category"]}'";
+	$querynew = "title='{$_POST["form_title"]}',short_title='{$_POST["form_shorttitle"]}',price='{$_POST["form_price"]}',brand='$selectbrand',seo_words='{$_POST["form_seo_words"]}',seo_description='{$_POST["form_seo_description"]}',mini_description='{$_POST["txt1"]}',description='{$_POST["txt2"]}',mini_features='{$_POST["txt3"]}',features='{$_POST["txt4"]}',how_to_use='{$_POST["txt5"]}',new='$chk_new',leader='$chk_leader',sale='$chk_sale',visible='$chk_visible',type_tovara='{$_POST["form_type"]}',brand_id='{$_POST["form_category"]}'";
 	$update = mysql_query("UPDATE table_products SET $querynew WHERE products_id = '$id'",$link);
 
 $_SESSION['message'] = "<p id='form-success'>Товар успешно изменен!</p>";
@@ -272,7 +272,7 @@ echo '
 }
 
 echo '
-<h3 class="h3click" >Краткое описание товара</h3>
+<h3 class="h3click" >Краткое описание товара (вид: Строка)</h3>
 <div class="div-editor1" >
 <textarea id="editor1" name="txt1" cols="100" rows="20">'.$row["mini_description"].'</textarea>
 		<script type="text/javascript">
@@ -296,7 +296,7 @@ echo '
 		</script>
 </div>
 
-<h3 class="h3click" >Краткие характеристики</h3>
+<h3 class="h3click" >Краткие характеристики (вид: Блок)</h3>
 <div class="div-editor3" >
 <textarea id="editor3" name="txt3" cols="100" rows="20">'.$row["mini_features"].'</textarea>
 		<script type="text/javascript">
@@ -308,11 +308,23 @@ echo '
 		</script>
 </div>
 
-<h3 class="h3click" >Характеристики</h3>
+<h3 class="h3click" >Состав</h3>
 <div class="div-editor4" >
 <textarea id="editor4" name="txt4" cols="100" rows="20">'.$row["features"].'</textarea>
 		<script type="text/javascript">
 			var ckeditor1 = CKEDITOR.replace( "editor4" );
+			AjexFileManager.init({
+				returnTo: "ckeditor",
+				editor: ckeditor1
+			});
+		</script>
+</div>
+
+<h3 class="h3click" >Как применять</h3>
+<div class="div-editor5" >
+<textarea id="editor5" name="txt5" cols="100" rows="20">'.$row["how_to_use"].'</textarea>
+		<script type="text/javascript">
+			var ckeditor1 = CKEDITOR.replace( "editor5" );
 			AjexFileManager.init({
 				returnTo: "ckeditor",
 				editor: ckeditor1
