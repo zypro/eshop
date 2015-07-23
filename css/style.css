@@ -1955,3 +1955,51 @@ div.tabs_content > div {padding:10px;}
 #feedback input:focus,#feedback textarea:focus {
 	border: 1px solid #c4e1eb;
 }
+
+.jssora03l, .jssora03r {
+	display: block;
+	position: absolute;
+	/* size of arrow element */
+	width: 55px;
+	height: 55px;
+	cursor: pointer;
+	background: url(/img/a03.png) no-repeat;
+	overflow: hidden;
+}
+.jssora03l { background-position: -3px -33px; }
+.jssora03r { background-position: -63px -33px; }
+.jssora03l:hover { background-position: -123px -33px; }
+.jssora03r:hover { background-position: -183px -33px; }
+.jssora03l.jssora03ldn { background-position: -243px -33px; }
+.jssora03r.jssora03rdn { background-position: -303px -33px; }
+
+.slider {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 800px;
+	height: 350px;
+	margin-bottom: 20px;
+}
+
+.slider1 {
+	cursor: move;
+	position: absolute;
+	left: 0px; top: 0px;
+	width: 800px;
+	height: 350px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.banners img {
+	margin-bottom: 50px;
+	width: 221px;
+	height: 149px;
+}
+
+.banners1 img {
+	margin-bottom: 20px;
+	width: 221px;
+	height: 149px;
+}

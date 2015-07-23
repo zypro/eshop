@@ -53,6 +53,7 @@
 	<script src="/js/jquery.cookie.min.js"></script>
 	<script src="/trackbar/jquery.trackbar.js"></script>
 	<script src="/js/TextChange.js"></script>
+	<script src="/js/jssor.slider.mini.js"></script>
 	<title>Интернет магазин Косметики</title>
 </head>
 <body>
@@ -63,7 +64,10 @@
 ?>
 
 	<div id="block-right">
-
+<div id="banner">
+	<a href="#" class="banners"><img src="/img/action-shop-1.png"></a>
+	<a href="#" class="banners1"><img src="/img/action-shop-3.png"></a>
+</div>
 <?php
 	include 'include/block-category.php';
 	include 'include/block-parameter.php';
@@ -71,6 +75,7 @@
 ?>
 	</div>
 		<div id="block-content">
+		<?php include 'include/slider.php'; ?>
 			<div id="block-sorting">
 				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
 				<ul id="options-list">
