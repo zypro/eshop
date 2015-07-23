@@ -151,8 +151,8 @@
 }
 
 #block-search input#input-search {
-	width: 250px;
-	height: 26px;
+	width: 285px;
+	height: 30px;
 	border: 1px solid #e1e1e2;
 	font: 14px sans-serif;
 	padding-left: 25px;
@@ -172,7 +172,7 @@
 	background: url(/images/grd-button-search-hover.png);
 }
 
-#top-menu {
+/*#top-menu {
 	width: 1033px;
 	height: 45px;
 	margin-top: 5px;
@@ -199,6 +199,14 @@
 #top-menu img {
 	float: left;
 	margin-top: -7px;
+}*/
+
+#top-menu {
+	margin-bottom: 10px;
+}
+
+#top-menu a {
+	text-decoration: none;
 }
 
 #block-basket {
@@ -242,7 +250,7 @@
 }
 
 .header-title {
-	width: 210px;
+	width: 222px;
 	font: 14px sans-serif;
 	margin-top: 0;
 	padding: 7px 0 7px 10px;
@@ -513,7 +521,7 @@
 }
 
 #block-sorting {
-	height: 60px;
+	height: 55px;
 	border-bottom: 1px solid #eeeeee;
 }
 
@@ -658,6 +666,7 @@
 
 #block-tovar-list {
 	display: none;
+	margin-top: 28px;
 }
 
 #block-tovar-list > li {
@@ -2003,3 +2012,4 @@ div.tabs_content > div {padding:10px;}
 	width: 221px;
 	height: 149px;
 }
+

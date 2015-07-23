@@ -98,12 +98,11 @@
 </div>
 <!-- Меню -->
 <div id="top-menu">
-	<ul>
-		<li><img src="/images/shop.png"><a href="index.php">Главная</a></li>
-		<li><img src="/images/new-32.png"><a href="view_aystopper.php?go=news">Новинки</a></li>
-		<li><img src="/images/bestprice-32.png"><a href="view_aystopper.php?go=leaders">Лидеры продаж</a></li>
-		<li><img src="/images/sale-32.png"><a href="view_aystopper.php?go=sale">Распродажа</a></li>
-	</ul>
-		<p align="right" id="block-basket"><img src="/images/cart-icon.png"><a href="cart.php?action=oneclick">Корзина пуста</a></p>
-	<div id="nav-line"></div>
+<ul class="nav nav-tabs">
+	<li role="presentation" class="active"><a href="index.php">Главная</a></li>
+	<li role="presentation"><a href="view_aystopper.php?go=news">Новинки</a></li>
+	<li role="presentation"><a href="view_aystopper.php?go=leaders">Лидеры продаж</a></li>
+	<li role="presentation"><a href="view_aystopper.php?go=sale">Распродажа</a></li>
+	<p align="right" id="block-basket"><img src="/images/cart-icon.png"><a href="cart.php?action=oneclick">Корзина пуста</a></p>
+</ul>
 </div>
