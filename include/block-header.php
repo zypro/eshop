@@ -1,6 +1,9 @@
 <?php
 	defined('myeshop') or die ('Доступ запрещён!');
+	$page = $_GET["go"];
+	$index = $_GET["php"];
 ?>
+
 <!-- Основной блок -->
 
 <div id="block-header">
@@ -99,10 +102,10 @@
 <!-- Меню -->
 <div id="top-menu">
 <ul class="nav nav-tabs">
-	<li role="presentation" class="active"><a href="index.php">Главная</a></li>
-	<li role="presentation"><a href="view_aystopper.php?go=news">Новинки</a></li>
-	<li role="presentation"><a href="view_aystopper.php?go=leaders">Лидеры продаж</a></li>
-	<li role="presentation"><a href="view_aystopper.php?go=sale">Распродажа</a></li>
+	<li role="presentation"><a href="index.php"><img src="/images/shop.png">Главная</a></li>
+	<li role="presentation"<? if ($page=='news') {echo 'class="active"';}?>><a href="view_aystopper.php?go=news"><img src="/images/new-32.png">Новинки</a></li>
+	<li role="presentation"<? if ($page=='leaders') {echo 'class="active"';}?>><a href="view_aystopper.php?go=leaders"><img src="/images/bestprice-32.png">Лидеры продаж</a></li>
+	<li role="presentation"<? if ($page=='sale') {echo 'class="active"';}?>><a href="view_aystopper.php?go=sale"><img src="/images/sale-32.png">Распродажа</a></li>
 	<p align="right" id="block-basket"><img src="/images/cart-icon.png"><a href="cart.php?action=oneclick">Корзина пуста</a></p>
 </ul>
 </div>

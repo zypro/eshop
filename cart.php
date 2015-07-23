@@ -98,6 +98,7 @@ $itogpricecart = $int;
 <head>
 	<meta charset="utf-8">
 	<link href="css/reset.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="trackbar/trackbar.css" rel="stylesheet">
 

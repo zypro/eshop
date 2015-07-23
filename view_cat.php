@@ -45,6 +45,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="trackbar/trackbar.css">
 	<script src="/js/jquery-1.8.2.min.js"></script>
