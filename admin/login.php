@@ -11,11 +11,12 @@ If ($_POST["submit_enter"])
 
  if ($login && $pass)
 {
-		/*$pass = md5($pass);
-		$pass = strrev($pass);
-		$pass = strtolower("8md7udyd".$pass."2ui6z");
+		/*
 	$pass = md5($pass);
 	$pass = strrev($pass);*/
+		$pass = md5($pass);
+		$pass = strrev($pass);
+		$pass = strtolower("8md7udyd".$pass."2ui6z");
 
 
 	$result = mysql_query("SELECT * FROM reg_admin WHERE login = '$login' AND pass = '$pass'",$link);

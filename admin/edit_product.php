@@ -200,18 +200,22 @@ If (mysql_num_rows($category) > 0)
 {
 $result_category = mysql_fetch_array($category);
 
-if ($row["type_tovara"] == "mobile") $type_mobile = "selected";
-if ($row["type_tovara"] == "notebook") $type_notebook = "selected";
-if ($row["type_tovara"] == "notepad") $type_notepad = "selected";
+if ($row["type_tovara"] == "makeup") $type_makeup = "selected";
+if ($row["type_tovara"] == "care") $type_care = "selected";
+if ($row["type_tovara"] == "hygiene") $type_hygiene = "selected";
+if ($row["type_tovara"] == "mans") $type_mans = "selected";
+if ($row["type_tovara"] == "kids") $type_kids = "selected";
 
 echo '
 <li>
 <label>Тип товара</label>
 
 <select name="form_type" id="type" size="1" >
-	<option '.$type_mobile.' value="mobile" >Мобильные телефоны</option>
-	<option '.$type_notebook.' value="notebook" >Ноутбуки</option>
-	<option '.$type_notepad.' value="notepad" >Планшеты</option>
+	<option '.$type_makeup.' value="makeup" >Макияж</option>
+	<option '.$type_care.' value="care" >Уход</option>
+	<option '.$type_hygiene.' value="hygiene" >Гигиена</option>
+	<option '.$type_mans.' value="mans" >Мужчинам</option>
+	<option '.$type_kids.' value="kids" >Детям</option>
 </select>
 
 </li>

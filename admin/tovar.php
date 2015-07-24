@@ -30,30 +30,49 @@ if (isset($cat))
 
 		break;
 
-		case 'mobile':
+		case 'makeup':
 
-		$cat_name = 'Мобильные телефоны';
-		$url = "cat=mobile&";
-		$cat = "WHERE type_tovara='mobile'";
-
-		break;
-
-		case 'notebook':
-
-		$cat_name = 'Ноутбуки';
-		$url = "cat=notebook&";
-		$cat = "WHERE type_tovara='notebook'";
+		$cat_name = 'Макияж';
+		$url = "cat=makeup&";
+		$cat = "WHERE type_tovara='makeup'";
 
 		break;
 
-		case 'notepad':
+		case 'care':
 
-		$cat_name = 'Планшеты';
-		$url = "cat=notepad&";
-		$cat = "WHERE type_tovara='notepad'";
+		$cat_name = 'Уход';
+		$url = "cat=care&";
+		$cat = "WHERE type_tovara='care'";
+
+		break;
+
+		case 'hygiene':
+
+		$cat_name = 'Гигиена';
+		$url = "cat=hygiene&";
+		$cat = "WHERE type_tovara='hygiene'";
 
 
 		break;
+
+		case 'mans':
+
+		$cat_name = 'Мужчинам';
+		$url = "cat=mans&";
+		$cat = "WHERE type_tovara='mans'";
+
+
+		break;
+
+		case 'kids':
+
+		$cat_name = 'Детям';
+		$url = "cat=kids&";
+		$cat = "WHERE type_tovara='kids'";
+
+
+		break;
+
 
 		default:
 
@@ -121,10 +140,10 @@ if (isset($action))
 	<div id="list-links" >
 		<ul>
 		<li><a href="tovar.php?cat=all"><strong>Все товары</strong></a></li>
-		<li><a href="tovar.php?cat=mobile"><strong>Телефоны</strong></a></li>
+		<li><a href="tovar.php?cat=makeup"><strong>Макияж</strong></a></li>
 		<?php
 
-		$result1 = mysql_query("SELECT * FROM category WHERE type='mobile'",$link);
+		$result1 = mysql_query("SELECT * FROM category WHERE type='makeup'",$link);
 		If (mysql_num_rows($result1) > 0)
 		{
 		$row1 = mysql_fetch_array($result1);
@@ -138,9 +157,9 @@ if (isset($action))
 		?>
 		</ul>
 		<ul>
-		<li><a href="tovar.php?cat=notebook"><strong>Ноутбуки</strong></a></li>
+		<li><a href="tovar.php?cat=care"><strong>Уход</strong></a></li>
 		<?php
-		$result1 = mysql_query("SELECT * FROM category WHERE type='notebook'",$link);
+		$result1 = mysql_query("SELECT * FROM category WHERE type='care'",$link);
 		If (mysql_num_rows($result1) > 0)
 		{
 		$row1 = mysql_fetch_array($result1);
@@ -154,9 +173,39 @@ if (isset($action))
 		?>
 		</ul>
 		<ul>
-		<li><a href="tovar.php?cat=notepad"><strong>Планшеты</strong></a></li>
+		<li><a href="tovar.php?cat=hygiene"><strong>Гигиена</strong></a></li>
 		<?php
-		$result1 = mysql_query("SELECT * FROM category WHERE type='notepad'",$link);
+		$result1 = mysql_query("SELECT * FROM category WHERE type='hygiene'",$link);
+		If (mysql_num_rows($result1) > 0)
+		{
+		$row1 = mysql_fetch_array($result1);
+		do
+		{
+		echo '<li><a href="tovar.php?type='.$row1["type"].'&cat='.$row1["brand"].'">'.$row1["brand"].'</a></li>';
+		} while ($row1 = mysql_fetch_array($result1));
+		}
+		?>
+		</ul>
+
+		<ul>
+		<li><a href="tovar.php?cat=mans"><strong>Мужчинам</strong></a></li>
+		<?php
+		$result1 = mysql_query("SELECT * FROM category WHERE type='mans'",$link);
+		If (mysql_num_rows($result1) > 0)
+		{
+		$row1 = mysql_fetch_array($result1);
+		do
+		{
+		echo '<li><a href="tovar.php?type='.$row1["type"].'&cat='.$row1["brand"].'">'.$row1["brand"].'</a></li>';
+		} while ($row1 = mysql_fetch_array($result1));
+		}
+		?>
+		</ul>
+
+		<ul>
+		<li><a href="tovar.php?cat=kids"><strong>Детям</strong></a></li>
+		<?php
+		$result1 = mysql_query("SELECT * FROM category WHERE type='kids'",$link);
 		If (mysql_num_rows($result1) > 0)
 		{
 		$row1 = mysql_fetch_array($result1);

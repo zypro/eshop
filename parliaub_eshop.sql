@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2015 г., 19:12
+-- Время создания: Июл 20 2015 г., 15:56
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -61,15 +61,14 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `cart_datetime` datetime NOT NULL,
   `cart_ip` varchar(100) NOT NULL,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
 
 --
 -- Дамп данных таблицы `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_id_product`, `cart_price`, `cart_count`, `cart_datetime`, `cart_ip`) VALUES
-(54, 12, 566, 5, '2015-07-12 23:03:10', '91.231.255.246'),
-(63, 11, 988, 1, '2015-07-15 19:05:35', '127.0.0.1');
+(54, 12, 566, 5, '2015-07-12 23:03:10', '91.231.255.246');
 
 -- --------------------------------------------------------
 
@@ -82,20 +81,91 @@ CREATE TABLE IF NOT EXISTS `category` (
   `type` varchar(100) NOT NULL,
   `brand` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
 
 --
 -- Дамп данных таблицы `category`
 --
 
 INSERT INTO `category` (`id`, `type`, `brand`) VALUES
-(1, 'mobile', 'Apple'),
-(2, 'mobile', 'Samsung'),
-(3, 'notebook', 'Asus'),
-(4, 'notebook', 'Acer'),
-(6, 'mobile', 'Sony'),
-(7, 'mobile', 'LG'),
-(8, '', '');
+(8, 'makeup', 'Тушь для ресниц'),
+(9, 'makeup', 'Карандаши, подводка'),
+(10, 'makeup', 'Тени для век'),
+(11, 'makeup', 'Для губ'),
+(12, 'makeup', 'Помады'),
+(13, 'makeup', 'Карандаши'),
+(14, 'makeup', 'Блески'),
+(16, 'makeup', 'Бальзамы'),
+(17, 'makeup', 'Для лица'),
+(18, 'makeup', 'Пудра'),
+(19, 'makeup', 'Румяна'),
+(20, 'makeup', 'Тональные кремы'),
+(21, 'makeup', 'Корректор'),
+(22, 'makeup', 'База для макияжа'),
+(23, 'makeup', 'Для ногтей'),
+(24, 'makeup', 'Лак для ногтей'),
+(25, 'makeup', 'База, сушка, корректор'),
+(26, 'makeup', 'Средства для снятия лака'),
+(27, 'makeup', 'Средства для ухода'),
+(28, 'makeup', 'Пилки для ногтей'),
+(29, 'care', 'Кремы дневные'),
+(30, 'care', 'Кремы ночные'),
+(31, 'care', 'Средства для век и ресниц'),
+(32, 'care', 'Бальзамы для губ'),
+(33, 'care', 'Очищение, тоники'),
+(34, 'care', 'Скрабы, пилинги'),
+(35, 'care', 'Маски для лица'),
+(36, 'care', 'Сыворотки, концентраты'),
+(37, 'care', 'Аксессуары'),
+(38, 'care', 'Уход за волосами'),
+(39, 'care', 'Шампуни'),
+(40, 'care', 'Бальзамы, маски'),
+(41, 'care', 'Краска для волос'),
+(42, 'care', 'Специальны уход'),
+(43, 'care', 'Средства для укладки'),
+(44, 'care', 'Уход за телом'),
+(45, 'care', 'Гели для душа'),
+(46, 'care', 'Пенна для ванны'),
+(47, 'care', 'Кремы, молочко'),
+(48, 'care', 'Спреи для тела'),
+(49, 'care', 'Скрабы'),
+(50, 'care', 'Коррекция фигуры'),
+(51, 'care', 'Мыло '),
+(52, 'care', 'Дезодаранты'),
+(53, 'care', 'Уход за руками'),
+(54, 'care', 'Кремы для рук'),
+(55, 'care', 'Уход за ногтями'),
+(56, 'care', 'Кремы, гели, спреи'),
+(57, 'hygiene', 'Зубные пасты'),
+(58, 'hygiene', 'Ополаскиватели, спреи'),
+(59, 'hygiene', 'Зубные щетки'),
+(60, 'hygiene', 'Для душа и ванны'),
+(61, 'hygiene', 'Гели для душа'),
+(62, 'hygiene', 'Пена для ванны'),
+(63, 'hygiene', 'Мыло'),
+(64, 'hygiene', 'Дезодаранты'),
+(65, 'hygiene', 'Шариковые'),
+(66, 'hygiene', 'Спреи'),
+(67, 'hygiene', 'Интимная гигиена'),
+(68, 'hygiene', 'Гели, лубриканты'),
+(69, 'hygiene', 'Салфетки, прокладки'),
+(70, 'mans', 'Шариковые'),
+(71, 'mans', 'Спреи'),
+(72, 'mans', 'Для и после бритья'),
+(73, 'mans', 'Пена для бритья'),
+(74, 'mans', 'Средства после бритья'),
+(75, 'mans', 'Уход за лицом'),
+(76, 'mans', 'Очищение'),
+(77, 'mans', 'Уход за телом и волосами'),
+(78, 'mans', 'Шампуни, бальзамы'),
+(79, 'mans', 'Гели для душа'),
+(80, 'kids', 'Для губ'),
+(81, 'kids', 'Для кожи'),
+(82, 'kids', 'Защита от солнца'),
+(83, 'kids', 'Салфетки'),
+(84, 'kids', 'Для ванны и душа'),
+(85, 'kids', 'Для зубов'),
+(86, 'kids', 'Для ногтей');
 
 -- --------------------------------------------------------
 
@@ -119,10 +189,7 @@ INSERT INTO `news` (`id`, `title`, `text`, `date`) VALUES
 (1, 'News 1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 03:12:34'),
 (2, 'News 2', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 03:07:03'),
 (3, 'News 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 02:23:16'),
-(4, 'News 4', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 04:19:21'),
-(6, 'цуаца', 'цацацац', '2015-07-15 15:33:01'),
-(7, 'ацацац', 'цацацуацауц цу\r\n цу\r\nа ц\r\nауц\r\nа\r\n \r\nца \r\nцуа', '2015-07-15 15:33:07'),
-(8, 'ацацац', 'цацацуацауц цу\r\n цу\r\nа ц\r\nауц\r\nа\r\n \r\nца \r\nцуа', '2015-07-15 15:33:42');
+(4, 'News 4', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in eius, numquam quae expedita, ipsam vel eveniet id porro dignissimos, ipsa animi dolore tempora pariatur repellendus quaerat quisquam facilis esse.', '2015-07-06 04:19:21');
 
 -- --------------------------------------------------------
 
@@ -144,14 +211,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_email` varchar(50) NOT NULL,
   PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
---
--- Дамп данных таблицы `orders`
---
-
-INSERT INTO `orders` (`order_id`, `order_datetime`, `order_confirmed`, `order_dostavka`, `order_pay`, `order_type_pay`, `order_fio`, `order_address`, `order_phone`, `order_note`, `order_email`) VALUES
-(5, '2015-07-15 19:03:24', '', 'Самовывоз', '', '', 'fewfwf', 'wf', 'wfwfw', 'wfwfwfwfewfw', 'fewf@mail.ru'),
-(6, '2015-07-15 19:05:53', 'yes', 'По почте', '', '', 'fewfwf', 'wefwf', 'efw', 'wfwfwfwfewfw', 'fewf@mail.ru');
 
 -- --------------------------------------------------------
 
@@ -183,15 +242,14 @@ CREATE TABLE IF NOT EXISTS `reg_admin` (
   `delete_category` int(11) NOT NULL DEFAULT '0',
   `view_admin` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `reg_admin`
 --
 
 INSERT INTO `reg_admin` (`id`, `login`, `pass`, `fio`, `role`, `email`, `phone`, `view_orders`, `accept_orders`, `delete_orders`, `add_tovar`, `edit_tovar`, `delete_tovar`, `accept_reviews`, `delete_reviews`, `view_clients`, `delete_clients`, `add_news`, `delete_news`, `add_category`, `delete_category`, `view_admin`) VALUES
-(4, 'admin', '55tteerr07b432d25170b469b57095ca269bc202fw423fe', 'Rahimov Valijon Begovich', 'Vali', 'v-rahimov@mail.ru', '+992908990121', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(5, 'pwnz222', '55tteerr550de3138dbd63002cd40d25bdb9cd18fw423fe', 'Rahimov Valijon Begovich', 'Administrator', 'v-rahimov@mail.ru22', '+99290899012122', 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1);
+(6, 'pwnz22', '8md7udyd2994a44277b1de81ba8d4bc0de3614f42ui6z', 'Rahimov Valijon Begovich', 'Администратор', 'v-rahimov@mail.ru', '+992908990121', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -249,28 +307,16 @@ CREATE TABLE IF NOT EXISTS `table_products` (
   `yes_like` int(11) NOT NULL DEFAULT '1',
   `short_title` varchar(50) NOT NULL,
   PRIMARY KEY (`products_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Дамп данных таблицы `table_products`
 --
 
 INSERT INTO `table_products` (`products_id`, `title`, `price`, `brand`, `seo_words`, `seo_description`, `mini_description`, `mini_features`, `image`, `description`, `features`, `datetime`, `new`, `leader`, `sale`, `visible`, `count`, `type_tovara`, `brand_id`, `yes_like`, `short_title`) VALUES
-(1, 'Мобильный телефон Samsung Galaxy S6 32Gb (черно-синий)', 39934, 'Samsung', '', '', 'Производитель : Samsung Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас Сканер отпечатков пальцев : да Срок ', 'Производитель : Samsung\nДатчики   : G-сенсор   , датчик освещенности   , датчик приближения   , цифровой компас  \nСканер отпечатков пальцев : да\nСрок гарантии : 1 год\nДополнительно : Быстрая зарядка (десять ', 'img1.jpg', '', '0', '2015-07-03 03:16:32', 0, 0, 0, 1, 1, 'mobile', 2, 1, 'Samsung Galaxy S6 32Gb '),
-(2, 'Мобильный телефон Apple iPhone 4S 8Gb (черный) ', 3551, 'Apple', '', '', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', 'Производитель : Apple\nДатчики   : G-сенсор   , датчик освещенности   , датчик приближения   , цифровой компас  \n', 'img2.jpg', '', '', '2015-07-03 04:09:12', 1, 0, 0, 1, 2, 'mobile', 1, 1, 'Apple iPhone 4S 8Gb'),
-(3, 'Мобильный телефон LG Leon (титан) ', 7991, 'LG', '', '', '4-ЯДЕРНЫЙ ПРОЦЕССОР 1,3 ГГЦ \r\n\r\nВозможности 4-ядерного процессора помогут вам решить все необходимые задачи в течение дня. Испытайте его скорость работы в многофункциональном режиме. ', 'Wi-Fi (802.11)   : b, g   , n  \r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : microUSB', 'img3.jpg', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', '', '2015-07-07 07:00:00', 0, 0, 0, 1, 1, 'mobile', 7, 1, ' LG Leon (титан) '),
-(4, 'Мобильный телефон Apple iPhone 5s 16Gb как новый (золотистый)', 788, 'Apple', '', '', 'Это ранее использованные изделия Apple, которые проходят заводскую процедуру восстановления, замены корпуса и экрана, прежде чем обрести нового владельца. Все изделия проходят строжайшую процедуру реставрации компанией Apple, упакованы в новую коробку с новым зарядным устройством и наушниками. Вы можете ожидать значительную экономию, полностью функциональное устройство с полным комплектом документации, гарантию производителя 1 год. ', 'Bluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n  \r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да', 'img5.jpg', '', '', '2015-07-07 06:00:00', 0, 0, 0, 1, 1, 'mobile', 1, 1, 'Apple iPhone 5s 16Gb '),
-(5, 'Мобильный телефон Sony Xperia Z1 Compact (черный)', 988, 'Sony', '', '', 'Sony Xperia Z1 Compact сочетает в себе функциональность смартфона премиум-класса с красотой исполнения, идеально умещаясь в ладони. При условии, что все порты и крышки закрыты, устройство целых полчаса без проблем может снимать первоклассные фото и видео на глубине до 1,5 метра. ', 'Модем   : да\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img4.jpg', '', '', '2015-07-07 04:11:52', 0, 0, 0, 1, 0, 'mobile', 6, 1, ''),
-(7, 'Мобильный телефон Sony Xperia E4g LTE (черный) ', 899, 'Sony', '', '', 'Благодаря тонкому и продуманному до мелочей дизайну Sony Xperia E4g удобен в использовании и комфортно лежит в ладони. А высокое качество исполнения, которым отличаются все продукты Sony, делают этот 4G-смартфон неподвластным времени. ', 'Wi-Fi (802.11)   : да\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img7.jpg', '', '', '2015-07-07 07:19:20', 0, 0, 0, 1, 1, 'mobile', 6, 1, ''),
-(8, 'Мобильный телефон Sony Xperia Z2 (черный)', 988, 'Sony', '', '', 'Водонепроницаемый смартфон Sony Xperia Z2 выполнен в цельном корпусе из алюминия со стеклянными панелями. Благодаря идеально сбалансированному дизайну изображение на Full HD дисплее с диагональю 5,2 дюйма отлично выглядит под любым углом. Основная камера с 20,7 Мп матрицей, которая на 30% крупнее использующихся в смартфонах, по качеству съемки выходит на уровень компактных цифровых камер Sony и, более того, способна снимать видео в формате 4К, то есть в четыре раза четче, чем Full HD. ', 'Модем   : да\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nUSB-хост   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img8.jpg', '', '', '2015-07-07 04:14:17', 0, 0, 0, 1, 1, 'mobile', 6, 1, 'Sony Xperia Z2 '),
-(9, 'Мобильный телефон Sony Xperia Z3 Dual (белый)', 545, 'Sony', '', '', 'Водонепроницаемый двухсимочный смартфон Sony Xperia Z3 Dual воплотил в себе изящество дизайна и мощь высоких технологий. Новое творение Sony доказывает: красота долговечна. Ведь ультратонкий алюминиевый каркас с закругленными краями, панели из прочного закаленного стекла и эксклюзивный дизайн кнопки питания придают новому премиум-смартфону престижный элегантный вид. Но внешний вид – это еще не все, не так ли? Именно поэтому в Sony позаботились о сбалансированном симметричном дизайне, чтобы устройство идеально ложилось в руку. А благодаря простому и удобному интерфейсу пользоваться этим смартфоном удивительно комфортно. ', 'Bluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nUSB-хост   : да\r\nРазъем для синхронизации : microUSB\r\nNFC   : да', 'img9.jpg', '', '', '2015-07-07 04:11:14', 0, 0, 0, 1, 7, 'mobile', 6, 1, 'Sony Xperia Z3 Dual'),
-(10, 'Мобильный телефон Apple iPhone 6 16GB (темно-серый)', 899, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Доступ в Интернет   : GPRS   , EDGE   , 3G   , 4G\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да\r\nNFC   : да', 'img10.jpg', '', '', '2015-07-07 07:21:35', 0, 0, 0, 1, 2, 'mobile', 1, 1, ''),
-(11, 'Мобильный телефон Apple iPhone 6 64GB (золотистый) ', 988, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Доступ в Интернет   : GPRS   , EDGE   , 3G   , 4G\r\nBluetooth   : 4.0  \r\nWi-Fi (802.11)   : a, b, g   , n   , ac\r\nE-mail клиент   : да\r\nСинхронизация с ПК   : да\r\nРазъем для синхронизации : Apple Lightning\r\nБеспроводная синхронизация : Да\r\nNFC   : да', 'img11.jpg', '', '', '0000-00-00 00:00:00', 0, 0, 0, 1, 10, 'mobile', 1, 4, ''),
-(12, 'Мобильный телефон Apple iPhone 6 128GB (темно-серый)', 566, 'Apple', '', '', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом исключительно экономичный. Его гладкая металлическая поверхность плавно переходит в стекло, из которого создан самый передовой среди iPhone дисплей Retina HD. iPhone 6 – это новое поколение iPhone, улучшенное во всех смыслах. ', 'Смартфон Apple iPhone 6 с диагональю дисплея 4,7 дюйма стал не просто больше. Он стал лучше во всех отношениях. Больше, но при этом значительно тоньше (6,9 мм против 7,6 мм у iPhone 5s). Мощнее, но при этом ', 'img12.jpg', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', 'lorem ipsum Производитель : Apple Датчики : G-сенсор , датчик освещенности , датчик приближения , цифровой компас', '2015-07-07 10:30:33', 0, 0, 0, 1, 17, 'mobile', 1, 3, ''),
-(13, 'wfwefwfw', 34242, 'Apple', 'wefwfw', 'fewfwfw', '<p>fwefwfwfew</p>\r\n', '<p>fwefwfwfew</p>\r\n', '', '<p>fwefwfwfew</p>\r\n', '<p>fwefwfwfew</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 0, 'mobile', 1, 1, ''),
-(14, 'APPLE 4s', 544, 'Apple', '', '', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', 'mobile-1434.jpg', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', '<p>wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;wefw ewf wfwf wef wf ewfwfw f wef wf ewf&nbsp;</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 1, 'mobile', 1, 1, ''),
-(15, 'fwefwfew', 3242, 'Apple', '', '', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', 'mobile-1537.jpg', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 0, 'mobile', 1, 1, 'wefwfwfwe'),
-(16, 'fwefwfew', 3242, 'Apple', '', '', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', 'mobile-1680.jpg', '<p>wfwefwfw wef wef wefw</p>\r\n', '<p>wfwefwfw wef wef wefw</p>\r\n', '0000-00-00 00:00:00', 1, 1, 1, 1, 1, 'mobile', 1, 1, 'wefwfwfwe');
+(24, 'ewfwf', 45, 'Помады', 'wefwfe', 'wfwfwfewfewew', '<p>wfwefwfwfw1</p>\r\n', '<p>fwefw fwf ewf wfw fwfwfwfw fwf wfwfwfwfewfwefw fwf ewf wfw fwfwfwfw fwf wfwfwfwfewfwefw fwf ewf wfw fwfwfwfw fwf wfwfwfwfewfwefw fwf ewf wfw fwfwfwfw fwf wfwfwfwfew</p>\r\n\r\n<p>fwefw fwf ewf wfw fwfwfwfw fwf wfwfwfwfew</p>\r\n', 'makeup-2453.jpg', '<p>fwfwfwfwfwfw 2</p>\r\n', '<p>wefwefwfwefwe4</p>\r\n', '0000-00-00 00:00:00', 0, 0, 0, 1, 1, 'makeup', 12, 1, 'wfwfwfw'),
+(25, 'Кайал «Ультрамодерн»', 455, 'Карандаши, подводка', 'Кайал «Ультрамодерн»', 'Кайал «Ультрамодерн»', '<p>Придать особую глубину взгляду поможет&nbsp;<strong>кайал &laquo;Ультрамодерн&raquo;</strong>:</p>\r\n', '<p>Придать особую глубину взгляду поможет&nbsp;<strong>кайал &laquo;Ультрамодерн&raquo;</strong>:</p>\r\n\r\n<ul>\r\n	<li>Водостойкая текстура держится более 4 часов.</li>\r\n	<li>Отлично подходит для всех типов кожи.</li>\r\n	<li>Восковая основа без консервантов и минеральных масел, содержит натуральные антиоксиданты.</li>\r\n	<li>Мягкая текстура не раздражает слизистую оболочку глаз, а насыщенные оттенки подойдут к любому макияжу.</li>\r\n</ul>\r\n', 'makeup-2548.png', '', '', '0000-00-00 00:00:00', 0, 0, 0, 1, 1, 'makeup', 9, 2, 'Кайал «Ультрамодерн»'),
+(26, 'цацуац', 45454, 'Очищение', 'цуац', 'ацуацууаццу', '', '', 'mans-2673.png', '', '', '0000-00-00 00:00:00', 0, 0, 0, 1, 0, 'mans', 76, 1, 'ацауца');
 
 -- --------------------------------------------------------
 
@@ -290,16 +336,6 @@ CREATE TABLE IF NOT EXISTS `table_reviews` (
   PRIMARY KEY (`reviews_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
---
--- Дамп данных таблицы `table_reviews`
---
-
-INSERT INTO `table_reviews` (`reviews_id`, `products_id`, `name`, `good_reviews`, `bad_reviews`, `comment`, `date`, `moderate`) VALUES
-(4, 12, 'fwfewf', 'wfwfw', 'fwfwf', 'wfwffewwf', '2015-07-15', 1),
-(5, 9, 'wefewfwe', 'fwfwfwfwf', 'wfwfwfwwfw', 'fwfwfwfwfwfw', '2015-07-15', 1),
-(7, 16, 'fwe', 'fwf', 'ewfwf', 'wfwfwfw', '2015-07-15', 1),
-(8, 11, 'fwef', 'wfw', 'fwf', 'wfwfw', '2015-07-15', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -311,7 +347,7 @@ CREATE TABLE IF NOT EXISTS `upload_images` (
   `products_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Дамп данных таблицы `upload_images`
@@ -326,7 +362,8 @@ INSERT INTO `upload_images` (`id`, `products_id`, `image`) VALUES
 (6, 15, 'mobile-330.jpg'),
 (7, 15, 'mobile-485.jpg'),
 (8, 16, 'mobile-207.jpg'),
-(9, 16, 'mobile-171.jpg');
+(9, 16, 'mobile-171.jpg'),
+(10, 25, 'makeup-300.png');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

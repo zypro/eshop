@@ -80,7 +80,7 @@ $error = array();
 	{
 
 						mysql_query("INSERT INTO table_products(title,short_title,price,brand,seo_words,seo_description,mini_description,description,mini_features,features,new,leader,sale,visible,type_tovara,brand_id)
-						VALUES(						
+						VALUES(
 								'".$_POST["form_title"]."',
 								'".$_POST["form_shorttitle"]."',
 								'".$_POST["form_price"]."',
@@ -189,6 +189,8 @@ $error = array();
 			<option value="makeup">Макияж</option>
 			<option value="care">Уход</option>
 			<option value="hygiene">Гигиена</option>
+			<option value="mans">Мужчинам</option>
+			<option value="kids">Детям</option>
 		</select>
 	</li>
 
@@ -204,7 +206,7 @@ $error = array();
 	$result_category = mysql_fetch_array($category);
 	do
 	{
-	echo '<option value="'.$result_category["id"].'" >'.$result_category["brand"].'</option>';
+	echo '<option value="'.$result_category["id"].'" >'.$result_category["type"]," - ", $result_category["brand"].'</option>';
 
 	}
 	 while ($result_category = mysql_fetch_array($category));
@@ -284,7 +286,7 @@ $error = array();
 	<li><input type="checkbox" name="chk_leader" id="chk_leader"><label for="chk_leader" >Популярный товар</label></li>
 	<li><input type="checkbox" name="chk_sale" id="chk_sale"><label for="chk_sale" >Товар со скидкой</label></li>
 </ul>
-<p align="right" ><input type="submit" id="submit_form" name="submit_add" value="Добавить товар"/></p>     
+<p align="right" ><input type="submit" id="submit_form" name="submit_add" value="Добавить товар"/></p>
 </form>
 	</div>
 	</div>
