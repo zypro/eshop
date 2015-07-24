@@ -8,7 +8,7 @@
 	<div><img u="image" src="/img/img3.png"></div>
 	<div><img u="image" src="/img/img4.png"></div>
 </div>
-<span u="arrowleft" class="jssora03l" style="top: 145px; left: 8px;"></span>
+<span u="arrowleft" class="jssora03l" style="top: 175px; left: 8px;"></span>
 <!-- Arrow Right -->
-<span u="arrowright" class="jssora03r" style="top: 145px; right: 8px;"></span>
+<span u="arrowright" class="jssora03r" style="top: 175px; right: 8px;"></span>
 </div>
