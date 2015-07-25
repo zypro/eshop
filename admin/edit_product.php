@@ -24,13 +24,18 @@ if (isset($action))
 	switch ($action) {
 
 		case 'delete':
-		if ($_SESSION['edit_tovar'] == '1')
+	if ($_SESSION['edit_tovar'] == '1')
 		{
 
-		if (file_exists("../upload_images/".$_GET["img"]))
+	if (file_exists("../upload_images/".$_GET["img"]))
 	{
 		unlink("../upload_images/".$_GET["img"]);
 	}
+
+	if (file_exists("../upload_images/large/".$_GET["img"]))
+		{
+			unlink("../upload_images/large/".$_GET["img"]);
+		}
 		}else
 		{
 			$msgerror = 'У вас нет прав на изменение товаров!';
@@ -39,9 +44,9 @@ if (isset($action))
 	}
 	}
 
-		if ($_POST["submit_save"])
+	if ($_POST["submit_save"])
 	{
-		if ($_SESSION['edit_tovar'] == '1')
+	if ($_SESSION['edit_tovar'] == '1')
 		{
 $error = array();
 
@@ -76,6 +81,12 @@ $error = array();
 	{
 		include 'actions/upload-image.php';
 		unset($_POST["upload_image"]);
+	}
+
+		if (empty($_POST["upload_image_large"]))
+	{
+		include 'actions/upload-image-large.php';
+		unset($_POST["upload_image_large"]);
 	}
 
 		if (empty($_POST["galleryimg"]))
@@ -267,6 +278,38 @@ echo '
 <div id="baseimg-upload">
 	<input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
 	<input type="file" name="upload_image" />
+</div>
+';
+}
+
+		if (strlen($row["image_large"]) > 0 && file_exists("../upload_images/large/".$row["image_large"]))
+{
+$img_path_large = '../upload_images/large/'.$row["image_large"];
+$max_width = 110;
+$max_height = 110;
+ list($width, $height) = getimagesize($img_path_large);
+$ratioh = $max_height/$height;
+$ratiow = $max_width/$width;
+$ratio = min($ratioh, $ratiow);
+// New dimensions 
+$width = intval($ratio*$width);
+$height = intval($ratio*$height);
+
+echo '
+<label class="stylelabel" >Большая картинка</label>
+<div id="baseimg">
+	<img src="'.$img_path_large.'" width="'.$width.'" height="'.$height.'" />
+	<a href="edit_product.php?id='.$row["products_id"].'&img='.$row["image_large"].'&action=delete" ></a>
+</div>
+';
+
+}else
+{
+echo '
+<label class="stylelabel" >Большая картинка</label>
+<div id="baseimg-upload">
+	<input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
+	<input type="file" name="upload_image_large" />
 </div>
 ';
 }
