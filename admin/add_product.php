@@ -229,9 +229,9 @@ $error = array();
 <input type="file" name="upload_image">
 </div>
 
-<label class="stylelabel1" >Большая картинка</label>
+<label class="stylelabel" >Большая картинка</label>
 
-<div id="large-img-upload">
+<div id="baseimg-upload">
 <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
 <input type="file" name="upload_image_large">
 </div>
