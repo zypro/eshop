@@ -109,6 +109,12 @@ $error = array();
 		unset($_POST["upload_image"]);
 		}
 
+		if (empty($_POST["upload_image_large"]))
+		{
+		include("actions/upload-image-large.php");
+		unset($_POST["upload_image_large"]);
+		}
+
 		if (empty($_POST["galleryimg"]))
 		{
 		include("actions/upload-gallery.php");
@@ -221,6 +227,13 @@ $error = array();
 <div id="baseimg-upload">
 <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
 <input type="file" name="upload_image">
+</div>
+
+<label class="stylelabel" >Большая картинка</label>
+
+<div id="baseimg-upload">
+<input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
+<input type="file" name="upload_image_large">
 </div>
 
 <h3 class="h3click" >Краткое описание товара (вид: Строка)</h3>
