@@ -98,7 +98,7 @@
 </div>
 <!-- Меню -->
 <div id="top-menu">
-	<ul>
+	<ul class="flat">
 		<li><img src="/images/shop.png"><a href="index.php">Главная</a></li>
 		<li><img src="/images/new-32.png"><a href="view_aystopper.php?go=news">Новинки</a></li>
 		<li><img src="/images/bestprice-32.png"><a href="view_aystopper.php?go=leaders">Лидеры продаж</a></li>

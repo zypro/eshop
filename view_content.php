@@ -35,6 +35,7 @@ $_SESSION['countid'] = $id;
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="trackbar/trackbar.css">
 	<script src="/js/jquery-1.8.2.min.js"></script>
+	<script src="/js/jquery.elevateZoom-3.0.8.min.js"></script>
 	<script src="/js/jcarousellite_1.0.1.js"></script>
 	<script src="/js/eshop-script.js"></script>
 	<script src="/js/jquery.cookie.min.js"></script>
@@ -77,8 +78,8 @@ $(document).ready(function(){
 			if (strlen($row1["image"]) > 0 && file_exists("./upload_images/".$row1["image"]))
 				{
 				$img_path = './upload_images/'.$row1["image"];
-				$max_width = 300;
-				$max_height = 300;
+				$max_width = 350;
+				$max_height = 350;
 				 list($width, $height) = getimagesize($img_path); 
 				$ratioh = $max_height/$height;
 				$ratiow = $max_width/$width;
@@ -91,18 +92,22 @@ $(document).ready(function(){
 				$width = 110;
 				$height = 200;
 				}
+				if (strlen($row1["image_large"]) > 0 && file_exists("./upload_images/large/".$row1["image_large"]))
+				{
+					$img_path_large = './upload_images/large/'.$row1["image_large"];
+				}
 				// Количество отзывов 
 				$query_reviews = mysql_query("SELECT * FROM table_reviews WHERE products_id = '$id' AND moderate='1'",$link);  
 				$count_reviews = mysql_num_rows($query_reviews);
 						echo '
 							<div id="block-breadcrumbs-and-rating">
-								<p id="nav-breadcrumbs"><a href="view_cat.php?type=mobile">Мобильные телефоны</a> \ <span>'.$row1["brand"].'</span></p>
+								<p id="nav-breadcrumbs"><a href="view_cat.php?type=makeup">Макияж</a> \ <span>'.$row1["brand"].'</span></p>
 								<div id="block-like">
 									<p id="likegood" tid="'.$id.'">Нравиться</p>
 									<p id="likegoodcount">'.$row1["yes_like"].'</p>
 								</div>
 							</div>
-							<div id="block-content-info"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
+							<div id="block-content-info"><img id="zoom" src="'.$img_path.'" width="'.$width.'" height="'.$height.'" data-zoom-image="'.$img_path_large.'">
 								<div id="block-mini-description">
 									<p id="content-title">'.$row1["title"].'</p>
 									<ul class="reviews-and-counts-content">
@@ -215,5 +220,12 @@ echo '
 	include 'include/block-footer.php';
 ?>
 </div>
+<script>
+	$("#zoom").elevateZoom({
+  zoomType				: "lens",
+  lensShape : "round",
+  lensSize    : 200
+});
+</script>
 </body>
 </html>

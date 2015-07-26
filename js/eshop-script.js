@@ -717,7 +717,10 @@ $("#likegoodcount").html(data);
 
 }
 });
+
+
 });
+
 // Slider
 	jQuery(document).ready(function ($) {
 		var options = {
@@ -732,4 +735,5 @@ $("#likegoodcount").html(data);
 		};
 		var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 		});
+
 });

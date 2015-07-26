@@ -202,7 +202,7 @@
 						echo '
 								<li>
 									<div class="block-images-list">
-										<img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
+										<img id="zoom" src="'.$img_path.'" width="'.$width.'" height="'.$height.'" data-zoom-image="'.$img_path.'">
 									</div>
 									<ul class="reviews-and-counts-list">
 										<li><img src="/images/eye-icon.png"><p>'.$row["count"].'</p></li>
