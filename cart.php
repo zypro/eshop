@@ -97,16 +97,18 @@ $itogpricecart = $int;
 
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 	<link href="css/reset.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/breadcrumbs.css" rel="stylesheet">
 	<link href="trackbar/trackbar.css" rel="stylesheet">
-
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jcarousellite_1.0.1.js"></script>
 	<script src="/js/eshop-script.js"></script>
 	<script src="/js/jquery.cookie.min.js"></script>
 	<script src="/trackbar/jquery.trackbar.js"></script>
 	<script src="/js/TextChange.js"></script>
+	<script src="/js/modernizr.js"></script>
 
 	<title>Корзина Заказов</title>
 </head>
@@ -132,17 +134,13 @@ $action = clear_string($_GET["action"]);
 
 	echo '
 	<div id="block-step">
-		<div id="name-step">
-			<ul>
-				<li><a class="active" >1. Корзина товаров</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a>2. Контактная информация</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a>3. Завершение</a></li>
+			<ul class="cd-multi-steps text-center custom-icons">
+				<li class="current"><a>Корзина товаров</a></li>
+				<li><a>Контактная информация</a></li>
+				<li><a>Завершение</a></li>
+						<a id="block-step-a" href="cart.php?action=clear" >Очистить</a>
 			</ul>
-		</div>
-		<p>шаг 1 из 3</p>
-		<a href="cart.php?action=clear" >Очистить</a>
+
 	</div>
 ';
 
@@ -238,16 +236,11 @@ else
 
 echo '
 <div id="block-step">
-		<div id="name-step">
-			<ul>
-				<li><a href="cart.php?action=oneclick" >1. Корзина товаров</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a class="active" >2. Контактная информация</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a>3. Завершение</a></li>
+			<ul class="cd-multi-steps text-center custom-icons">
+				<li class="visited"><a href="cart.php?action=oneclick" >Корзина товаров</a></li>
+				<li class="current"><a >Контактная информация</a></li>
+				<li><a>Завершение</a></li>
 			</ul>
-		</div>
-	<p>шаг 2 из 3</p>
 </div>
 ';
 
@@ -298,16 +291,11 @@ echo '
 
 echo '
 <div id="block-step">
-		<div id="name-step">
-			<ul>
-				<li><a href="cart.php?action=oneclick" >1. Корзина товаров</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a href="cart.php?action=confirm" >2. Контактная информация</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a class="active" >3. Завершение</a></li>
+			<ul class="cd-multi-steps text-center custom-icons">
+				<li class="visited"><a href="cart.php?action=oneclick">Корзина товаров</a></li>
+				<li class="visited"><a href="cart.php?action=confirm">Контактная информация</a></li>
+				<li class="current"><a>Завершение</a></li>
 			</ul>
-		</div>
-	<p>шаг 3 из 3</p>
 </div>
 <h3>Конечная информация:</3>
 ';
@@ -348,16 +336,11 @@ echo '
 
 echo '
 <div id="block-step">
-		<div id="name-step">
-			<ul>
-				<li><a class="active" >1. Корзина товаров</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a>2. Контактная информация</a></li>
-				<li><span>&rarr;</span></li>
-				<li><a>3. Завершение</a></li>
+			<ul class="cd-multi-steps text-center custom-icons">
+				<li class="current"><a>Корзина товаров</a></li>
+				<li><a>Контактная информация</a></li>
+				<li><a>Завершение</a></li>
 			</ul>
-		</div>
-	<p>шаг 1 из 3</p>
 	<a href="cart.php?action=clear" >Очистить</a>
 </div>
 ';

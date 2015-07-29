@@ -24,17 +24,19 @@ if (isset($action))
 	switch ($action) {
 
 		case 'delete':
-		if ($_SESSION['edit_tovar'] == '1')
+	if ($_SESSION['edit_tovar'] == '1')
 		{
-		if (file_exists("../upload_images/".$_GET["img"]))
+
+	if (file_exists("../upload_images/".$_GET["img"]))
 	{
 		unlink("../upload_images/".$_GET["img"]);
 	}
-			if (file_exists("../upload_images/large/".$_GET["img"]))
-	{
-		unlink("../upload_images/large/".$_GET["img"]);
-	}
-	}else
+
+	if (file_exists("../upload_images/large/".$_GET["img"]))
+		{
+			unlink("../upload_images/large/".$_GET["img"]);
+		}
+		}else
 		{
 			$msgerror = 'У вас нет прав на изменение товаров!';
 		}
@@ -42,9 +44,9 @@ if (isset($action))
 	}
 	}
 
-		if ($_POST["submit_save"])
+	if ($_POST["submit_save"])
 	{
-		if ($_SESSION['edit_tovar'] == '1')
+	if ($_SESSION['edit_tovar'] == '1')
 		{
 $error = array();
 
@@ -285,7 +287,7 @@ echo '
 $img_path_large = '../upload_images/large/'.$row["image_large"];
 $max_width = 110;
 $max_height = 110;
- list($width, $height) = getimagesize($img_path);
+ list($width, $height) = getimagesize($img_path_large);
 $ratioh = $max_height/$height;
 $ratiow = $max_width/$width;
 $ratio = min($ratioh, $ratiow);
@@ -311,6 +313,7 @@ echo '
 </div>
 ';
 }
+
 echo '
 <h3 class="h3click" >Краткое описание товара (вид: Строка)</h3>
 <div class="div-editor1" >
