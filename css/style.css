@@ -13,6 +13,7 @@
 	width: 220px;
 	height: auto;
 	float: right;
+	margin-top: 3px;
 }
 
 #block-content {
@@ -174,37 +175,19 @@
 
 #top-menu {
 	width: 1033px;
-	height: 45px;
-	margin-top: 5px;
-}
-
-#top-menu li {
-	float: left;
-	margin: 8px 0 0 10px;
-}
-
-#top-menu a {
-	font: 15px sans-serif;
-	color: #34659d;
-	margin: 0 3px 0 4px;
-	text-decoration: none;
-	border-bottom: 1px dashed #34659d;
-}
-
-#top-menu a:hover {
-	color: #ef662b;
-	border-bottom: 1px dashed #ef662b;
+	height: 50px;
+	margin-top: 21px;
 }
 
 #top-menu img {
-	float: left;
-	margin-top: -7px;
+	margin-top: -4px;
+	position: absolute;
+	margin-left: -34px;
+	margin-top: -9px;
 }
 
 #block-basket {
 	margin-top: 0;
-	padding-top: 7px;
-	margin-right: -3px;
 }
 
 #block-basket span {
@@ -215,18 +198,14 @@
 #block-basket a {
 	font: bold 15px sans-serif;
 	text-decoration: none;
-	margin-left: 40px;
-	border-bottom: 1px dashed #34659d;
+	margin-left: 69px;
 	color: black;
-}
-
-#block-basket a:hover {
-	border-bottom: none;
 }
 
 #block-basket img {
 	position: absolute;
 	margin-top: -3px;
+	margin-left: 79px;
 }
 
 #nav-line {
@@ -515,6 +494,7 @@
 #block-sorting {
 	height: 60px;
 	border-bottom: 1px solid #eeeeee;
+	margin-top: 3px;
 }
 
 #options-list > li {
@@ -2001,4 +1981,59 @@ div.tabs_content > div {padding:10px;}
 	margin-bottom: 20px;
 	width: 221px;
 	height: 149px;
+}
+
+.ph-button {
+	border-style: solid;
+
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+	color: #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	font-style: normal;
+	text-align: center;
+	text-decoration: none;
+	transition: all 200ms ease-in-out 0s;
+	white-space: nowrap;
+	font-family: sans-serif;
+	font-weight: 700;
+	padding: 19px 15px 18px 42px;
+	font-size: 18px;
+}
+
+.ph-buttongreen {
+	border-style: solid;
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+	border-radius: 6px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	transition: all 200ms ease-in-out 0s;
+	padding: 19px 9px 18px 40px;
+}
+
+.ph-btn-blue {
+
+	border-color: #326e99;
+	background-color: #3f8aBf;
+	    margin-right: 15px;
+}
+
+.ph-btn-blue:hover, .ph-btn-blue:focus, .ph-btn-blue:active {
+	background-color: #397CAC;
+	border-color: #326E99;
+}
+.ph-float {
+	float: left;
+}
+
+.ph-btn-green {
+
+	border-color: #3AC162;
+	background-color: #5FCF80;
+
+}
+.ph-btn-green:hover, .ph-btn-green:focus, .ph-btn-green:active {
+	background-color: #4BC970;
+	border-color: #3AC162;
 }

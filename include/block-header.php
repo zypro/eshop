@@ -99,11 +99,12 @@
 <!-- Меню -->
 <div id="top-menu">
 	<ul class="flat">
-		<li><img src="/images/shop.png"><a href="index.php">Главная</a></li>
-		<li><img src="/images/new-32.png"><a href="view_aystopper.php?go=news">Новинки</a></li>
-		<li><img src="/images/bestprice-32.png"><a href="view_aystopper.php?go=leaders">Лидеры продаж</a></li>
-		<li><img src="/images/sale-32.png"><a href="view_aystopper.php?go=sale">Распродажа</a></li>
+		<li class="ph-float"><a class='ph-button ph-btn-blue' href="index.php"><img  src="/images/shop.png">Главная</a></li>
+		<li class="ph-float"><a class='ph-button ph-btn-blue' href="view_aystopper.php?go=news"><img src="/images/new-32.png">Новинки</a></li>
+		<li class="ph-float"><a class='ph-button ph-btn-blue' href="view_aystopper.php?go=leaders"><img src="/images/bestprice-32.png">Лидеры продаж</a></li>
+		<li class="ph-float"><a class='ph-button ph-btn-blue' href="view_aystopper.php?go=sale"><img src="/images/sale-32.png">Распродажа</a></li>
 	</ul>
-		<p align="right" id="block-basket"><img src="/images/cart-icon.png"><a href="cart.php?action=oneclick">Корзина пуста</a></p>
-	<div id="nav-line"></div>
+		<p class="ph-float" id="block-basket"><img src="/images/cart-icon.png"><a class='ph-buttongreen ph-btn-green' href="cart.php?action=oneclick">Корзина пуста</a></p>
+
 </div>
+	<div id="nav-line"></div>
