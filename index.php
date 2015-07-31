@@ -65,8 +65,8 @@
 
 	<div id="block-right">
 <div id="banner">
-	<a href="#" class="banners"><img src="/img/action-shop-1.png"></a>
-	<a href="#" class="banners1"><img src="/img/action-shop-3.png"></a>
+	<a href="#" class="banners"><img src="/img/shop-action-1-11-2015.jpg"></a>
+	<a href="#" class="banners1"><img src="/img/shop-action-2-11-2015.jpg"></a>
 </div>
 <?php
 	include 'include/block-category.php';

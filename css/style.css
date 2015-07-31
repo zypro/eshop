@@ -544,11 +544,19 @@
 }
 
 #block-tovar-grid > li {
-	width: 380px;
+	width: 377px;
 	height: 230px;
+	padding: 3px;
 	float: left;
 	margin-left: 10px;
 	margin-top: 15px;
+
+}
+
+#block-tovar-grid > li:hover {
+	border-color: rgb(234, 0, 0);
+	box-shadow: 0 0 5px rgb(234, 0, 0);
+
 }
 
 .style-title-grid {
@@ -641,11 +649,18 @@
 }
 
 #block-tovar-list > li {
-	border-bottom: 1px solid #e6e6e6;
 	min-height: 160px;
 	height: auto;
+	padding: 3px;
 	margin-top: 15px;
 	padding-bottom: 5px;
+}
+
+#block-tovar-list > li:hover {
+	border-color: rgb(234, 0, 0);
+	box-shadow: 0 0 5px rgb(234, 0, 0);
+	cursor: pointer;
+
 }
 
 .reviews-and-counts-list {
