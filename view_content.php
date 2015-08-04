@@ -36,12 +36,15 @@ $_SESSION['countid'] = $id;
 	<link rel="stylesheet" href="trackbar/trackbar.css">
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jquery.elevateZoom-3.0.8.min.js"></script>
+<<<<<<< HEAD
 	<script src="/js/jcarousellite_1.0.1.js"></script>
+=======
+>>>>>>> 29add81ff61c62c698e010c3f9508f36f0dd3aa0
 	<script src="/js/eshop-script.js"></script>
+	<script src="/js/jcarousellite_1.0.1.js"></script>
 	<script src="/js/jquery.cookie.min.js"></script>
 	<script src="/trackbar/jquery.trackbar.js"></script>
 	<script src="/js/TextChange.js"></script>
-
 	<link rel="stylesheet" href="fancybox/jquery.fancybox.css">
 	<script src="/fancybox/jquery.fancybox.js"></script>
 	<script src="/js/jTabs.js"></script>
@@ -221,10 +224,17 @@ echo '
 ?>
 </div>
 <script>
+<<<<<<< HEAD
 	$("#zoom").elevateZoom({
   zoomType				: "lens",
   lensShape : "round",
   lensSize    : 200
+=======
+		$("#zoom").elevateZoom({
+	zoomType				: "lens",
+	lensShape : "round",
+	lensSize : 300
+>>>>>>> 29add81ff61c62c698e010c3f9508f36f0dd3aa0
 });
 </script>
 </body>
