@@ -131,6 +131,7 @@ $error = array();
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="cp.png" sizes="96x96">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-1.8.2.min.js"></script>

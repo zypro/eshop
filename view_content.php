@@ -225,9 +225,12 @@ echo '
 </div>
 <script>
 	$("#zoom").elevateZoom({
-  zoomType				: "lens",
-  lensShape : "round",
-  lensSize    : 200
+		zoomWindowFadeIn: 500,
+		zoomWindowFadeOut: 500,
+		lensFadeIn: 500,
+		lensFadeOut: 500,
+		zoomType	: "lens",
+		lensSize : 220 
 });
 </script>
 </body>

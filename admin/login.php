@@ -68,9 +68,10 @@ If (mysql_num_rows($result) > 0)
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style-login.css">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="cp.png" sizes="96x96">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style-login.css">
 	<title>Панель управления</title>
 </head>
 <body>

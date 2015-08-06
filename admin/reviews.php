@@ -76,6 +76,7 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="cp.png" sizes="96x96">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="jquery_confirm/jquery_confirm.css">

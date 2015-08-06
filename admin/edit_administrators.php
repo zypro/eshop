@@ -56,6 +56,7 @@ $querynew = "login='{$_POST["admin_login"]}',$pass fio='{$_POST["admin_fio"]}',r
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="cp.png" sizes="96x96">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="jquery_confirm/jquery_confirm.css">
