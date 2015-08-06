@@ -152,8 +152,8 @@
 }
 
 #block-search input#input-search {
-	width: 285px;
-	height: 30px;
+	width: 250px;
+	height: 26px;
 	border: 1px solid #e1e1e2;
 	font: 14px sans-serif;
 	padding-left: 25px;
@@ -173,30 +173,17 @@
 	background: url(/images/grd-button-search-hover.png);
 }
 
-/*#top-menu {
+#top-menu {
 	width: 1033px;
 	height: 50px;
 	margin-top: 21px;
 }
 
 #top-menu img {
-<<<<<<< HEAD
 	margin-top: -4px;
 	position: absolute;
 	margin-left: -34px;
 	margin-top: -9px;
-=======
-	float: left;
-	margin-top: -7px;
-}*/
-
-#top-menu {
-	margin-bottom: 10px;
-}
-
-#top-menu a {
-	text-decoration: none;
->>>>>>> 29add81ff61c62c698e010c3f9508f36f0dd3aa0
 }
 
 #block-basket {
@@ -234,7 +221,7 @@
 }
 
 .header-title {
-	width: 222px;
+	width: 210px;
 	font: 14px sans-serif;
 	margin-top: 0;
 	padding: 7px 0 7px 10px;
@@ -261,6 +248,29 @@
 }
 
 #block-category > ul > li > a:hover {
+	background-color: #eee;
+}
+
+#block-parfume {
+	width: 220px;
+	height: auto;
+}
+#block-parfume > ul > li {
+	border-bottom: 1px solid #eeeeee;
+}
+
+#block-parfume > ul > li.active{
+	border-bottom: 1px solid #efefef;
+}
+
+#block-parfume > ul > li > a {
+	font: 15px sans-serif;
+	padding: 6px 0 6px 30px;
+	display: block;
+	cursor: pointer;
+}
+
+#block-parfume > ul > li > a:hover {
 	background-color: #eee;
 }
 
@@ -505,7 +515,7 @@
 }
 
 #block-sorting {
-	height: 55px;
+	height: 60px;
 	border-bottom: 1px solid #eeeeee;
 	margin-top: 3px;
 }
@@ -659,7 +669,6 @@
 
 #block-tovar-list {
 	display: none;
-	margin-top: 28px;
 }
 
 #block-tovar-list > li {
@@ -2012,7 +2021,6 @@ div.tabs_content > div {padding:10px;}
 	height: 149px;
 }
 
-<<<<<<< HEAD
 .ph-button {
 	border-style: solid;
 
@@ -2067,5 +2075,15 @@ div.tabs_content > div {padding:10px;}
 	background-color: #4BC970;
 	border-color: #3AC162;
 }
-=======
->>>>>>> 29add81ff61c62c698e010c3f9508f36f0dd3aa0
+
+#womans-parfume {
+	position: absolute;
+	margin-left: -26px;
+	margin-top: -6px;
+}
+
+#mans-parfume {
+	position: absolute;
+	margin-left: -30px;
+	margin-top: -6px;
+}

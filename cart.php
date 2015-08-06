@@ -113,6 +113,7 @@ $itogpricecart = $int;
 	<title>Корзина Заказов</title>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 <?php
 	include 'include/block-header.php';
@@ -120,6 +121,7 @@ $itogpricecart = $int;
 <div id="block-right">
 <?php
 	include 'include/block-category.php';
+	include 'include/block-parfume.php';
 	include 'include/block-news.php';
 ?>
 </div>

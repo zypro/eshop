@@ -44,6 +44,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="trackbar/trackbar.css">
@@ -56,6 +57,7 @@
 	<title>Интернет магазин Косметики</title>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 
 <?php
@@ -64,6 +66,7 @@
 	<div id="block-right">
 <?php
 	include 'include/block-category.php';
+	include 'include/block-parfume.php';
 	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>

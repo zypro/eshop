@@ -89,6 +89,7 @@ define('myeshop', true);
 <html>
 <head>
 	<meta charset="utf-8">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="trackbar/trackbar.css" rel="stylesheet">
@@ -102,6 +103,7 @@ define('myeshop', true);
 	<title>Интернет Магазин Женской Косметики</title>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 <?php
        include("include/block-header.php");
@@ -109,6 +111,7 @@ define('myeshop', true);
 <div id="block-right">
 <?php
        include 'include/block-category.php';
+        include 'include/block-parfume.php';
        include 'include/block-parameter.php';
        include 'include/block-news.php';
 ?>

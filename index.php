@@ -44,9 +44,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="trackbar/trackbar.css">
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jcarousellite_1.0.1.js"></script>
@@ -55,10 +55,10 @@
 	<script src="/trackbar/jquery.trackbar.js"></script>
 	<script src="/js/TextChange.js"></script>
 	<script src="/js/jssor.slider.mini.js"></script>
-	<script src="/js/bootstrap.js"></script>
 	<title>Интернет магазин Косметики</title>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 
 <?php
@@ -72,14 +72,15 @@
 </div>
 <?php
 	include 'include/block-category.php';
+	include 'include/block-parfume.php';
 	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>
 	</div>
 		<div id="block-content">
 		<?php include 'include/slider.php'; ?>
-		<p class="breadcrumb"><a href="index.php">Главная страница</a> \ <span class="active">Все товары</span></p>
 			<div id="block-sorting">
+				<p id="nav-breadcrumbs"><a href="index.php">Главная страница</a> \ <span>Все товары</span></p>
 				<ul id="options-list">
 					<li>Вид: </li>
 					<li><img id="style-grid" src="/images/icon-grid.png"></li>

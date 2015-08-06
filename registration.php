@@ -9,6 +9,7 @@ define('myeshop', true);
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="trackbar/trackbar.css">
@@ -24,6 +25,7 @@ define('myeshop', true);
 	<title>Регистрация</title>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 <?php
 	include 'include/block-header.php';
@@ -31,6 +33,7 @@ define('myeshop', true);
 	<div id="block-right">
 <?php
 	include 'include/block-category.php';
+	include 'include/block-parfume.php';
 	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>

@@ -216,6 +216,8 @@ if ($row["type_tovara"] == "care") $type_care = "selected";
 if ($row["type_tovara"] == "hygiene") $type_hygiene = "selected";
 if ($row["type_tovara"] == "mans") $type_mans = "selected";
 if ($row["type_tovara"] == "kids") $type_kids = "selected";
+if ($row["type_tovara"] == "mans-parfume") $type_mans_parfume = "selected";
+if ($row["type_tovara"] == "womans-parfume") $type_womans_parfume = "selected";
 
 echo '
 <li>
@@ -227,6 +229,8 @@ echo '
 	<option '.$type_hygiene.' value="hygiene" >Гигиена</option>
 	<option '.$type_mans.' value="mans" >Мужчинам</option>
 	<option '.$type_kids.' value="kids" >Детям</option>
+	<option '.$type_mans_parfume.' value="mans-parfume" >Мужской парфюм</option>
+	<option '.$type_womans_parfume.' value="womans-parfume" >Женский парфюм</option>
 </select>
 
 </li>
@@ -234,72 +238,12 @@ echo '
 	<label>Категория</label>
 	<select name="form_category" size="10" >
 ';
-if ($row["brand_id"] == "8") $type_ink = "selected";
-if ($row["brand_id"] == "9") $type_pencil_eyeliner = "selected";
-if ($row["brand_id"] == "10") $type_eyeshadow = "selected";
-if ($row["brand_id"] == "11") $type_for_lips = "selected";
-if ($row["brand_id"] == "12") $type_lipstick = "selected";
-if ($row["brand_id"] == "13") $type_pencils = "selected";
-if ($row["brand_id"] == "14") $type_shines = "selected";
-if ($row["brand_id"] == "16") $type_balms = "selected";
-if ($row["brand_id"] == "17") $type_for_face = "selected";
-if ($row["brand_id"] == "18") $type_powder = "selected";
-if ($row["brand_id"] == "19") $type_rouge = "selected";
-if ($row["brand_id"] == "20") $type_creams = "selected";
-if ($row["brand_id"] == "21") $type_corrector = "selected";
-if ($row["brand_id"] == "22") $type_base_makeup = "selected";
-if ($row["brand_id"] == "23") $type_for_nails = "selected";
-if ($row["brand_id"] == "24") $type_nail_polish = "selected";
-if ($row["brand_id"] == "25") $type_base_dryers_corrector = "selected";
-if ($row["brand_id"] == "26") $type_removal_funds = "selected";
-if ($row["brand_id"] == "27") $type_care_funds = "selected";
-if ($row["brand_id"] == "28") $type_nailfile = "selected";
-if ($row["brand_id"] == "29") $type_day_creams = "selected";
-if ($row["brand_id"] == "30") $type_night_creams = "selected";
-if ($row["brand_id"] == "31") $type_eyelashes_funds = "selected";
-if ($row["brand_id"] == "32") $type_lip_balms = "selected";
-if ($row["brand_id"] == "33") $type_clean_tonic = "selected";
-if ($row["brand_id"] == "34") $type_clean_deep = "selected";
-if ($row["brand_id"] == "35") $type_face_masks = "selected";
-if ($row["brand_id"] == "36") $type_whey_concentrate = "selected";
-if ($row["brand_id"] == "37") $type_accessories = "selected";
 
+do
 {
 
-
-echo 
-'
-<option '.$type_ink.' value="'.$result_category["id"].'" >Тушь для ресниц</option>
-<option '.$type_pencil_eyeliner.' value="makeup" >Карандаши, подводка</option>
-<option '.$$id_eyeshadow.' value="makeup" >Тени для век</option>
-<option '.$id_for_lips.' value="makeup" >Для губ</option>
-<option '.$type_lipstick.' value="makeup" >Помады</option>
-<option '.$type_pencils.' value="makeup" >Карандаши</option>
-<option '.$type_shines.' value="makeup" >Блески</option>
-<option '.$type_balms.' value="makeup" >Бальзамы</option>
-<option '.$type_for_face.' value="makeup" >Для лица</option>
-<option '.$type_powder.' value="makeup" >Пудра</option>
-<option '.$type_rouge.' value="makeup" >Румяна</option>
-<option '.$type_creams.' value="makeup" >Тональные кремы</option>
-<option '.$type_corrector.' value="makeup" >Корректор</option>
-<option '.$type_for_nails.' value="makeup" >Для ногтей</option>
-<option '.$type_nail_polish.' value="makeup" >Лак для ногтей</option>
-<option '.$type_base_dryers_corrector.' value="makeup" >База, сушка, корректор</option>
-<option '.$type_removal_funds.' value="makeup" >Средства для снятия лака</option>
-<option '.$type_care_funds.' value="makeup" >Средства для ухода</option>
-<option '.$type_nailfile.' value="makeup" >Пилки для ногтей</option>
-<option '.$type_day_creams.' value="care" >Кремы дневные</option>
-<option '.$type_night_creams.' value="care" >Кремы ночные</option>
-<option '.$type_eyelashes_funds.' value="care" >Средства для век и ресниц</option>
-<option '.$type_lip_balms.' value="care" >Бальзамы для губ</option>
-<option '.$type_clean_tonic.' value="'.$result_category["id"].'" >Очищение, тоники</option>
-<option '.$type_clean_deep.' value="care" >Скрабы, пилинги</option>
-<option '.$type_face_masks.' value="care" >Маски для лица</option>
-<option '.$type_whey_concentrate.' value="care" >Сыворотки, концентраты</option>
-<option '.$type_accessories.' value="care" >Аксессуары</option>
-
-
-
+echo '
+<option value="'.$result_category["id"].'" '.(($result_category["id"] == $row['brand_id']) ? "selected" : "").'>'.$result_category["type"].'-'.$result_category["brand"].'</option>
 ';
 
 }

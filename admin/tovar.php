@@ -216,6 +216,36 @@ if (isset($action))
 		}
 		?>
 		</ul>
+
+		<ul>
+		<li><a href="tovar.php?cat=mans-parfume"><strong>Мужской парфюм</strong></a></li>
+		<?php
+		$result1 = mysql_query("SELECT * FROM category WHERE type='mans-parfume'",$link);
+		If (mysql_num_rows($result1) > 0)
+		{
+		$row1 = mysql_fetch_array($result1);
+		do
+		{
+		echo '<li><a href="tovar.php?type='.$row1["type"].'&cat='.$row1["brand"].'">'.$row1["brand"].'</a></li>';
+		} while ($row1 = mysql_fetch_array($result1));
+		}
+		?>
+		</ul>
+
+		<ul>
+		<li><a href="tovar.php?cat=womans-parfume"><strong>Женский парфюм</strong></a></li>
+		<?php
+		$result1 = mysql_query("SELECT * FROM category WHERE type='womans-parfume'",$link);
+		If (mysql_num_rows($result1) > 0)
+		{
+		$row1 = mysql_fetch_array($result1);
+		do
+		{
+		echo '<li><a href="tovar.php?type='.$row1["type"].'&cat='.$row1["brand"].'">'.$row1["brand"].'</a></li>';
+		} while ($row1 = mysql_fetch_array($result1));
+		}
+		?>
+		</ul>
 	</div>
 </li>
 </ul>
@@ -277,7 +307,7 @@ $height = 164;
 }
 echo '
 <li>
-<p>'.$row["title"].'</p>
+<p>'.$row["brand"].'</p>
 <center>
 <img src="'.$img_path.'" width="'.$width.'" height="'.$height.'" />
 </center>

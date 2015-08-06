@@ -29,6 +29,7 @@ $_SESSION['countid'] = $id;
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 	<meta name="Description" content="<? echo $resquery["seo_description"]; ?>">
 	<meta name="keywords" content="<? echo $resquery["seo_words"]; ?>">
 	<link rel="stylesheet" href="css/reset.css">
@@ -36,15 +37,12 @@ $_SESSION['countid'] = $id;
 	<link rel="stylesheet" href="trackbar/trackbar.css">
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jquery.elevateZoom-3.0.8.min.js"></script>
-<<<<<<< HEAD
 	<script src="/js/jcarousellite_1.0.1.js"></script>
-=======
->>>>>>> 29add81ff61c62c698e010c3f9508f36f0dd3aa0
 	<script src="/js/eshop-script.js"></script>
-	<script src="/js/jcarousellite_1.0.1.js"></script>
 	<script src="/js/jquery.cookie.min.js"></script>
 	<script src="/trackbar/jquery.trackbar.js"></script>
 	<script src="/js/TextChange.js"></script>
+
 	<link rel="stylesheet" href="fancybox/jquery.fancybox.css">
 	<script src="/fancybox/jquery.fancybox.js"></script>
 	<script src="/js/jTabs.js"></script>
@@ -59,6 +57,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 <?php
 	include 'include/block-header.php';
@@ -66,6 +65,7 @@ $(document).ready(function(){
 	<div id="block-right">
 <?php
 	include 'include/block-category.php';
+	include 'include/block-parfume.php';
 	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>
@@ -224,17 +224,10 @@ echo '
 ?>
 </div>
 <script>
-<<<<<<< HEAD
 	$("#zoom").elevateZoom({
   zoomType				: "lens",
   lensShape : "round",
   lensSize    : 200
-=======
-		$("#zoom").elevateZoom({
-	zoomType				: "lens",
-	lensShape : "round",
-	lensSize : 300
->>>>>>> 29add81ff61c62c698e010c3f9508f36f0dd3aa0
 });
 </script>
 </body>

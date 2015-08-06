@@ -67,9 +67,9 @@ switch ($sorting)
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 	<link href="css/reset.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href="trackbar/trackbar.css" rel="stylesheet">
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jcarousellite_1.0.1.js"></script>
@@ -77,11 +77,11 @@ switch ($sorting)
 	<script src="/js/jquery.cookie.min.js"></script>
 	<script src="/trackbar/jquery.trackbar.js"></script>
 	<script src="/js/TextChange.js"></script>
-	<script src="/js/bootstrap.js"></script>
 
 	<title>Интернет-Магазин Цифровой Техники</title>
 </head>
 <body>
+<?php include_once 'include/google-analytics.php'; ?>
 <div id="block-body">
 <?php
 	include 'include/block-header.php';
@@ -89,6 +89,7 @@ switch ($sorting)
 <div id="block-right">
 <?php	
 	include 'include/block-category.php';
+	include 'include/block-parfume.php';
 	include 'include/block-parameter.php';
 	include 'include/block-news.php';
 ?>

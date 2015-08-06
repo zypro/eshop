@@ -198,6 +198,8 @@ $error = array();
 			<option value="hygiene">Гигиена</option>
 			<option value="mans">Мужчинам</option>
 			<option value="kids">Детям</option>
+			<option value="mans-parfume">Мужской парфюм</option>
+			<option value="womans-parfume">Женский парфюм</option>
 		</select>
 	</li>
 

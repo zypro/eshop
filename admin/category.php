@@ -37,7 +37,7 @@ if ($_SESSION['auth_admin'] == "yes_auth")
 						VALUES(
 							'".$cat_type."',
 							'".$cat_brand."'
-						)",$link);
+							)",$link);
 
 		$_SESSION['message'] = "<p id='form-success'>Категория успешно добавлена!</p>";
 	}
