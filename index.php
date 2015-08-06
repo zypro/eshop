@@ -143,7 +143,7 @@
 						echo '
 								<li>
 									<div class="block-images-grid">
-										<img src="'.$img_path.'" width="'.$width.'" height="'.$height.'">
+										<a href="view_content.php?id='.$row["products_id"].'"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'"></a>
 									</div>
 									<p class="style-title-grid"><a href="view_content.php?id='.$row["products_id"].'">'.$row["title"].'</a></p>
 									<ul class="reviews-and-counts-grid">
@@ -205,7 +205,7 @@
 						echo '
 								<li>
 									<div class="block-images-list">
-										<img id="zoom" src="'.$img_path.'" width="'.$width.'" height="'.$height.'" data-zoom-image="'.$img_path.'">
+									<a href="view_content.php?id='.$row["products_id"].'"><img src="'.$img_path.'" width="'.$width.'" height="'.$height.'"></a>
 									</div>
 									<ul class="reviews-and-counts-list">
 										<li><img src="/images/eye-icon.png"><p>'.$row["count"].'</p></li>

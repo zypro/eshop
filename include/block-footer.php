@@ -24,7 +24,7 @@
 		<p>О компании</p>
 		<ul>
 			<li><a href="">О нас</a></li>
-			<li><a href="">Вакансии</a></li>
+			<li><a href="chat/index.php">Чат</a></li>
 			<li><a href="">Партнерам</a></li>
 			<li><a href="feedback.php">Контакты</a></li>
 		</ul>

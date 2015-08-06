@@ -682,8 +682,6 @@
 #block-tovar-list > li:hover {
 	border-color: rgb(234, 0, 0);
 	box-shadow: 0 0 5px rgb(234, 0, 0);
-	cursor: pointer;
-
 }
 
 .reviews-and-counts-list {
@@ -1642,7 +1640,7 @@ font:15px sans-serif;
 }
 
 #block-mini-description {
-	width: 600px;
+	width: 520px;
 	float: left;
 }
 
