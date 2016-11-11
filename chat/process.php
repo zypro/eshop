@@ -22,7 +22,7 @@
         		 }
         		 else{
         			 $text= array();
-        			 $log['state'] = $state + count($lines) - $state;
+        			 $log['state'] = count($lines);
         			 foreach ($lines as $line_num => $line)
                        {
         				   if($line_num >= $state){
